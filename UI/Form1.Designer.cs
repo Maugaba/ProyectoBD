@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxUsuario = new System.Windows.Forms.TextBox();
+            this.textBoxContraseña = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Ocultar = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ButtonIniciarSesion = new System.Windows.Forms.Button();
+            this.rolesTableAdapter1 = new DAL.DataSetVentasTableAdapters.RolesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -43,33 +44,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxUsuario
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.textBox1.Location = new System.Drawing.Point(338, 209);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 25);
-            this.textBox1.TabIndex = 2;
+            this.textBoxUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxUsuario.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsuario.Location = new System.Drawing.Point(187, 140);
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(364, 50);
+            this.textBoxUsuario.TabIndex = 2;
+            this.textBoxUsuario.Text = "Usuario";
+            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // textBoxContraseña
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(338, 273);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(178, 25);
-            this.textBox2.TabIndex = 3;
+            this.textBoxContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxContraseña.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxContraseña.Location = new System.Drawing.Point(187, 241);
+            this.textBoxContraseña.Name = "textBoxContraseña";
+            this.textBoxContraseña.Size = new System.Drawing.Size(364, 50);
+            this.textBoxContraseña.TabIndex = 3;
+            this.textBoxContraseña.Text = "Contraseña";
+            this.textBoxContraseña.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::UI.Properties.Resources.dis;
-            this.pictureBox1.Location = new System.Drawing.Point(568, 177);
+            this.pictureBox1.Location = new System.Drawing.Point(658, 44);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 138);
+            this.pictureBox1.Size = new System.Drawing.Size(325, 265);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -79,9 +83,9 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::UI.Properties.Resources.Usarios;
-            this.pictureBox2.Location = new System.Drawing.Point(291, 199);
+            this.pictureBox2.Location = new System.Drawing.Point(96, 131);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 36);
+            this.pictureBox2.Size = new System.Drawing.Size(85, 70);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -91,9 +95,9 @@
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::UI.Properties.Resources._lock;
-            this.pictureBox3.Location = new System.Drawing.Point(291, 263);
+            this.pictureBox3.Location = new System.Drawing.Point(96, 230);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(41, 36);
+            this.pictureBox3.Size = new System.Drawing.Size(85, 70);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
@@ -103,9 +107,9 @@
             this.Ocultar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Ocultar.BackColor = System.Drawing.Color.Transparent;
             this.Ocultar.Image = global::UI.Properties.Resources.eyelashes;
-            this.Ocultar.Location = new System.Drawing.Point(519, 267);
+            this.Ocultar.Location = new System.Drawing.Point(568, 230);
             this.Ocultar.Name = "Ocultar";
-            this.Ocultar.Size = new System.Drawing.Size(43, 40);
+            this.Ocultar.Size = new System.Drawing.Size(66, 70);
             this.Ocultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Ocultar.TabIndex = 10;
             this.Ocultar.TabStop = false;
@@ -116,24 +120,28 @@
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::UI.Properties.Resources.eye;
-            this.pictureBox4.Location = new System.Drawing.Point(519, 267);
+            this.pictureBox4.Location = new System.Drawing.Point(568, 230);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(43, 40);
+            this.pictureBox4.Size = new System.Drawing.Size(66, 70);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // button1
+            // ButtonIniciarSesion
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.button1.Location = new System.Drawing.Point(374, 304);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 53);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Iniciar Sesión";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ButtonIniciarSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonIniciarSesion.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonIniciarSesion.Location = new System.Drawing.Point(278, 340);
+            this.ButtonIniciarSesion.Name = "ButtonIniciarSesion";
+            this.ButtonIniciarSesion.Size = new System.Drawing.Size(189, 108);
+            this.ButtonIniciarSesion.TabIndex = 5;
+            this.ButtonIniciarSesion.Text = "Iniciar Sesión";
+            this.ButtonIniciarSesion.UseVisualStyleBackColor = true;
+            // 
+            // rolesTableAdapter1
+            // 
+            this.rolesTableAdapter1.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -144,9 +152,9 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ButtonIniciarSesion);
+            this.Controls.Add(this.textBoxContraseña);
+            this.Controls.Add(this.textBoxUsuario);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.Ocultar);
             this.MaximizeBox = false;
@@ -166,14 +174,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxUsuario;
+        private System.Windows.Forms.TextBox textBoxContraseña;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox Ocultar;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ButtonIniciarSesion;
+        private DAL.DataSetVentasTableAdapters.RolesTableAdapter rolesTableAdapter1;
     }
 }
 

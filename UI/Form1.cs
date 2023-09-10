@@ -12,6 +12,8 @@ namespace UI
 {
     public partial class Form1 : Form
     {
+        int a=1, b=1;
+        
         public Form1()
         {
             InitializeComponent();
@@ -20,15 +22,32 @@ namespace UI
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             Ocultar.BringToFront();
-            textBox2.PasswordChar = '\0';
+            textBoxContraseña.PasswordChar = '\0';
         }
 
         private void Ocultar_Click(object sender, EventArgs e)
         {
             pictureBox4.BringToFront();
-            textBox2.PasswordChar = '*';
+            textBoxContraseña.PasswordChar = '*';
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (a == 1)
+            {
+                textBoxUsuario.Text = "";
+                a=0;
+            }
+        }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (b == 1)
+            {
+                textBoxContraseña.Text = "";
+                textBoxContraseña.PasswordChar = '*';
+                b = 0;
+            }
+        }
     }
 }
