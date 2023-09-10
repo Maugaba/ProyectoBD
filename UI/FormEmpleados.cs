@@ -21,5 +21,10 @@ namespace UI
         {
 
         }
+
+        private void dataGridView1_AutoSizeColumnModeChanged(object sender, DataGridViewAutoSizeColumnModeEventArgs e)
+        {
+
+        }
     }
 }
