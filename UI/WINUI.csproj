@@ -52,6 +52,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmpleados.Designer.cs">
+      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGarantia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGarantia.Designer.cs">
+      <DependentUpon>FormGarantia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMarcas.Designer.cs">
+      <DependentUpon>FormMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMetodoDePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMetodoDePago.Designer.cs">
+      <DependentUpon>FormMetodoDePago.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +92,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmpleados.resx">
+      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGarantia.resx">
+      <DependentUpon>FormGarantia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMarcas.resx">
+      <DependentUpon>FormMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMetodoDePago.resx">
+      <DependentUpon>FormMetodoDePago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRol.resx">
       <DependentUpon>FormRol.cs</DependentUpon>
