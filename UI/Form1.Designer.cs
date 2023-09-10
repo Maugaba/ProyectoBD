@@ -151,6 +151,7 @@
             this.ButtonIniciarSesion.Text = "Iniciar Sesion";
             this.ButtonIniciarSesion.TextColor = System.Drawing.Color.White;
             this.ButtonIniciarSesion.UseVisualStyleBackColor = false;
+            this.ButtonIniciarSesion.Click += new System.EventHandler(this.ButtonIniciarSesion_Click);
             // 
             // Form1
             // 
