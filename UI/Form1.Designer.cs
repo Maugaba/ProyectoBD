@@ -35,8 +35,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Ocultar = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.ButtonIniciarSesion = new System.Windows.Forms.Button();
             this.rolesTableAdapter1 = new DAL.DataSetVentasTableAdapters.RolesTableAdapter();
+            this.ButtonIniciarSesion = new UI.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -83,9 +83,9 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::UI.Properties.Resources.Usarios;
-            this.pictureBox2.Location = new System.Drawing.Point(96, 131);
+            this.pictureBox2.Location = new System.Drawing.Point(96, 122);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(85, 70);
+            this.pictureBox2.Size = new System.Drawing.Size(85, 79);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -128,31 +128,41 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // ButtonIniciarSesion
-            // 
-            this.ButtonIniciarSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonIniciarSesion.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonIniciarSesion.Location = new System.Drawing.Point(278, 340);
-            this.ButtonIniciarSesion.Name = "ButtonIniciarSesion";
-            this.ButtonIniciarSesion.Size = new System.Drawing.Size(189, 108);
-            this.ButtonIniciarSesion.TabIndex = 5;
-            this.ButtonIniciarSesion.Text = "Iniciar Sesión";
-            this.ButtonIniciarSesion.UseVisualStyleBackColor = true;
-            // 
             // rolesTableAdapter1
             // 
             this.rolesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ButtonIniciarSesion
+            // 
+            this.ButtonIniciarSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonIniciarSesion.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ButtonIniciarSesion.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.ButtonIniciarSesion.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.ButtonIniciarSesion.BorderRadius = 40;
+            this.ButtonIniciarSesion.BorderSize = 0;
+            this.ButtonIniciarSesion.FlatAppearance.BorderSize = 0;
+            this.ButtonIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonIniciarSesion.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.ButtonIniciarSesion.ForeColor = System.Drawing.Color.White;
+            this.ButtonIniciarSesion.Location = new System.Drawing.Point(412, 340);
+            this.ButtonIniciarSesion.Name = "ButtonIniciarSesion";
+            this.ButtonIniciarSesion.Size = new System.Drawing.Size(175, 100);
+            this.ButtonIniciarSesion.TabIndex = 12;
+            this.ButtonIniciarSesion.Text = "Iniciar Sesion";
+            this.ButtonIniciarSesion.TextColor = System.Drawing.Color.White;
+            this.ButtonIniciarSesion.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::UI.Properties.Resources.fondo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(983, 568);
+            this.Controls.Add(this.ButtonIniciarSesion);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.ButtonIniciarSesion);
             this.Controls.Add(this.textBoxContraseña);
             this.Controls.Add(this.textBoxUsuario);
             this.Controls.Add(this.pictureBox4);
@@ -181,8 +191,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox Ocultar;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button ButtonIniciarSesion;
         private DAL.DataSetVentasTableAdapters.RolesTableAdapter rolesTableAdapter1;
+        private RJButton ButtonIniciarSesion;
     }
 }
 

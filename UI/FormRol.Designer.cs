@@ -35,17 +35,19 @@
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonNuevo = new System.Windows.Forms.Button();
-            this.buttonGuardar = new System.Windows.Forms.Button();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonListarActivos = new System.Windows.Forms.Button();
-            this.buttonListarInactivos = new System.Windows.Forms.Button();
+            this.buttonListarInactivos = new UI.RJButton();
+            this.buttonEditar = new UI.RJButton();
+            this.buttonListarActivos = new UI.RJButton();
+            this.buttonGuardar = new UI.RJButton();
+            this.buttonNuevo = new UI.RJButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.textBoxDescripcion);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.checkBoxEstado);
@@ -107,6 +109,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 230);
             this.dataGridView1.Name = "dataGridView1";
@@ -114,66 +117,116 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // buttonNuevo
+            // buttonListarInactivos
             // 
-            this.buttonNuevo.Location = new System.Drawing.Point(33, 13);
-            this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(86, 52);
-            this.buttonNuevo.TabIndex = 2;
-            this.buttonNuevo.Text = "Nuevo";
-            this.buttonNuevo.UseVisualStyleBackColor = true;
-            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
-            // 
-            // buttonGuardar
-            // 
-            this.buttonGuardar.Enabled = false;
-            this.buttonGuardar.Location = new System.Drawing.Point(33, 84);
-            this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(86, 52);
-            this.buttonGuardar.TabIndex = 3;
-            this.buttonGuardar.Text = "Guardar";
-            this.buttonGuardar.UseVisualStyleBackColor = true;
-            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            this.buttonListarInactivos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonListarInactivos.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonListarInactivos.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonListarInactivos.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonListarInactivos.BorderRadius = 40;
+            this.buttonListarInactivos.BorderSize = 0;
+            this.buttonListarInactivos.FlatAppearance.BorderSize = 0;
+            this.buttonListarInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarInactivos.ForeColor = System.Drawing.Color.White;
+            this.buttonListarInactivos.Location = new System.Drawing.Point(700, 159);
+            this.buttonListarInactivos.Name = "buttonListarInactivos";
+            this.buttonListarInactivos.Size = new System.Drawing.Size(85, 40);
+            this.buttonListarInactivos.TabIndex = 30;
+            this.buttonListarInactivos.Text = "Listar Inactivos";
+            this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
+            this.buttonListarInactivos.UseVisualStyleBackColor = false;
+            this.buttonListarInactivos.Click += new System.EventHandler(this.buttonListarInactivos_Click);
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Enabled = false;
-            this.buttonEditar.Location = new System.Drawing.Point(670, 13);
+            this.buttonEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonEditar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonEditar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonEditar.BorderRadius = 40;
+            this.buttonEditar.BorderSize = 0;
+            this.buttonEditar.FlatAppearance.BorderSize = 0;
+            this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditar.ForeColor = System.Drawing.Color.White;
+            this.buttonEditar.Location = new System.Drawing.Point(699, 25);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(86, 52);
-            this.buttonEditar.TabIndex = 4;
+            this.buttonEditar.Size = new System.Drawing.Size(85, 40);
+            this.buttonEditar.TabIndex = 29;
             this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.TextColor = System.Drawing.Color.White;
+            this.buttonEditar.UseVisualStyleBackColor = false;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonListarActivos
             // 
-            this.buttonListarActivos.Location = new System.Drawing.Point(670, 73);
+            this.buttonListarActivos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonListarActivos.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonListarActivos.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonListarActivos.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonListarActivos.BorderRadius = 40;
+            this.buttonListarActivos.BorderSize = 0;
+            this.buttonListarActivos.FlatAppearance.BorderSize = 0;
+            this.buttonListarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarActivos.ForeColor = System.Drawing.Color.White;
+            this.buttonListarActivos.Location = new System.Drawing.Point(700, 88);
             this.buttonListarActivos.Name = "buttonListarActivos";
-            this.buttonListarActivos.Size = new System.Drawing.Size(86, 52);
-            this.buttonListarActivos.TabIndex = 5;
+            this.buttonListarActivos.Size = new System.Drawing.Size(85, 40);
+            this.buttonListarActivos.TabIndex = 28;
             this.buttonListarActivos.Text = "Listar Activos";
-            this.buttonListarActivos.UseVisualStyleBackColor = true;
+            this.buttonListarActivos.TextColor = System.Drawing.Color.White;
+            this.buttonListarActivos.UseVisualStyleBackColor = false;
             this.buttonListarActivos.Click += new System.EventHandler(this.buttonListarActivos_Click);
             // 
-            // buttonListarInactivos
+            // buttonGuardar
             // 
-            this.buttonListarInactivos.Location = new System.Drawing.Point(670, 142);
-            this.buttonListarInactivos.Name = "buttonListarInactivos";
-            this.buttonListarInactivos.Size = new System.Drawing.Size(86, 52);
-            this.buttonListarInactivos.TabIndex = 6;
-            this.buttonListarInactivos.Text = "Listar Inactivos";
-            this.buttonListarInactivos.UseVisualStyleBackColor = true;
-            this.buttonListarInactivos.Click += new System.EventHandler(this.buttonListarInactivos_Click);
+            this.buttonGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonGuardar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonGuardar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonGuardar.BorderRadius = 40;
+            this.buttonGuardar.BorderSize = 0;
+            this.buttonGuardar.FlatAppearance.BorderSize = 0;
+            this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGuardar.ForeColor = System.Drawing.Color.White;
+            this.buttonGuardar.Location = new System.Drawing.Point(22, 94);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(85, 40);
+            this.buttonGuardar.TabIndex = 27;
+            this.buttonGuardar.Text = "Guardar";
+            this.buttonGuardar.TextColor = System.Drawing.Color.White;
+            this.buttonGuardar.UseVisualStyleBackColor = false;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
+            // buttonNuevo
+            // 
+            this.buttonNuevo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonNuevo.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonNuevo.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonNuevo.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonNuevo.BorderRadius = 40;
+            this.buttonNuevo.BorderSize = 0;
+            this.buttonNuevo.FlatAppearance.BorderSize = 0;
+            this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNuevo.ForeColor = System.Drawing.Color.White;
+            this.buttonNuevo.Location = new System.Drawing.Point(22, 25);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(85, 40);
+            this.buttonNuevo.TabIndex = 26;
+            this.buttonNuevo.Text = "Nuevo";
+            this.buttonNuevo.TextColor = System.Drawing.Color.White;
+            this.buttonNuevo.UseVisualStyleBackColor = false;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click_1);
             // 
             // FormRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonListarInactivos);
-            this.Controls.Add(this.buttonListarActivos);
             this.Controls.Add(this.buttonEditar);
+            this.Controls.Add(this.buttonListarActivos);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.dataGridView1);
@@ -181,6 +234,7 @@
             this.Name = "FormRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRol";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormRol_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -198,10 +252,10 @@
         private System.Windows.Forms.CheckBox checkBoxEstado;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonNuevo;
-        private System.Windows.Forms.Button buttonGuardar;
-        private System.Windows.Forms.Button buttonEditar;
-        private System.Windows.Forms.Button buttonListarActivos;
-        private System.Windows.Forms.Button buttonListarInactivos;
+        private RJButton buttonListarInactivos;
+        private RJButton buttonEditar;
+        private RJButton buttonListarActivos;
+        private RJButton buttonGuardar;
+        private RJButton buttonNuevo;
     }
 }

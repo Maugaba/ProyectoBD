@@ -22,7 +22,7 @@ namespace UI
             InitializeComponent();
         }
 
-        private void buttonNuevo_Click(object sender, EventArgs e)
+        private void buttonNuevo_Click_1(object sender, EventArgs e)
         {
             groupBox1.Enabled = true;
             buttonNuevo.Enabled = false;
