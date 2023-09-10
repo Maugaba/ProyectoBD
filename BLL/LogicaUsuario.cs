@@ -51,8 +51,9 @@ namespace BLL
         /// <param name="usuario">Refiere al nombre del usuario</param>
         /// <param name="contraseña">Refiere a la contraseña del usuario</param>
         /// <param name="idRol">Refiere al Rol que se la asignara al usuario</param>
+        /// <param name="idEmpleado">Refiere al Empleado que se la asignara al usuario</param>
         /// <returns></returns>
-        public string NuevoUsuario(string usuario, string contraseña, int idRol)
+        public string NuevoUsuario(string usuario, string contraseña, int idRol, int idEmpleado)
         {
             string contraseñaUsuario = contraseña;
             string hashContraseña = CifrarContraseña(contraseñaUsuario);
@@ -62,8 +63,16 @@ namespace BLL
                 return "Error: el usuario " + usuario + " ya existe previamente";
             else
             {
-                USUARIOS.InsertQueryUsuario(usuario, hashContraseña, idRol);
-                return "Se agregó el usuario " + usuario;
+                try
+                {
+                    USUARIOS.InsertQueryUsuario(usuario, hashContraseña, idRol, idEmpleado);
+                    return "Se agregó el usuario " + usuario;
+                }
+                catch (Exception)
+                {
+                    return "El empleado al que intentas crear un usuario ya posee un usuario previamente ";
+                }
+                
             }
         }//fin del metodo NuevoUsuario
 
@@ -74,8 +83,9 @@ namespace BLL
         /// <param name="idRol">Refiere al rol que posee el usuario</param>
         /// <param name="estado">Refiere al estado actual del usuario</param>
         /// <param name="id">Refiere al identificador del usuario que se editara</param>
+        /// <param name="idEmpleado">Refiere al empleado del usuario que se editara</param>
         /// <returns></returns>
-        public string EditarUsuario(string usuario, int idRol, byte estado, int id)
+        public string EditarUsuario(string usuario, int idRol, byte estado, int id, int idEmpleado)
         {
             int existe;
             existe = Convert.ToInt32(USUARIOS.ScalarQueryExisteUsuario(usuario));
@@ -83,7 +93,7 @@ namespace BLL
                 return "Error: el usuario " + usuario + " ya existe previamente";
             else
             {
-                USUARIOS.UpdateQueryUsuario(usuario, idRol, estado, id);
+                USUARIOS.UpdateQueryUsuario(usuario, idRol, estado, idEmpleado, id);
                 return "Se editó el usuario con registro: " + id;
             }
         }//fin del metodo EditarUsuario

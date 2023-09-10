@@ -7,9 +7,12 @@
     }
 }
 
-namespace DAL.DataSetVentasTableAdapters {
-    
-    
+namespace DAL.DataSetVentasTableAdapters
+{
+    partial class EmpleadosTableAdapter
+    {
+    }
+
     public partial class UsuariosTableAdapter {
     }
 }
