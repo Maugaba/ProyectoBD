@@ -16,5 +16,19 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Ocultar.BringToFront();
+            textBox2.PasswordChar = '\0';
+        }
+
+        private void Ocultar_Click(object sender, EventArgs e)
+        {
+            pictureBox4.BringToFront();
+            textBox2.PasswordChar = '*';
+        }
+
+
     }
 }
