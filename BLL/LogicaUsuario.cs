@@ -13,6 +13,7 @@ namespace BLL
     {   
         //atributos
         private UsuariosTableAdapter usuarios = null;
+        private Usuarios1TableAdapter usuarios1 = null;
 
         //propiedades
         private UsuariosTableAdapter USUARIOS
@@ -22,6 +23,15 @@ namespace BLL
                 if (usuarios == null)
                     usuarios = new UsuariosTableAdapter();
                 return usuarios;
+            }
+        }
+        private Usuarios1TableAdapter USUARIOS1
+        {
+            get
+            {
+                if (usuarios1 == null)
+                    usuarios1 = new Usuarios1TableAdapter();
+                return usuarios1;
             }
         }
 
@@ -44,6 +54,15 @@ namespace BLL
         {
             return USUARIOS.GetDataUsuariosInactivos();
         }//fin del metodo ListarUsuariosInactivos
+
+        /// <summary>
+        /// Nos retorna metodo para verificar inicio de sesion
+        /// </summary>
+        /// <returns></returns>
+        public DataTable Login()
+        {
+            return USUARIOS1.GetDataLogin();
+        }//fin del metodo Login
 
         /// <summary>
         /// Este metodo nos crear un nuevo usuario en la base de datos
