@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataUsuariosActivos" GetMethodModifier="Public" GetMethodName="GetDataUsuariosActivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataUsuariosActivos" UserSourceName="GetDataUsuariosActivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Usuarios.IdUsuario, Usuarios.Usuario, Roles.Nombre AS Rol, Empleados.Apellidos + ', ' + Empleados.Nombres AS NombreCompleto
+                    <CommandText>SELECT        Usuarios.IdUsuario, Usuarios.Usuario, Roles.Nombre AS Rol, Empleados.Apellidos + ', ' + Empleados.Nombres AS NombreCompleto, Usuarios.Estado
 FROM            Usuarios INNER JOIN
                          Roles ON Usuarios.IdRol = Roles.IdRol INNER JOIN
                          Empleados ON Usuarios.IdEmpleado = Empleados.IdEmpleado
@@ -27,12 +27,13 @@ WHERE        (Usuarios.Estado = 1)</CommandText>
               <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
               <Mapping SourceColumn="Rol" DataSetColumn="Rol" />
               <Mapping SourceColumn="NombreCompleto" DataSetColumn="NombreCompleto" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataUsuariosInactivos" GetMethodModifier="Public" GetMethodName="GetDataUsuariosInactivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataUsuariosInactivos" UserSourceName="GetDataUsuariosInactivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Usuarios.IdUsuario, Usuarios.Usuario, Roles.Nombre AS Rol, Empleados.Apellidos + ', ' + Empleados.Nombres AS NombreCompleto
+                    <CommandText>SELECT        Usuarios.IdUsuario, Usuarios.Usuario, Roles.Nombre AS Rol, Empleados.Apellidos + ', ' + Empleados.Nombres AS NombreCompleto, Usuarios.Estado
 FROM            Usuarios INNER JOIN
                          Roles ON Usuarios.IdRol = Roles.IdRol INNER JOIN
                          Empleados ON Usuarios.IdEmpleado = Empleados.IdEmpleado
@@ -102,7 +103,7 @@ WHERE        (IdUsuario = @id)</CommandText>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Roles" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataRolesActivos" GetMethodModifier="Public" GetMethodName="GetDataRolesActivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataRolesActivos" UserSourceName="GetDataRolesActivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdRol, Nombre, Descripcion
+                    <CommandText>SELECT        IdRol, Nombre, Descripcion, Estado
 FROM            Roles
 WHERE        (Estado = 1)</CommandText>
                     <Parameters />
@@ -114,14 +115,13 @@ WHERE        (Estado = 1)</CommandText>
               <Mapping SourceColumn="IdRol" DataSetColumn="IdRol" />
               <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Roles" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataRolesInactivos" GetMethodModifier="Public" GetMethodName="GetDataRolesInactivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataRolesInactivos" UserSourceName="GetDataRolesInactivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdRol, Nombre, Descripcion
-FROM            Roles
-WHERE        (Estado = 0)</CommandText>
+                    <CommandText>SELECT Descripcion, Estado, IdRol, Nombre FROM Roles WHERE (Estado = 0)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -171,7 +171,7 @@ WHERE        (IdRol = @id)</CommandText>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Garantías" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataGarantíasActivas" GetMethodModifier="Public" GetMethodName="GetDataGarantíasActivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataGarantíasActivas" UserSourceName="GetDataGarantíasActivas">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdGarantía, TiempoDeGarantíaEnDias
+                    <CommandText>SELECT        IdGarantía, TiempoDeGarantíaEnDias, Estado
 FROM            Garantías
 WHERE        (Estado = 1)</CommandText>
                     <Parameters />
@@ -182,14 +182,13 @@ WHERE        (Estado = 1)</CommandText>
             <Mappings>
               <Mapping SourceColumn="IdGarantía" DataSetColumn="IdGarantía" />
               <Mapping SourceColumn="TiempoDeGarantíaEnDias" DataSetColumn="TiempoDeGarantíaEnDias" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Garantías" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataGarantíasInactivas" GetMethodModifier="Public" GetMethodName="GetDataGarantíasInactivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataGarantíasInactivas" UserSourceName="GetDataGarantíasInactivas">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdGarantía, TiempoDeGarantíaEnDias
-FROM            Garantías
-WHERE        (Estado = 0)</CommandText>
+                    <CommandText>SELECT Estado, IdGarantía, TiempoDeGarantíaEnDias FROM Garantías WHERE (Estado = 0)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -206,12 +205,12 @@ VALUES        (@tiempo, 1)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryExisteGarantía" Modifier="Public" Name="ScalarQueryExisteGarantía" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ScalarQueryExisteGarantía">
+              <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryExisteGarantía" Modifier="Public" Name="ScalarQueryExisteGarantía" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ScalarQueryExisteGarantía">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Cuantos
 FROM            Garantías
-WHERE        (TiempoDeGarantíaEnDias LIKE @busca + '%')</CommandText>
+WHERE        (TiempoDeGarantíaEnDias = @busca )</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="busca" ColumnName="TiempoDeGarantíaEnDias" DataSourceName="VentasElectronica.dbo.Garantías" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@busca" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="TiempoDeGarantíaEnDias" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -239,7 +238,7 @@ WHERE        (IdGarantía = @id)</CommandText>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Marcas" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataMarcasActivas" GetMethodModifier="Public" GetMethodName="GetDataMarcasActivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataMarcasActivas" UserSourceName="GetDataMarcasActivas">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdMarca, Nombre, Descripcion
+                    <CommandText>SELECT        IdMarca, Nombre, Descripcion, Estado
 FROM            Marcas
 WHERE        (Estado = 1)</CommandText>
                     <Parameters />
@@ -251,14 +250,13 @@ WHERE        (Estado = 1)</CommandText>
               <Mapping SourceColumn="IdMarca" DataSetColumn="IdMarca" />
               <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Marcas" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataMarcasInactivas" GetMethodModifier="Public" GetMethodName="GetDataMarcasInactivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataMarcasInactivas" UserSourceName="GetDataMarcasInactivas">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdMarca, Nombre, Descripcion
-FROM            Marcas
-WHERE        (Estado = 0)</CommandText>
+                    <CommandText>SELECT Descripcion, Estado, IdMarca, Nombre FROM Marcas WHERE (Estado = 0)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -310,7 +308,7 @@ WHERE        (IdMarca = @id)</CommandText>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.MetodosDePago" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataMetodosDePagoActivos" GetMethodModifier="Public" GetMethodName="GetDataMetodosDePagoActivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataMetodosDePagoActivos" UserSourceName="GetDataMetodosDePagoActivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdMétodoDePago, Nombre, Descripcion
+                    <CommandText>SELECT        IdMétodoDePago, Nombre, Descripcion, Estado
 FROM            MetodosDePago
 WHERE (Estado = 1)</CommandText>
                     <Parameters />
@@ -322,14 +320,13 @@ WHERE (Estado = 1)</CommandText>
               <Mapping SourceColumn="IdMétodoDePago" DataSetColumn="IdMétodoDePago" />
               <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.MetodosDePago" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataMetodosDePagoInactivos" GetMethodModifier="Public" GetMethodName="GetDataMetodosDePagoInactivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataMetodosDePagoInactivos" UserSourceName="GetDataMetodosDePagoInactivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdMétodoDePago, Nombre, Descripcion
-FROM            MetodosDePago
-WHERE (Estado = 0)</CommandText>
+                    <CommandText>SELECT Descripcion, Estado, IdMétodoDePago, Nombre FROM MetodosDePago WHERE (Estado = 0)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -376,12 +373,33 @@ WHERE        (IdMétodoDePago = @id)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmpleadosTableAdapter" GeneratorDataComponentClassName="EmpleadosTableAdapter" Name="Empleados" UserDataComponentName="EmpleadosTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Usuarios1TableAdapter" GeneratorDataComponentClassName="Usuarios1TableAdapter" Name="Usuarios1" UserDataComponentName="Usuarios1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Empleados" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataEmpleadosActivos" GetMethodModifier="Public" GetMethodName="GetDataEmpleadosActivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataEmpleadosActivos" UserSourceName="GetDataEmpleadosActivos">
+              <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Usuarios" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataLogin" GetMethodModifier="Public" GetMethodName="GetDataLogin" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataLogin" UserSourceName="GetDataLogin">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdEmpleado, (Apellidos + ', ' + Nombres) as NombreCompleto, FechaNacimiento, Género, DPI, Dirección, Télefono
+                    <CommandText>SELECT        IdUsuario, Usuario, Contraseña, IdRol
+FROM            Usuarios
+WHERE        (Estado = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdUsuario" DataSetColumn="IdUsuario" />
+              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
+              <Mapping SourceColumn="Contraseña" DataSetColumn="Contraseña" />
+              <Mapping SourceColumn="IdRol" DataSetColumn="IdRol" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Empleados1TableAdapter" GeneratorDataComponentClassName="Empleados1TableAdapter" Name="Empleados1" UserDataComponentName="Empleados1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Empleados" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataNombreEmpleado" GetMethodModifier="Public" GetMethodName="GetDataNombreEmpleado" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataNombreEmpleado" UserSourceName="GetDataNombreEmpleado">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        IdEmpleado, Apellidos + ', ' + Nombres AS NombreCompleto
 FROM            Empleados
 WHERE        (Estado = 1)</CommandText>
                     <Parameters />
@@ -391,20 +409,39 @@ WHERE        (Estado = 1)</CommandText>
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="IdEmpleado" DataSetColumn="IdEmpleado" />
+              <Mapping SourceColumn="NombreCompleto" DataSetColumn="NombreCompleto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmpleadosTableAdapter" GeneratorDataComponentClassName="EmpleadosTableAdapter" Name="Empleados" UserDataComponentName="EmpleadosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Empleados" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataEmpleadosActivos" GetMethodModifier="Public" GetMethodName="GetDataEmpleadosActivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataEmpleadosActivos" UserSourceName="GetDataEmpleadosActivos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        IdEmpleado, Nombres, Apellidos, FechaNacimiento, Género, DPI, Dirección, Télefono, Estado
+FROM            Empleados
+WHERE        (Estado = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdEmpleado" DataSetColumn="IdEmpleado" />
+              <Mapping SourceColumn="Nombres" DataSetColumn="Nombres" />
+              <Mapping SourceColumn="Apellidos" DataSetColumn="Apellidos" />
               <Mapping SourceColumn="FechaNacimiento" DataSetColumn="FechaNacimiento" />
               <Mapping SourceColumn="Género" DataSetColumn="Género" />
               <Mapping SourceColumn="DPI" DataSetColumn="DPI" />
               <Mapping SourceColumn="Dirección" DataSetColumn="Dirección" />
               <Mapping SourceColumn="Télefono" DataSetColumn="Télefono" />
-              <Mapping SourceColumn="NombreCompleto" DataSetColumn="NombreCompleto" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Empleados" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataEmpleadosInactivos" GetMethodModifier="Public" GetMethodName="GetDataEmpleadosInactivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataEmpleadosInactivos" UserSourceName="GetDataEmpleadosInactivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdEmpleado, (Apellidos + ', ' + Nombres) as NombreCompleto, FechaNacimiento, Género, DPI, Dirección, Télefono
-FROM            Empleados
-WHERE        (Estado = 0)</CommandText>
+                    <CommandText>SELECT Apellidos, DPI, Dirección, Estado, FechaNacimiento, Género, IdEmpleado, Nombres, Télefono FROM Empleados WHERE (Estado = 0)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -461,27 +498,6 @@ WHERE        (IdEmpleado = @id)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Usuarios1TableAdapter" GeneratorDataComponentClassName="Usuarios1TableAdapter" Name="Usuarios1" UserDataComponentName="Usuarios1TableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="VentasElectronicaConnectionString (Settings)" DbObjectName="VentasElectronica.dbo.Usuarios" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataLogin" GetMethodModifier="Public" GetMethodName="GetDataLogin" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataLogin" UserSourceName="GetDataLogin">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdUsuario, Usuario, Contraseña, IdRol
-FROM            Usuarios
-WHERE        (Estado = 1)</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="IdUsuario" DataSetColumn="IdUsuario" />
-              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
-              <Mapping SourceColumn="Contraseña" DataSetColumn="Contraseña" />
-              <Mapping SourceColumn="IdRol" DataSetColumn="IdRol" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -515,6 +531,7 @@ WHERE        (Estado = 1)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" type="xs:unsignedByte" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -536,6 +553,7 @@ WHERE        (Estado = 1)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" type="xs:unsignedByte" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -544,6 +562,7 @@ WHERE        (Estado = 1)</CommandText>
             <xs:sequence>
               <xs:element name="IdGarantía" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdGarantíaColumn" msprop:Generator_ColumnPropNameInRow="IdGarantía" msprop:Generator_UserColumnName="IdGarantía" msprop:Generator_ColumnVarNameInTable="columnIdGarantía" type="xs:int" />
               <xs:element name="TiempoDeGarantíaEnDias" msprop:Generator_ColumnPropNameInTable="TiempoDeGarantíaEnDiasColumn" msprop:Generator_ColumnPropNameInRow="TiempoDeGarantíaEnDias" msprop:Generator_UserColumnName="TiempoDeGarantíaEnDias" msprop:Generator_ColumnVarNameInTable="columnTiempoDeGarantíaEnDias" type="xs:int" />
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" type="xs:unsignedByte" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -565,6 +584,7 @@ WHERE        (Estado = 1)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" type="xs:unsignedByte" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -586,6 +606,43 @@ WHERE        (Estado = 1)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Usuarios1" msprop:Generator_RowEvHandlerName="Usuarios1RowChangeEventHandler" msprop:Generator_RowDeletedName="Usuarios1RowDeleted" msprop:Generator_RowDeletingName="Usuarios1RowDeleting" msprop:Generator_RowEvArgName="Usuarios1RowChangeEvent" msprop:Generator_TablePropName="Usuarios1" msprop:Generator_RowChangedName="Usuarios1RowChanged" msprop:Generator_UserTableName="Usuarios1" msprop:Generator_RowChangingName="Usuarios1RowChanging" msprop:Generator_RowClassName="Usuarios1Row" msprop:Generator_TableClassName="Usuarios1DataTable" msprop:Generator_TableVarName="tableUsuarios1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdUsuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdUsuarioColumn" msprop:Generator_ColumnPropNameInRow="IdUsuario" msprop:Generator_UserColumnName="IdUsuario" msprop:Generator_ColumnVarNameInTable="columnIdUsuario" type="xs:int" />
+              <xs:element name="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_UserColumnName="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contraseña" msprop:Generator_ColumnPropNameInTable="ContraseñaColumn" msprop:Generator_ColumnPropNameInRow="Contraseña" msprop:Generator_UserColumnName="Contraseña" msprop:Generator_ColumnVarNameInTable="columnContraseña">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdRol" msprop:Generator_ColumnPropNameInTable="IdRolColumn" msprop:Generator_ColumnPropNameInRow="IdRol" msprop:Generator_UserColumnName="IdRol" msprop:Generator_ColumnVarNameInTable="columnIdRol" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Empleados1" msprop:Generator_RowEvHandlerName="Empleados1RowChangeEventHandler" msprop:Generator_RowDeletedName="Empleados1RowDeleted" msprop:Generator_RowDeletingName="Empleados1RowDeleting" msprop:Generator_RowEvArgName="Empleados1RowChangeEvent" msprop:Generator_TablePropName="Empleados1" msprop:Generator_RowChangedName="Empleados1RowChanged" msprop:Generator_UserTableName="Empleados1" msprop:Generator_RowChangingName="Empleados1RowChanging" msprop:Generator_RowClassName="Empleados1Row" msprop:Generator_TableClassName="Empleados1DataTable" msprop:Generator_TableVarName="tableEmpleados1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdEmpleado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdEmpleadoColumn" msprop:Generator_ColumnPropNameInRow="IdEmpleado" msprop:Generator_UserColumnName="IdEmpleado" msprop:Generator_ColumnVarNameInTable="columnIdEmpleado" type="xs:int" />
+              <xs:element name="NombreCompleto" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_UserColumnName="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="202" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -593,6 +650,20 @@ WHERE        (Estado = 1)</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdEmpleado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdEmpleadoColumn" msprop:Generator_ColumnPropNameInRow="IdEmpleado" msprop:Generator_UserColumnName="IdEmpleado" msprop:Generator_ColumnVarNameInTable="columnIdEmpleado" type="xs:int" />
+              <xs:element name="Nombres" msprop:Generator_ColumnPropNameInTable="NombresColumn" msprop:Generator_ColumnPropNameInRow="Nombres" msprop:Generator_UserColumnName="Nombres" msprop:Generator_ColumnVarNameInTable="columnNombres" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellidos" msprop:Generator_ColumnPropNameInTable="ApellidosColumn" msprop:Generator_ColumnPropNameInRow="Apellidos" msprop:Generator_UserColumnName="Apellidos" msprop:Generator_ColumnVarNameInTable="columnApellidos">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="FechaNacimiento" msprop:Generator_ColumnPropNameInTable="FechaNacimientoColumn" msprop:Generator_ColumnPropNameInRow="FechaNacimiento" msprop:Generator_UserColumnName="FechaNacimiento" msprop:Generator_ColumnVarNameInTable="columnFechaNacimiento" type="xs:dateTime" />
               <xs:element name="Género" msprop:Generator_ColumnPropNameInTable="GéneroColumn" msprop:Generator_ColumnPropNameInRow="Género" msprop:Generator_UserColumnName="Género" msprop:Generator_ColumnVarNameInTable="columnGénero">
                 <xs:simpleType>
@@ -622,35 +693,7 @@ WHERE        (Estado = 1)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NombreCompleto" msdata:ReadOnly="true" msprop:Generator_UserColumnName="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="202" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Usuarios1" msprop:Generator_RowEvHandlerName="Usuarios1RowChangeEventHandler" msprop:Generator_RowDeletedName="Usuarios1RowDeleted" msprop:Generator_RowDeletingName="Usuarios1RowDeleting" msprop:Generator_RowEvArgName="Usuarios1RowChangeEvent" msprop:Generator_TablePropName="Usuarios1" msprop:Generator_RowChangedName="Usuarios1RowChanged" msprop:Generator_RowChangingName="Usuarios1RowChanging" msprop:Generator_TableClassName="Usuarios1DataTable" msprop:Generator_RowClassName="Usuarios1Row" msprop:Generator_TableVarName="tableUsuarios1" msprop:Generator_UserTableName="Usuarios1">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IdUsuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="IdUsuario" msprop:Generator_ColumnPropNameInTable="IdUsuarioColumn" msprop:Generator_ColumnVarNameInTable="columnIdUsuario" msprop:Generator_UserColumnName="IdUsuario" type="xs:int" />
-              <xs:element name="Usuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_UserColumnName="Usuario">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Contraseña" msprop:Generator_ColumnPropNameInRow="Contraseña" msprop:Generator_ColumnPropNameInTable="ContraseñaColumn" msprop:Generator_ColumnVarNameInTable="columnContraseña" msprop:Generator_UserColumnName="Contraseña">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="IdRol" msprop:Generator_ColumnPropNameInRow="IdRol" msprop:Generator_ColumnPropNameInTable="IdRolColumn" msprop:Generator_ColumnVarNameInTable="columnIdRol" msprop:Generator_UserColumnName="IdRol" type="xs:int" />
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" type="xs:unsignedByte" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -676,18 +719,22 @@ WHERE        (Estado = 1)</CommandText>
       <xs:selector xpath=".//mstns:MetodosDePago" />
       <xs:field xpath="mstns:IdMétodoDePago" />
     </xs:unique>
-    <xs:unique name="Empleados_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Empleados" />
-      <xs:field xpath="mstns:IdEmpleado" />
-    </xs:unique>
     <xs:unique name="Usuarios1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Usuarios1" />
       <xs:field xpath="mstns:IdUsuario" />
     </xs:unique>
+    <xs:unique name="Empleados1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Empleados1" />
+      <xs:field xpath="mstns:IdEmpleado" />
+    </xs:unique>
+    <xs:unique name="Empleados_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Empleados" />
+      <xs:field xpath="mstns:IdEmpleado" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_IdUsuario_Roles" msdata:parent="Roles" msdata:child="Usuarios1" msdata:parentkey="IdRol" msdata:childkey="IdRol" msprop:Generator_UserParentTable="Roles" msprop:Generator_UserChildTable="Usuarios1" msprop:Generator_RelationVarName="relationFK_IdUsuario_Roles" msprop:Generator_ChildPropName="GetUsuarios1Rows" msprop:Generator_ParentPropName="RolesRow" msprop:Generator_UserRelationName="FK_IdUsuario_Roles" />
+      <msdata:Relationship name="FK_IdUsuario_Roles" msdata:parent="Roles" msdata:child="Usuarios1" msdata:parentkey="IdRol" msdata:childkey="IdRol" msprop:Generator_UserParentTable="Roles" msprop:Generator_UserChildTable="Usuarios1" msprop:Generator_RelationVarName="relationFK_IdUsuario_Roles" msprop:Generator_ChildPropName="GetUsuarios1Rows" msprop:Generator_UserRelationName="FK_IdUsuario_Roles" msprop:Generator_ParentPropName="RolesRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

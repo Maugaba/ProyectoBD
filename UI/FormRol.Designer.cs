@@ -116,6 +116,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 208);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // buttonListarInactivos
             // 
@@ -145,6 +146,7 @@
             this.buttonEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.buttonEditar.BorderRadius = 40;
             this.buttonEditar.BorderSize = 0;
+            this.buttonEditar.Enabled = false;
             this.buttonEditar.FlatAppearance.BorderSize = 0;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
@@ -185,6 +187,7 @@
             this.buttonGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.buttonGuardar.BorderRadius = 40;
             this.buttonGuardar.BorderSize = 0;
+            this.buttonGuardar.Enabled = false;
             this.buttonGuardar.FlatAppearance.BorderSize = 0;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;

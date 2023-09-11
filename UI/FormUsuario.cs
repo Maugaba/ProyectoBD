@@ -13,10 +13,10 @@ namespace UI
 {
     public partial class FormUsuario : Form
     {
-        int listAoI = 0, id = 0;
         LogicaUsuario logicaUsuario = new LogicaUsuario();
         LogicaRol logicaRol = new LogicaRol();
         LogicaEmpleado logicaEmpleado = new LogicaEmpleado();
+        int id = 0;
         public FormUsuario()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace UI
 
         private void FormUsuario_Load(object sender, EventArgs e)
         {
-            comboBoxEmpleado.DataSource = logicaEmpleado.ListarEmpleadosActivos();
+            comboBoxEmpleado.DataSource = logicaEmpleado.ListarEmpleadosUser();
             comboBoxEmpleado.DisplayMember = "NombreCompleto";
             comboBoxEmpleado.ValueMember = "IdEmpleado";
             comboBoxRol.DataSource = logicaRol.ListarRolesActivos();
@@ -62,20 +62,19 @@ namespace UI
             dataGridView1.Refresh();
             buttonGuardar.Enabled = false;
             buttonNuevo.Enabled = true;
+            groupBox1.Enabled = false;
         }
 
         private void buttonListarActivos_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = logicaUsuario.ListarUsuariosActivos();
             dataGridView1.Refresh();
-            listAoI = 1;
         }
 
         private void buttonListarInactivos_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = logicaUsuario.ListarUsuariosInactivos();
             dataGridView1.Refresh();
-            listAoI = 0;
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -86,16 +85,7 @@ namespace UI
                 return;
             }
             string respuesta = "";
-            byte estado;
-            if (checkBoxEstado.Checked)
-            {
-                estado = 1;
-            }
-            else
-            {
-                estado = 0;
-            }
-            respuesta = logicaUsuario.EditarUsuario(textBoxUsuario.Text, (int)comboBoxRol.SelectedValue, estado, id, (int)comboBoxEmpleado.SelectedValue);
+            respuesta = logicaUsuario.EditarUsuario(textBoxUsuario.Text, (int)comboBoxRol.SelectedValue, Convert.ToByte(checkBoxEstado.CheckState), id, (int)comboBoxEmpleado.SelectedValue);
             MessageBox.Show(respuesta);
             dataGridView1.DataSource = logicaUsuario.ListarUsuariosActivos();
             dataGridView1.Refresh();
@@ -106,6 +96,8 @@ namespace UI
             buttonEditar.Enabled = false;
             buttonNuevo.Enabled = true;
             checkBoxEstado.Visible = false;
+            groupBox1.Enabled = false;
+            button1.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -128,6 +120,7 @@ namespace UI
             button1.Enabled = false;
             buttonNuevo.Enabled = true;
             checkBoxEstado.Visible = false;
+            groupBox1.Enabled = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -135,18 +128,11 @@ namespace UI
             if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count - 1)
             {
                 checkBoxEstado.Visible = true;
-                if (listAoI == 1)
-                {
-                    checkBoxEstado.Checked = true;
-                }
-                else
-                {
-                    checkBoxEstado.Checked = false;
-                }
                 id = dataGridView1.Rows[e.RowIndex].Cells[0].Value.GetHashCode();
                 textBoxUsuario.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 comboBoxRol.SelectedIndex = comboBoxRol.FindStringExact(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
                 comboBoxEmpleado.SelectedIndex = comboBoxEmpleado.FindStringExact(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+                checkBoxEstado.Checked = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
                 buttonEditar.Enabled = true;
                 buttonNuevo.Enabled = false;
                 groupBox1.Enabled = true;

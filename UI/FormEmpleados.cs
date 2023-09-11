@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace UI
 {
     public partial class FormEmpleados : Form
     {
-        int listAoI = 0, id = 0;
+        int id = 0;
         LogicaEmpleado logicaEmpleado = new LogicaEmpleado();
         public FormEmpleados()
         {
@@ -41,14 +42,12 @@ namespace UI
         {
             dataGridView1.DataSource = logicaEmpleado.ListarEmpleadosInactivos();
             dataGridView1.Refresh();
-            listAoI = 0;
         }
 
         private void buttonListarActivos_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = logicaEmpleado.ListarEmpleadosActivos();
             dataGridView1.Refresh();
-            listAoI = 1;
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -79,16 +78,7 @@ namespace UI
                 return;
             }
             string respuesta = "";
-            byte estado;
-            if (checkBoxEstado.Checked)
-            {
-                estado = 1;
-            }
-            else
-            {
-                estado = 0;
-            }
-            respuesta = logicaEmpleado.EditarEmpleado(textBoxNombre.Text, textBoxApellido.Text, dateTimePicker1.Value.ToString(), comboBox1.Text, textBoxDPI.Text, textBoxDireccion.Text, textBoxTelefono.Text, estado, id);
+            respuesta = logicaEmpleado.EditarEmpleado(textBoxNombre.Text, textBoxApellido.Text, dateTimePicker1.Value.ToString(), comboBox1.Text, textBoxDPI.Text, textBoxDireccion.Text, textBoxTelefono.Text, Convert.ToByte(checkBoxEstado.CheckState), id);
             MessageBox.Show(respuesta);
             dataGridView1.DataSource = logicaEmpleado.ListarEmpleadosActivos();
             dataGridView1.Refresh();
@@ -102,6 +92,7 @@ namespace UI
             buttonEditar.Enabled = false;
             buttonNuevo.Enabled = true;
             checkBoxEstado.Visible = false;
+            groupBox1.Enabled = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -109,27 +100,30 @@ namespace UI
             if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count - 1)
             {
                 checkBoxEstado.Visible = true;
-                if (listAoI == 1)
-                {
-                    checkBoxEstado.Checked = true;
-                }
-                else
-                {
-                    checkBoxEstado.Checked = false;
-                }
                 id = dataGridView1.Rows[e.RowIndex].Cells[0].Value.GetHashCode();
                 textBoxNombre.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 textBoxApellido.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                dateTimePicker1.Value = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+                dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
                 comboBox1.SelectedIndex = comboBox1.FindStringExact(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
                 textBoxDPI.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
                 textBoxDireccion.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
                 textBoxTelefono.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                checkBoxEstado.Checked = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
                 buttonEditar.Enabled = true;
                 buttonNuevo.Enabled = false;
                 groupBox1.Enabled = true;
                 buttonGuardar.Enabled = false;
             }
+        }
+
+        private void checkBoxEstado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormEmpleados_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
@@ -173,6 +167,7 @@ namespace UI
             dataGridView1.Refresh();
             buttonGuardar.Enabled = false;
             buttonNuevo.Enabled = true;
+            groupBox1.Enabled = false;
         }
     }
 }

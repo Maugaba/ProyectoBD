@@ -185,6 +185,7 @@
             this.buttonEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.buttonEditar.BorderRadius = 40;
             this.buttonEditar.BorderSize = 0;
+            this.buttonEditar.Enabled = false;
             this.buttonEditar.FlatAppearance.BorderSize = 0;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
@@ -225,6 +226,7 @@
             this.buttonGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.buttonGuardar.BorderRadius = 40;
             this.buttonGuardar.BorderSize = 0;
+            this.buttonGuardar.Enabled = false;
             this.buttonGuardar.FlatAppearance.BorderSize = 0;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
@@ -265,6 +267,7 @@
             this.button1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.button1.BorderRadius = 40;
             this.button1.BorderSize = 0;
+            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;

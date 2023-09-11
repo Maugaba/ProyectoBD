@@ -4,6 +4,17 @@
 
     partial class DataSetVentas
     {
+        partial class MetodosDePagoDataTable
+        {
+        }
+
+        partial class UsuariosDataTable
+        {
+        }
+
+        partial class EmpleadosDataTable
+        {
+        }
     }
 }
 

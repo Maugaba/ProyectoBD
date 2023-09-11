@@ -15,7 +15,7 @@ namespace UI
 {
     public partial class FormRol : Form
     {
-        int listAoI = 0, id = 0;
+        int id = 0;
         LogicaRol logicaRol = new LogicaRol();
         public FormRol()
         {
@@ -38,14 +38,12 @@ namespace UI
         {
             dataGridView1.DataSource = logicaRol.ListarRolesActivos();
             dataGridView1.Refresh();
-            listAoI = 1;
         }
 
         private void buttonListarInactivos_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = logicaRol.ListarUsuariosInactivos();
             dataGridView1.Refresh();
-            listAoI = 0;
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
@@ -69,6 +67,7 @@ namespace UI
             dataGridView1.Refresh();
             buttonGuardar.Enabled = false;
             buttonNuevo.Enabled = true;
+            groupBox1.Enabled = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -76,16 +75,10 @@ namespace UI
             if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count - 1)
             {
                 checkBoxEstado.Visible = true;
-                if (listAoI == 1)
-                {
-                    checkBoxEstado.Checked = true;  
-                }else
-                {
-                    checkBoxEstado.Checked = false;
-                }
                 id = dataGridView1.Rows[e.RowIndex].Cells[0].Value.GetHashCode();
                 textBoxNombre.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 textBoxDescripcion.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                checkBoxEstado.Checked = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
                 buttonEditar.Enabled = true;
                 buttonNuevo.Enabled = false;
                 groupBox1.Enabled = true;
@@ -103,6 +96,11 @@ namespace UI
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void buttonEditar_Click(object sender, EventArgs e)
         {
             if (textBoxNombre.Text == "")
@@ -116,16 +114,7 @@ namespace UI
                 return;
             }
             string respuesta = "";
-            byte estado;
-            if (checkBoxEstado.Checked)
-            {
-                estado = 1;
-            }
-            else
-            {
-                estado = 0;
-            }
-            respuesta = logicaRol.EditarRol(textBoxNombre.Text, textBoxDescripcion.Text, estado, id);
+            respuesta = logicaRol.EditarRol(textBoxNombre.Text, textBoxDescripcion.Text, Convert.ToByte(checkBoxEstado.CheckState), id);
             MessageBox.Show(respuesta);
             dataGridView1.DataSource = logicaRol.ListarRolesActivos();
             dataGridView1.Refresh();
@@ -134,7 +123,7 @@ namespace UI
             buttonEditar.Enabled = false;
             buttonNuevo.Enabled = true;
             checkBoxEstado.Visible = false;
-
+            groupBox1.Enabled = false;
         }
     }
 }

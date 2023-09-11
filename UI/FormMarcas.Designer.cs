@@ -52,6 +52,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1814, 461);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // groupBox1
             // 
@@ -134,6 +135,7 @@
             this.buttonListarInactivos.Text = "Listar Inactivos";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
             this.buttonListarInactivos.UseVisualStyleBackColor = false;
+            this.buttonListarInactivos.Click += new System.EventHandler(this.buttonListarInactivos_Click);
             // 
             // buttonEditar
             // 
@@ -143,6 +145,7 @@
             this.buttonEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.buttonEditar.BorderRadius = 40;
             this.buttonEditar.BorderSize = 0;
+            this.buttonEditar.Enabled = false;
             this.buttonEditar.FlatAppearance.BorderSize = 0;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.Font = new System.Drawing.Font("Arial", 27.75F);
@@ -154,6 +157,7 @@
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.TextColor = System.Drawing.Color.White;
             this.buttonEditar.UseVisualStyleBackColor = false;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonListarActivos
             // 
@@ -174,6 +178,7 @@
             this.buttonListarActivos.Text = "Listar Activos";
             this.buttonListarActivos.TextColor = System.Drawing.Color.White;
             this.buttonListarActivos.UseVisualStyleBackColor = false;
+            this.buttonListarActivos.Click += new System.EventHandler(this.buttonListarActivos_Click);
             // 
             // buttonGuardar
             // 
@@ -183,6 +188,7 @@
             this.buttonGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.buttonGuardar.BorderRadius = 40;
             this.buttonGuardar.BorderSize = 0;
+            this.buttonGuardar.Enabled = false;
             this.buttonGuardar.FlatAppearance.BorderSize = 0;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Arial", 27.75F);
@@ -194,6 +200,7 @@
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
             this.buttonGuardar.UseVisualStyleBackColor = false;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonNuevo
             // 
@@ -214,6 +221,7 @@
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
             this.buttonNuevo.UseVisualStyleBackColor = false;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // FormMarcas
             // 
@@ -233,6 +241,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMarcas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

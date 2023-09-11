@@ -50,6 +50,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 208);
             this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // groupBox1
             // 
@@ -69,7 +70,7 @@
             // checkBoxEstado
             // 
             this.checkBoxEstado.AutoSize = true;
-            this.checkBoxEstado.Location = new System.Drawing.Point(424, 36);
+            this.checkBoxEstado.Location = new System.Drawing.Point(418, 37);
             this.checkBoxEstado.Name = "checkBoxEstado";
             this.checkBoxEstado.Size = new System.Drawing.Size(59, 17);
             this.checkBoxEstado.TabIndex = 2;
@@ -79,7 +80,7 @@
             // 
             // textBoxGarantia
             // 
-            this.textBoxGarantia.Location = new System.Drawing.Point(120, 34);
+            this.textBoxGarantia.Location = new System.Drawing.Point(142, 33);
             this.textBoxGarantia.Name = "textBoxGarantia";
             this.textBoxGarantia.Size = new System.Drawing.Size(257, 20);
             this.textBoxGarantia.TabIndex = 1;
@@ -87,11 +88,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 36);
+            this.label1.Location = new System.Drawing.Point(6, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.Size = new System.Drawing.Size(135, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tiempo De Garantia";
+            this.label1.Text = "Tiempo de garantia en dias";
             // 
             // buttonListarInactivos
             // 
@@ -111,6 +112,7 @@
             this.buttonListarInactivos.Text = "Listar Inactivos";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
             this.buttonListarInactivos.UseVisualStyleBackColor = false;
+            this.buttonListarInactivos.Click += new System.EventHandler(this.buttonListarInactivos_Click);
             // 
             // buttonEditar
             // 
@@ -130,6 +132,7 @@
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.TextColor = System.Drawing.Color.White;
             this.buttonEditar.UseVisualStyleBackColor = false;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonListarActivos
             // 
@@ -149,6 +152,7 @@
             this.buttonListarActivos.Text = "Listar Activos";
             this.buttonListarActivos.TextColor = System.Drawing.Color.White;
             this.buttonListarActivos.UseVisualStyleBackColor = false;
+            this.buttonListarActivos.Click += new System.EventHandler(this.buttonListarActivos_Click);
             // 
             // buttonGuardar
             // 
@@ -168,6 +172,7 @@
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
             this.buttonGuardar.UseVisualStyleBackColor = false;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonNuevo
             // 
@@ -187,6 +192,7 @@
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
             this.buttonNuevo.UseVisualStyleBackColor = false;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // FormGarantia
             // 

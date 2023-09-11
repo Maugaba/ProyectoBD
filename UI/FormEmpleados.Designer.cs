@@ -108,8 +108,8 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Hombre",
-            "Mujer"});
+            "Masculino",
+            "Femenino"});
             this.comboBox1.Location = new System.Drawing.Point(222, 374);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(642, 50);
@@ -117,7 +117,7 @@
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.Location = new System.Drawing.Point(1047, 261);
+            this.textBoxTelefono.Location = new System.Drawing.Point(1047, 284);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(394, 50);
             this.textBoxTelefono.TabIndex = 12;
@@ -125,7 +125,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(884, 269);
+            this.label5.Location = new System.Drawing.Point(884, 292);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 42);
             this.label5.TabIndex = 11;
@@ -150,9 +150,9 @@
             // textBoxDPI
             // 
             this.textBoxDPI.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.textBoxDPI.Location = new System.Drawing.Point(1036, 77);
+            this.textBoxDPI.Location = new System.Drawing.Point(1047, 77);
             this.textBoxDPI.Name = "textBoxDPI";
-            this.textBoxDPI.Size = new System.Drawing.Size(405, 50);
+            this.textBoxDPI.Size = new System.Drawing.Size(394, 50);
             this.textBoxDPI.TabIndex = 8;
             // 
             // DPI
@@ -199,14 +199,21 @@
             // 
             // checkBoxEstado
             // 
+            this.checkBoxEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxEstado.AutoSize = true;
-            this.checkBoxEstado.Location = new System.Drawing.Point(1289, 374);
+            this.checkBoxEstado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxEstado.Cursor = System.Windows.Forms.Cursors.Default;
+            this.checkBoxEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxEstado.Location = new System.Drawing.Point(891, 376);
             this.checkBoxEstado.Name = "checkBoxEstado";
-            this.checkBoxEstado.Size = new System.Drawing.Size(152, 46);
+            this.checkBoxEstado.Size = new System.Drawing.Size(149, 46);
             this.checkBoxEstado.TabIndex = 2;
             this.checkBoxEstado.Text = "Estado";
             this.checkBoxEstado.UseVisualStyleBackColor = true;
             this.checkBoxEstado.Visible = false;
+            this.checkBoxEstado.CheckedChanged += new System.EventHandler(this.checkBoxEstado_CheckedChanged);
             // 
             // textBoxNombre
             // 
@@ -349,6 +356,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEmpleados";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

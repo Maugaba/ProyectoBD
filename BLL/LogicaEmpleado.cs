@@ -12,6 +12,7 @@ namespace BLL
     {   
         //atributos
         private EmpleadosTableAdapter empleados = null;
+        private Empleados1TableAdapter empleados1 = null;
 
         //propiedades
         private EmpleadosTableAdapter EMPLEADOS
@@ -21,6 +22,15 @@ namespace BLL
                 if (empleados == null)
                     empleados = new EmpleadosTableAdapter();
                 return empleados;
+            }
+        }
+        private Empleados1TableAdapter EMPLEADOS1
+        {
+            get
+            {
+                if (empleados1 == null)
+                    empleados1 = new Empleados1TableAdapter();
+                return empleados1;
             }
         }
 
@@ -44,6 +54,11 @@ namespace BLL
         {
             return EMPLEADOS.GetDataEmpleadosInactivos();
         }//fin del metodo ListarEmpleadosInactivos
+
+        public DataTable ListarEmpleadosUser()
+        {
+            return EMPLEADOS1.GetDataNombreEmpleado();
+        }
 
         /// <summary>
         /// Este metodo nos crea un nuevo empleado en la base de datos
