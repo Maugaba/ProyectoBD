@@ -50,8 +50,10 @@
             this.buttonListarActivos = new UI.RJButton();
             this.buttonGuardar = new UI.RJButton();
             this.buttonNuevo = new UI.RJButton();
+            this.dataSetVentas1 = new DAL.DataSetVentas();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetVentas1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -338,6 +340,11 @@
             this.buttonNuevo.UseVisualStyleBackColor = false;
             this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click_1);
             // 
+            // dataSetVentas1
+            // 
+            this.dataSetVentas1.DataSetName = "DataSetVentas";
+            this.dataSetVentas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FormEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,6 +367,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetVentas1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,5 +395,6 @@
         private RJButton buttonListarActivos;
         private RJButton buttonEditar;
         private RJButton buttonListarInactivos;
+        private DAL.DataSetVentas dataSetVentas1;
     }
 }

@@ -39,12 +39,12 @@
             this.checkBoxEstado = new System.Windows.Forms.CheckBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new UI.RJButton();
             this.buttonListarInactivos = new UI.RJButton();
             this.buttonEditar = new UI.RJButton();
             this.buttonListarActivos = new UI.RJButton();
             this.buttonGuardar = new UI.RJButton();
             this.buttonNuevo = new UI.RJButton();
-            this.button1 = new UI.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,9 +53,9 @@
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 230);
+            this.dataGridView1.Location = new System.Drawing.Point(55, 471);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 208);
+            this.dataGridView1.Size = new System.Drawing.Size(1814, 403);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -73,9 +73,10 @@
             this.groupBox1.Controls.Add(this.textBoxUsuario);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(145, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.groupBox1.Location = new System.Drawing.Point(240, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(498, 212);
+            this.groupBox1.Size = new System.Drawing.Size(1465, 453);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuario";
@@ -83,59 +84,60 @@
             // comboBoxEmpleado
             // 
             this.comboBoxEmpleado.FormattingEnabled = true;
-            this.comboBoxEmpleado.Location = new System.Drawing.Point(139, 169);
+            this.comboBoxEmpleado.Location = new System.Drawing.Point(542, 328);
             this.comboBoxEmpleado.Name = "comboBoxEmpleado";
-            this.comboBoxEmpleado.Size = new System.Drawing.Size(257, 21);
+            this.comboBoxEmpleado.Size = new System.Drawing.Size(516, 50);
             this.comboBoxEmpleado.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 169);
+            this.label4.Location = new System.Drawing.Point(151, 331);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 13);
+            this.label4.Size = new System.Drawing.Size(385, 42);
             this.label4.TabIndex = 7;
             this.label4.Text = "Seleccionar Empleado";
             // 
             // comboBoxRol
             // 
             this.comboBoxRol.FormattingEnabled = true;
-            this.comboBoxRol.Location = new System.Drawing.Point(139, 124);
+            this.comboBoxRol.Location = new System.Drawing.Point(542, 254);
             this.comboBoxRol.Name = "comboBoxRol";
-            this.comboBoxRol.Size = new System.Drawing.Size(257, 21);
+            this.comboBoxRol.Size = new System.Drawing.Size(516, 50);
             this.comboBoxRol.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 124);
+            this.label3.Location = new System.Drawing.Point(262, 254);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.Size = new System.Drawing.Size(274, 42);
             this.label3.TabIndex = 5;
             this.label3.Text = "Seleccionar Rol";
             // 
             // textBoxContraseña
             // 
-            this.textBoxContraseña.Location = new System.Drawing.Point(139, 76);
+            this.textBoxContraseña.Location = new System.Drawing.Point(542, 174);
             this.textBoxContraseña.Name = "textBoxContraseña";
-            this.textBoxContraseña.Size = new System.Drawing.Size(257, 20);
+            this.textBoxContraseña.Size = new System.Drawing.Size(516, 50);
             this.textBoxContraseña.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 76);
+            this.label2.Location = new System.Drawing.Point(328, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(208, 42);
             this.label2.TabIndex = 3;
             this.label2.Text = "Contraseña";
             // 
             // checkBoxEstado
             // 
             this.checkBoxEstado.AutoSize = true;
-            this.checkBoxEstado.Location = new System.Drawing.Point(427, 20);
+            this.checkBoxEstado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxEstado.Location = new System.Drawing.Point(1175, 103);
             this.checkBoxEstado.Name = "checkBoxEstado";
-            this.checkBoxEstado.Size = new System.Drawing.Size(59, 17);
+            this.checkBoxEstado.Size = new System.Drawing.Size(152, 46);
             this.checkBoxEstado.TabIndex = 2;
             this.checkBoxEstado.Text = "Estado";
             this.checkBoxEstado.UseVisualStyleBackColor = true;
@@ -143,19 +145,41 @@
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(139, 24);
+            this.textBoxUsuario.Location = new System.Drawing.Point(542, 103);
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(257, 20);
+            this.textBoxUsuario.Size = new System.Drawing.Size(516, 50);
             this.textBoxUsuario.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 27);
+            this.label1.Location = new System.Drawing.Point(392, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(144, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.button1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.button1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.button1.BorderRadius = 40;
+            this.button1.BorderSize = 0;
+            this.button1.Enabled = false;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(18, 296);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(216, 122);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Cambiar Contraseña";
+            this.button1.TextColor = System.Drawing.Color.White;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonListarInactivos
             // 
@@ -167,10 +191,11 @@
             this.buttonListarInactivos.BorderSize = 0;
             this.buttonListarInactivos.FlatAppearance.BorderSize = 0;
             this.buttonListarInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonListarInactivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarInactivos.Location = new System.Drawing.Point(704, 159);
+            this.buttonListarInactivos.Location = new System.Drawing.Point(1711, 296);
             this.buttonListarInactivos.Name = "buttonListarInactivos";
-            this.buttonListarInactivos.Size = new System.Drawing.Size(85, 40);
+            this.buttonListarInactivos.Size = new System.Drawing.Size(216, 122);
             this.buttonListarInactivos.TabIndex = 30;
             this.buttonListarInactivos.Text = "Listar Inactivos";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
@@ -188,10 +213,11 @@
             this.buttonEditar.Enabled = false;
             this.buttonEditar.FlatAppearance.BorderSize = 0;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditar.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(703, 25);
+            this.buttonEditar.Location = new System.Drawing.Point(1711, 33);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(85, 40);
+            this.buttonEditar.Size = new System.Drawing.Size(216, 122);
             this.buttonEditar.TabIndex = 29;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.TextColor = System.Drawing.Color.White;
@@ -208,10 +234,11 @@
             this.buttonListarActivos.BorderSize = 0;
             this.buttonListarActivos.FlatAppearance.BorderSize = 0;
             this.buttonListarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonListarActivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarActivos.Location = new System.Drawing.Point(704, 88);
+            this.buttonListarActivos.Location = new System.Drawing.Point(1711, 165);
             this.buttonListarActivos.Name = "buttonListarActivos";
-            this.buttonListarActivos.Size = new System.Drawing.Size(85, 40);
+            this.buttonListarActivos.Size = new System.Drawing.Size(216, 122);
             this.buttonListarActivos.TabIndex = 28;
             this.buttonListarActivos.Text = "Listar Activos";
             this.buttonListarActivos.TextColor = System.Drawing.Color.White;
@@ -229,10 +256,11 @@
             this.buttonGuardar.Enabled = false;
             this.buttonGuardar.FlatAppearance.BorderSize = 0;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGuardar.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(26, 94);
+            this.buttonGuardar.Location = new System.Drawing.Point(18, 165);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(85, 40);
+            this.buttonGuardar.Size = new System.Drawing.Size(216, 122);
             this.buttonGuardar.TabIndex = 27;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
@@ -249,36 +277,16 @@
             this.buttonNuevo.BorderSize = 0;
             this.buttonNuevo.FlatAppearance.BorderSize = 0;
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNuevo.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonNuevo.ForeColor = System.Drawing.Color.White;
-            this.buttonNuevo.Location = new System.Drawing.Point(26, 25);
+            this.buttonNuevo.Location = new System.Drawing.Point(18, 37);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(85, 40);
+            this.buttonNuevo.Size = new System.Drawing.Size(216, 122);
             this.buttonNuevo.TabIndex = 26;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
             this.buttonNuevo.UseVisualStyleBackColor = false;
             this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.button1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.button1.BorderRadius = 40;
-            this.button1.BorderSize = 0;
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(26, 162);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 40);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Cambiar Contraseña";
-            this.button1.TextColor = System.Drawing.Color.White;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormUsuario
             // 
@@ -286,7 +294,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1924, 977);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonListarInactivos);
             this.Controls.Add(this.buttonEditar);

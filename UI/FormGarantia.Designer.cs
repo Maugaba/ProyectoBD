@@ -46,9 +46,9 @@
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 230);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 429);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 208);
+            this.dataGridView1.Size = new System.Drawing.Size(1814, 464);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -60,9 +60,10 @@
             this.groupBox1.Controls.Add(this.textBoxGarantia);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(146, 40);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.groupBox1.Location = new System.Drawing.Point(319, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(498, 85);
+            this.groupBox1.Size = new System.Drawing.Size(1288, 297);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marca";
@@ -70,9 +71,10 @@
             // checkBoxEstado
             // 
             this.checkBoxEstado.AutoSize = true;
-            this.checkBoxEstado.Location = new System.Drawing.Point(418, 37);
+            this.checkBoxEstado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxEstado.Location = new System.Drawing.Point(1092, 133);
             this.checkBoxEstado.Name = "checkBoxEstado";
-            this.checkBoxEstado.Size = new System.Drawing.Size(59, 17);
+            this.checkBoxEstado.Size = new System.Drawing.Size(152, 46);
             this.checkBoxEstado.TabIndex = 2;
             this.checkBoxEstado.Text = "Estado";
             this.checkBoxEstado.UseVisualStyleBackColor = true;
@@ -80,17 +82,17 @@
             // 
             // textBoxGarantia
             // 
-            this.textBoxGarantia.Location = new System.Drawing.Point(142, 33);
+            this.textBoxGarantia.Location = new System.Drawing.Point(481, 134);
             this.textBoxGarantia.Name = "textBoxGarantia";
-            this.textBoxGarantia.Size = new System.Drawing.Size(257, 20);
+            this.textBoxGarantia.Size = new System.Drawing.Size(566, 50);
             this.textBoxGarantia.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 36);
+            this.label1.Location = new System.Drawing.Point(16, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 13);
+            this.label1.Size = new System.Drawing.Size(459, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tiempo de garantia en dias";
             // 
@@ -104,10 +106,11 @@
             this.buttonListarInactivos.BorderSize = 0;
             this.buttonListarInactivos.FlatAppearance.BorderSize = 0;
             this.buttonListarInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonListarInactivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarInactivos.Location = new System.Drawing.Point(620, 153);
+            this.buttonListarInactivos.Location = new System.Drawing.Point(1280, 317);
             this.buttonListarInactivos.Name = "buttonListarInactivos";
-            this.buttonListarInactivos.Size = new System.Drawing.Size(85, 40);
+            this.buttonListarInactivos.Size = new System.Drawing.Size(169, 106);
             this.buttonListarInactivos.TabIndex = 30;
             this.buttonListarInactivos.Text = "Listar Inactivos";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
@@ -124,10 +127,11 @@
             this.buttonEditar.BorderSize = 0;
             this.buttonEditar.FlatAppearance.BorderSize = 0;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditar.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(352, 153);
+            this.buttonEditar.Location = new System.Drawing.Point(855, 315);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(85, 40);
+            this.buttonEditar.Size = new System.Drawing.Size(169, 106);
             this.buttonEditar.TabIndex = 29;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.TextColor = System.Drawing.Color.White;
@@ -144,10 +148,11 @@
             this.buttonListarActivos.BorderSize = 0;
             this.buttonListarActivos.FlatAppearance.BorderSize = 0;
             this.buttonListarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonListarActivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarActivos.Location = new System.Drawing.Point(487, 153);
+            this.buttonListarActivos.Location = new System.Drawing.Point(1070, 317);
             this.buttonListarActivos.Name = "buttonListarActivos";
-            this.buttonListarActivos.Size = new System.Drawing.Size(85, 40);
+            this.buttonListarActivos.Size = new System.Drawing.Size(169, 106);
             this.buttonListarActivos.TabIndex = 28;
             this.buttonListarActivos.Text = "Listar Activos";
             this.buttonListarActivos.TextColor = System.Drawing.Color.White;
@@ -164,10 +169,11 @@
             this.buttonGuardar.BorderSize = 0;
             this.buttonGuardar.FlatAppearance.BorderSize = 0;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGuardar.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(221, 153);
+            this.buttonGuardar.Location = new System.Drawing.Point(651, 317);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(85, 40);
+            this.buttonGuardar.Size = new System.Drawing.Size(169, 106);
             this.buttonGuardar.TabIndex = 27;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
@@ -184,10 +190,11 @@
             this.buttonNuevo.BorderSize = 0;
             this.buttonNuevo.FlatAppearance.BorderSize = 0;
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNuevo.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonNuevo.ForeColor = System.Drawing.Color.White;
-            this.buttonNuevo.Location = new System.Drawing.Point(94, 153);
+            this.buttonNuevo.Location = new System.Drawing.Point(441, 315);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(85, 40);
+            this.buttonNuevo.Size = new System.Drawing.Size(169, 106);
             this.buttonNuevo.TabIndex = 26;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
@@ -200,7 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1822, 840);
             this.Controls.Add(this.buttonListarInactivos);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonListarActivos);

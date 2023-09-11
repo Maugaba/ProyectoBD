@@ -91,10 +91,15 @@
             // 
             // checkBoxEstado
             // 
+            this.checkBoxEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxEstado.AutoSize = true;
-            this.checkBoxEstado.Location = new System.Drawing.Point(1292, 49);
+            this.checkBoxEstado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxEstado.Location = new System.Drawing.Point(1267, 75);
             this.checkBoxEstado.Name = "checkBoxEstado";
-            this.checkBoxEstado.Size = new System.Drawing.Size(152, 46);
+            this.checkBoxEstado.Size = new System.Drawing.Size(149, 46);
             this.checkBoxEstado.TabIndex = 2;
             this.checkBoxEstado.Text = "Estado";
             this.checkBoxEstado.UseVisualStyleBackColor = true;
