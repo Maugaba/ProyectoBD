@@ -38,10 +38,10 @@
             this.ButtonProveedores = new UI.RJButton();
             this.ButtonCategoriaProducto = new UI.RJButton();
             this.ButtonFacturas = new UI.RJButton();
-            this.ButtonPermisos = new UI.RJButton();
-            this.ButtonAsignacionPermisos = new UI.RJButton();
             this.ButtonTiposDeClientes = new UI.RJButton();
             this.ButtonVentas = new UI.RJButton();
+            this.rjButtonCloseSession = new UI.RJButton();
+            this.rjButtonProductos = new UI.RJButton();
             this.SuspendLayout();
             // 
             // buttonUsuario
@@ -56,7 +56,7 @@
             this.buttonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUsuario.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonUsuario.ForeColor = System.Drawing.Color.White;
-            this.buttonUsuario.Location = new System.Drawing.Point(351, 52);
+            this.buttonUsuario.Location = new System.Drawing.Point(218, 52);
             this.buttonUsuario.Name = "buttonUsuario";
             this.buttonUsuario.Size = new System.Drawing.Size(237, 144);
             this.buttonUsuario.TabIndex = 27;
@@ -77,7 +77,7 @@
             this.ButtonEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonEmpleados.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonEmpleados.ForeColor = System.Drawing.Color.White;
-            this.ButtonEmpleados.Location = new System.Drawing.Point(615, 52);
+            this.ButtonEmpleados.Location = new System.Drawing.Point(482, 52);
             this.ButtonEmpleados.Name = "ButtonEmpleados";
             this.ButtonEmpleados.Size = new System.Drawing.Size(237, 144);
             this.ButtonEmpleados.TabIndex = 28;
@@ -98,7 +98,7 @@
             this.ButtonRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonRol.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonRol.ForeColor = System.Drawing.Color.White;
-            this.ButtonRol.Location = new System.Drawing.Point(893, 52);
+            this.ButtonRol.Location = new System.Drawing.Point(760, 52);
             this.ButtonRol.Name = "ButtonRol";
             this.ButtonRol.Size = new System.Drawing.Size(237, 144);
             this.ButtonRol.TabIndex = 29;
@@ -119,7 +119,7 @@
             this.ButtonMetodoDePago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonMetodoDePago.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonMetodoDePago.ForeColor = System.Drawing.Color.White;
-            this.ButtonMetodoDePago.Location = new System.Drawing.Point(1158, 52);
+            this.ButtonMetodoDePago.Location = new System.Drawing.Point(1025, 52);
             this.ButtonMetodoDePago.Name = "ButtonMetodoDePago";
             this.ButtonMetodoDePago.Size = new System.Drawing.Size(237, 144);
             this.ButtonMetodoDePago.TabIndex = 30;
@@ -140,7 +140,7 @@
             this.ButtonMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonMarcas.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonMarcas.ForeColor = System.Drawing.Color.White;
-            this.ButtonMarcas.Location = new System.Drawing.Point(351, 236);
+            this.ButtonMarcas.Location = new System.Drawing.Point(218, 236);
             this.ButtonMarcas.Name = "ButtonMarcas";
             this.ButtonMarcas.Size = new System.Drawing.Size(237, 144);
             this.ButtonMarcas.TabIndex = 31;
@@ -161,7 +161,7 @@
             this.ButtonGarantia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonGarantia.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonGarantia.ForeColor = System.Drawing.Color.White;
-            this.ButtonGarantia.Location = new System.Drawing.Point(615, 236);
+            this.ButtonGarantia.Location = new System.Drawing.Point(482, 236);
             this.ButtonGarantia.Name = "ButtonGarantia";
             this.ButtonGarantia.Size = new System.Drawing.Size(237, 144);
             this.ButtonGarantia.TabIndex = 32;
@@ -182,13 +182,14 @@
             this.ButtonClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonClientes.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonClientes.ForeColor = System.Drawing.Color.White;
-            this.ButtonClientes.Location = new System.Drawing.Point(893, 236);
+            this.ButtonClientes.Location = new System.Drawing.Point(760, 236);
             this.ButtonClientes.Name = "ButtonClientes";
             this.ButtonClientes.Size = new System.Drawing.Size(237, 144);
             this.ButtonClientes.TabIndex = 33;
             this.ButtonClientes.Text = "Clientes";
             this.ButtonClientes.TextColor = System.Drawing.Color.White;
             this.ButtonClientes.UseVisualStyleBackColor = false;
+            this.ButtonClientes.Click += new System.EventHandler(this.ButtonClientes_Click);
             // 
             // ButtonProveedores
             // 
@@ -202,13 +203,14 @@
             this.ButtonProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonProveedores.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonProveedores.ForeColor = System.Drawing.Color.White;
-            this.ButtonProveedores.Location = new System.Drawing.Point(1158, 236);
+            this.ButtonProveedores.Location = new System.Drawing.Point(1025, 236);
             this.ButtonProveedores.Name = "ButtonProveedores";
             this.ButtonProveedores.Size = new System.Drawing.Size(237, 144);
             this.ButtonProveedores.TabIndex = 34;
             this.ButtonProveedores.Text = "Proveedores";
             this.ButtonProveedores.TextColor = System.Drawing.Color.White;
             this.ButtonProveedores.UseVisualStyleBackColor = false;
+            this.ButtonProveedores.Click += new System.EventHandler(this.ButtonProveedores_Click);
             // 
             // ButtonCategoriaProducto
             // 
@@ -222,13 +224,14 @@
             this.ButtonCategoriaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonCategoriaProducto.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonCategoriaProducto.ForeColor = System.Drawing.Color.White;
-            this.ButtonCategoriaProducto.Location = new System.Drawing.Point(351, 416);
+            this.ButtonCategoriaProducto.Location = new System.Drawing.Point(218, 416);
             this.ButtonCategoriaProducto.Name = "ButtonCategoriaProducto";
             this.ButtonCategoriaProducto.Size = new System.Drawing.Size(237, 144);
             this.ButtonCategoriaProducto.TabIndex = 35;
             this.ButtonCategoriaProducto.Text = "Categorias de Productos";
             this.ButtonCategoriaProducto.TextColor = System.Drawing.Color.White;
             this.ButtonCategoriaProducto.UseVisualStyleBackColor = false;
+            this.ButtonCategoriaProducto.Click += new System.EventHandler(this.ButtonCategoriaProducto_Click);
             // 
             // ButtonFacturas
             // 
@@ -242,53 +245,14 @@
             this.ButtonFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonFacturas.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonFacturas.ForeColor = System.Drawing.Color.White;
-            this.ButtonFacturas.Location = new System.Drawing.Point(615, 416);
+            this.ButtonFacturas.Location = new System.Drawing.Point(482, 416);
             this.ButtonFacturas.Name = "ButtonFacturas";
             this.ButtonFacturas.Size = new System.Drawing.Size(237, 144);
             this.ButtonFacturas.TabIndex = 36;
             this.ButtonFacturas.Text = "Facturas";
             this.ButtonFacturas.TextColor = System.Drawing.Color.White;
             this.ButtonFacturas.UseVisualStyleBackColor = false;
-            // 
-            // ButtonPermisos
-            // 
-            this.ButtonPermisos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonPermisos.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.ButtonPermisos.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.ButtonPermisos.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.ButtonPermisos.BorderRadius = 40;
-            this.ButtonPermisos.BorderSize = 0;
-            this.ButtonPermisos.FlatAppearance.BorderSize = 0;
-            this.ButtonPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonPermisos.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.ButtonPermisos.ForeColor = System.Drawing.Color.White;
-            this.ButtonPermisos.Location = new System.Drawing.Point(893, 416);
-            this.ButtonPermisos.Name = "ButtonPermisos";
-            this.ButtonPermisos.Size = new System.Drawing.Size(237, 144);
-            this.ButtonPermisos.TabIndex = 37;
-            this.ButtonPermisos.Text = "Permisos";
-            this.ButtonPermisos.TextColor = System.Drawing.Color.White;
-            this.ButtonPermisos.UseVisualStyleBackColor = false;
-            // 
-            // ButtonAsignacionPermisos
-            // 
-            this.ButtonAsignacionPermisos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonAsignacionPermisos.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.ButtonAsignacionPermisos.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.ButtonAsignacionPermisos.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.ButtonAsignacionPermisos.BorderRadius = 40;
-            this.ButtonAsignacionPermisos.BorderSize = 0;
-            this.ButtonAsignacionPermisos.FlatAppearance.BorderSize = 0;
-            this.ButtonAsignacionPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAsignacionPermisos.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.ButtonAsignacionPermisos.ForeColor = System.Drawing.Color.White;
-            this.ButtonAsignacionPermisos.Location = new System.Drawing.Point(1158, 416);
-            this.ButtonAsignacionPermisos.Name = "ButtonAsignacionPermisos";
-            this.ButtonAsignacionPermisos.Size = new System.Drawing.Size(237, 144);
-            this.ButtonAsignacionPermisos.TabIndex = 38;
-            this.ButtonAsignacionPermisos.Text = "Asignacion de Permisos de Roles";
-            this.ButtonAsignacionPermisos.TextColor = System.Drawing.Color.White;
-            this.ButtonAsignacionPermisos.UseVisualStyleBackColor = false;
+            this.ButtonFacturas.Click += new System.EventHandler(this.ButtonFacturas_Click);
             // 
             // ButtonTiposDeClientes
             // 
@@ -302,13 +266,14 @@
             this.ButtonTiposDeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonTiposDeClientes.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonTiposDeClientes.ForeColor = System.Drawing.Color.White;
-            this.ButtonTiposDeClientes.Location = new System.Drawing.Point(615, 592);
+            this.ButtonTiposDeClientes.Location = new System.Drawing.Point(1025, 416);
             this.ButtonTiposDeClientes.Name = "ButtonTiposDeClientes";
             this.ButtonTiposDeClientes.Size = new System.Drawing.Size(237, 144);
             this.ButtonTiposDeClientes.TabIndex = 39;
             this.ButtonTiposDeClientes.Text = "Tipos de Clientes";
             this.ButtonTiposDeClientes.TextColor = System.Drawing.Color.White;
             this.ButtonTiposDeClientes.UseVisualStyleBackColor = false;
+            this.ButtonTiposDeClientes.Click += new System.EventHandler(this.ButtonTiposDeClientes_Click);
             // 
             // ButtonVentas
             // 
@@ -322,7 +287,7 @@
             this.ButtonVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonVentas.Font = new System.Drawing.Font("Arial", 27.75F);
             this.ButtonVentas.ForeColor = System.Drawing.Color.White;
-            this.ButtonVentas.Location = new System.Drawing.Point(893, 592);
+            this.ButtonVentas.Location = new System.Drawing.Point(760, 416);
             this.ButtonVentas.Name = "ButtonVentas";
             this.ButtonVentas.Size = new System.Drawing.Size(237, 144);
             this.ButtonVentas.TabIndex = 40;
@@ -330,17 +295,58 @@
             this.ButtonVentas.TextColor = System.Drawing.Color.White;
             this.ButtonVentas.UseVisualStyleBackColor = false;
             // 
+            // rjButtonCloseSession
+            // 
+            this.rjButtonCloseSession.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rjButtonCloseSession.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonCloseSession.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonCloseSession.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButtonCloseSession.BorderRadius = 40;
+            this.rjButtonCloseSession.BorderSize = 0;
+            this.rjButtonCloseSession.FlatAppearance.BorderSize = 0;
+            this.rjButtonCloseSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButtonCloseSession.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.rjButtonCloseSession.ForeColor = System.Drawing.Color.White;
+            this.rjButtonCloseSession.Location = new System.Drawing.Point(-143, -70);
+            this.rjButtonCloseSession.Name = "rjButtonCloseSession";
+            this.rjButtonCloseSession.Size = new System.Drawing.Size(164, 95);
+            this.rjButtonCloseSession.TabIndex = 41;
+            this.rjButtonCloseSession.Text = "Cerrar Sesión";
+            this.rjButtonCloseSession.TextColor = System.Drawing.Color.White;
+            this.rjButtonCloseSession.UseVisualStyleBackColor = false;
+            this.rjButtonCloseSession.Click += new System.EventHandler(this.rjButtonCloseSession_Click);
+            // 
+            // rjButtonProductos
+            // 
+            this.rjButtonProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rjButtonProductos.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonProductos.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonProductos.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButtonProductos.BorderRadius = 40;
+            this.rjButtonProductos.BorderSize = 0;
+            this.rjButtonProductos.FlatAppearance.BorderSize = 0;
+            this.rjButtonProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButtonProductos.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.rjButtonProductos.ForeColor = System.Drawing.Color.White;
+            this.rjButtonProductos.Location = new System.Drawing.Point(639, 588);
+            this.rjButtonProductos.Name = "rjButtonProductos";
+            this.rjButtonProductos.Size = new System.Drawing.Size(237, 144);
+            this.rjButtonProductos.TabIndex = 42;
+            this.rjButtonProductos.Text = "Productos";
+            this.rjButtonProductos.TextColor = System.Drawing.Color.White;
+            this.rjButtonProductos.UseVisualStyleBackColor = false;
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1807, 819);
+            this.ClientSize = new System.Drawing.Size(1540, 819);
+            this.Controls.Add(this.rjButtonProductos);
+            this.Controls.Add(this.rjButtonCloseSession);
             this.Controls.Add(this.ButtonVentas);
             this.Controls.Add(this.ButtonTiposDeClientes);
-            this.Controls.Add(this.ButtonAsignacionPermisos);
-            this.Controls.Add(this.ButtonPermisos);
             this.Controls.Add(this.ButtonFacturas);
             this.Controls.Add(this.ButtonCategoriaProducto);
             this.Controls.Add(this.ButtonProveedores);
@@ -355,6 +361,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.ResumeLayout(false);
 
         }
@@ -371,9 +378,9 @@
         private RJButton ButtonProveedores;
         private RJButton ButtonCategoriaProducto;
         private RJButton ButtonFacturas;
-        private RJButton ButtonPermisos;
-        private RJButton ButtonAsignacionPermisos;
         private RJButton ButtonTiposDeClientes;
         private RJButton ButtonVentas;
+        private RJButton rjButtonCloseSession;
+        private RJButton rjButtonProductos;
     }
 }

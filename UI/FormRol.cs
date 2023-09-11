@@ -61,6 +61,7 @@ namespace UI
             string respuesta = "";
             respuesta = logicaRol.NuevoRol(textBoxNombre.Text, textBoxDescripcion.Text);
             MessageBox.Show(respuesta);
+            int ide = Convert.ToInt32(logicaRol.ObtenerIdRol(textBoxNombre.Text));
             textBoxNombre.Text = "";
             textBoxDescripcion.Text = "";
             dataGridView1.DataSource = logicaRol.ListarRolesActivos();
@@ -68,6 +69,8 @@ namespace UI
             buttonGuardar.Enabled = false;
             buttonNuevo.Enabled = true;
             groupBox1.Enabled = false;
+            FormPermisos formpermisos = new FormPermisos(ide, 0);
+            formpermisos.Show();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -116,6 +119,8 @@ namespace UI
             string respuesta = "";
             respuesta = logicaRol.EditarRol(textBoxNombre.Text, textBoxDescripcion.Text, Convert.ToByte(checkBoxEstado.CheckState), id);
             MessageBox.Show(respuesta);
+            FormPermisos formpermisos = new FormPermisos(id, 1);
+            formpermisos.Show();
             dataGridView1.DataSource = logicaRol.ListarRolesActivos();
             dataGridView1.Refresh();
             textBoxNombre.Text = "";

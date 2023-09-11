@@ -35,8 +35,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Ocultar = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.rolesTableAdapter1 = new DAL.DataSetVentasTableAdapters.RolesTableAdapter();
             this.ButtonIniciarSesion = new UI.RJButton();
+            this.rolesTableAdapter1 = new DAL.DataSetVentasTableAdapters.RolesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -51,9 +51,8 @@
             this.textBoxUsuario.Location = new System.Drawing.Point(187, 140);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(364, 50);
-            this.textBoxUsuario.TabIndex = 2;
+            this.textBoxUsuario.TabIndex = 1;
             this.textBoxUsuario.Text = "Usuario";
-            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBoxContraseña
             // 
@@ -62,9 +61,9 @@
             this.textBoxContraseña.Location = new System.Drawing.Point(187, 241);
             this.textBoxContraseña.Name = "textBoxContraseña";
             this.textBoxContraseña.Size = new System.Drawing.Size(364, 50);
-            this.textBoxContraseña.TabIndex = 3;
+            this.textBoxContraseña.TabIndex = 2;
             this.textBoxContraseña.Text = "Contraseña";
-            this.textBoxContraseña.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxContraseña.TextChanged += new System.EventHandler(this.textBoxContraseña_TextChanged);
             // 
             // pictureBox1
             // 
@@ -128,10 +127,6 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // rolesTableAdapter1
-            // 
-            this.rolesTableAdapter1.ClearBeforeFill = true;
-            // 
             // ButtonIniciarSesion
             // 
             this.ButtonIniciarSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -147,11 +142,15 @@
             this.ButtonIniciarSesion.Location = new System.Drawing.Point(412, 340);
             this.ButtonIniciarSesion.Name = "ButtonIniciarSesion";
             this.ButtonIniciarSesion.Size = new System.Drawing.Size(175, 100);
-            this.ButtonIniciarSesion.TabIndex = 12;
+            this.ButtonIniciarSesion.TabIndex = 0;
             this.ButtonIniciarSesion.Text = "Iniciar Sesion";
             this.ButtonIniciarSesion.TextColor = System.Drawing.Color.White;
             this.ButtonIniciarSesion.UseVisualStyleBackColor = false;
             this.ButtonIniciarSesion.Click += new System.EventHandler(this.ButtonIniciarSesion_Click);
+            // 
+            // rolesTableAdapter1
+            // 
+            this.rolesTableAdapter1.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -174,6 +173,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

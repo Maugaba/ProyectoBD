@@ -55,7 +55,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.groupBox1.Location = new System.Drawing.Point(207, 12);
+            this.groupBox1.Location = new System.Drawing.Point(140, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1465, 453);
             this.groupBox1.TabIndex = 0;
@@ -112,8 +112,10 @@
             // dataGridView1
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 471);
+            this.dataGridView1.Location = new System.Drawing.Point(-45, 464);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1814, 403);
             this.dataGridView1.TabIndex = 1;
@@ -132,7 +134,7 @@
             this.buttonListarInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonListarInactivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarInactivos.Location = new System.Drawing.Point(1678, 296);
+            this.buttonListarInactivos.Location = new System.Drawing.Point(1611, 289);
             this.buttonListarInactivos.Name = "buttonListarInactivos";
             this.buttonListarInactivos.Size = new System.Drawing.Size(169, 106);
             this.buttonListarInactivos.TabIndex = 30;
@@ -154,7 +156,7 @@
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(1678, 33);
+            this.buttonEditar.Location = new System.Drawing.Point(1611, 26);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(169, 106);
             this.buttonEditar.TabIndex = 29;
@@ -175,7 +177,7 @@
             this.buttonListarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonListarActivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarActivos.Location = new System.Drawing.Point(1678, 165);
+            this.buttonListarActivos.Location = new System.Drawing.Point(1611, 158);
             this.buttonListarActivos.Name = "buttonListarActivos";
             this.buttonListarActivos.Size = new System.Drawing.Size(169, 106);
             this.buttonListarActivos.TabIndex = 28;
@@ -197,7 +199,7 @@
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(32, 257);
+            this.buttonGuardar.Location = new System.Drawing.Point(-45, 182);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(169, 106);
             this.buttonGuardar.TabIndex = 27;
@@ -218,7 +220,7 @@
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNuevo.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonNuevo.ForeColor = System.Drawing.Color.White;
-            this.buttonNuevo.Location = new System.Drawing.Point(32, 88);
+            this.buttonNuevo.Location = new System.Drawing.Point(-45, 49);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(169, 106);
             this.buttonNuevo.TabIndex = 26;
@@ -229,11 +231,10 @@
             // 
             // FormRol
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1801, 858);
+            this.ClientSize = new System.Drawing.Size(1667, 845);
             this.Controls.Add(this.buttonListarInactivos);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonListarActivos);
