@@ -46,7 +46,6 @@
             this.checkBoxEstado = new System.Windows.Forms.CheckBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.dataSetVentas1 = new DAL.DataSetVentas();
-            this.Regresar = new UI.RJButton();
             this.buttonListarInactivos = new UI.RJButton();
             this.buttonEditar = new UI.RJButton();
             this.buttonListarActivos = new UI.RJButton();
@@ -63,11 +62,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(110, 496);
+            this.dataGridView1.Location = new System.Drawing.Point(116, 513);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1969, 534);
+            this.dataGridView1.Size = new System.Drawing.Size(1969, 461);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.AutoSizeColumnModeChanged += new System.Windows.Forms.DataGridViewAutoSizeColumnModeEventHandler(this.dataGridView1_AutoSizeColumnModeChanged);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -93,11 +92,11 @@
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(312, 15);
+            this.groupBox1.Location = new System.Drawing.Point(308, 47);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1581, 473);
+            this.groupBox1.Size = new System.Drawing.Size(1581, 458);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Metodo de Pago";
@@ -260,28 +259,6 @@
             this.dataSetVentas1.DataSetName = "DataSetVentas";
             this.dataSetVentas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Regresar
-            // 
-            this.Regresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Regresar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.Regresar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.Regresar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.Regresar.BorderRadius = 40;
-            this.Regresar.BorderSize = 0;
-            this.Regresar.FlatAppearance.BorderSize = 0;
-            this.Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Regresar.Font = new System.Drawing.Font("Arial", 20.25F);
-            this.Regresar.ForeColor = System.Drawing.Color.White;
-            this.Regresar.Location = new System.Drawing.Point(1906, 15);
-            this.Regresar.Margin = new System.Windows.Forms.Padding(4);
-            this.Regresar.Name = "Regresar";
-            this.Regresar.Size = new System.Drawing.Size(184, 52);
-            this.Regresar.TabIndex = 26;
-            this.Regresar.Text = "Regresar";
-            this.Regresar.TextColor = System.Drawing.Color.White;
-            this.Regresar.UseVisualStyleBackColor = false;
-            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
-            // 
             // buttonListarInactivos
             // 
             this.buttonListarInactivos.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -294,7 +271,7 @@
             this.buttonListarInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonListarInactivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarInactivos.Location = new System.Drawing.Point(1902, 363);
+            this.buttonListarInactivos.Location = new System.Drawing.Point(1898, 380);
             this.buttonListarInactivos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListarInactivos.Name = "buttonListarInactivos";
             this.buttonListarInactivos.Size = new System.Drawing.Size(188, 95);
@@ -316,7 +293,7 @@
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(1902, 92);
+            this.buttonEditar.Location = new System.Drawing.Point(1898, 109);
             this.buttonEditar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(188, 95);
@@ -338,7 +315,7 @@
             this.buttonListarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonListarActivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarActivos.Location = new System.Drawing.Point(1902, 235);
+            this.buttonListarActivos.Location = new System.Drawing.Point(1898, 252);
             this.buttonListarActivos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListarActivos.Name = "buttonListarActivos";
             this.buttonListarActivos.Size = new System.Drawing.Size(188, 95);
@@ -360,7 +337,7 @@
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(116, 308);
+            this.buttonGuardar.Location = new System.Drawing.Point(112, 325);
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(188, 95);
@@ -382,7 +359,7 @@
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNuevo.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonNuevo.ForeColor = System.Drawing.Color.White;
-            this.buttonNuevo.Location = new System.Drawing.Point(116, 92);
+            this.buttonNuevo.Location = new System.Drawing.Point(112, 109);
             this.buttonNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(188, 95);
@@ -399,7 +376,6 @@
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(2182, 1036);
-            this.Controls.Add(this.Regresar);
             this.Controls.Add(this.buttonListarInactivos);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonListarActivos);
@@ -445,6 +421,5 @@
         private RJButton buttonEditar;
         private RJButton buttonListarInactivos;
         private DAL.DataSetVentas dataSetVentas1;
-        private RJButton Regresar;
     }
 }

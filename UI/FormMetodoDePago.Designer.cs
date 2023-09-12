@@ -50,9 +50,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(104, 424);
+            this.dataGridView1.Location = new System.Drawing.Point(132, 522);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1505, 424);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(2007, 426);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -67,27 +69,31 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Arial", 24F);
-            this.groupBox1.Location = new System.Drawing.Point(300, 35);
+            this.groupBox1.Location = new System.Drawing.Point(400, 43);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1089, 383);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1452, 471);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Metodo de Pago";
             // 
             // textBoxDescripcion
             // 
-            this.textBoxDescripcion.Location = new System.Drawing.Point(274, 155);
+            this.textBoxDescripcion.Location = new System.Drawing.Point(365, 191);
+            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
-            this.textBoxDescripcion.Size = new System.Drawing.Size(632, 197);
+            this.textBoxDescripcion.Size = new System.Drawing.Size(841, 242);
             this.textBoxDescripcion.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 158);
+            this.label2.Location = new System.Drawing.Point(117, 194);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 36);
+            this.label2.Size = new System.Drawing.Size(224, 45);
             this.label2.TabIndex = 3;
             this.label2.Text = "Descripcion";
             // 
@@ -95,9 +101,10 @@
             // 
             this.checkBoxEstado.AutoSize = true;
             this.checkBoxEstado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBoxEstado.Location = new System.Drawing.Point(934, 53);
+            this.checkBoxEstado.Location = new System.Drawing.Point(1245, 65);
+            this.checkBoxEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxEstado.Name = "checkBoxEstado";
-            this.checkBoxEstado.Size = new System.Drawing.Size(131, 40);
+            this.checkBoxEstado.Size = new System.Drawing.Size(165, 49);
             this.checkBoxEstado.TabIndex = 2;
             this.checkBoxEstado.Text = "Estado";
             this.checkBoxEstado.UseVisualStyleBackColor = true;
@@ -105,17 +112,19 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(274, 60);
+            this.textBoxNombre.Location = new System.Drawing.Point(365, 74);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(632, 44);
+            this.textBoxNombre.Size = new System.Drawing.Size(841, 53);
             this.textBoxNombre.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 68);
+            this.label1.Location = new System.Drawing.Point(188, 84);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 36);
+            this.label1.Size = new System.Drawing.Size(162, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
@@ -131,9 +140,10 @@
             this.buttonListarInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonListarInactivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarInactivos.Location = new System.Drawing.Point(1395, 304);
+            this.buttonListarInactivos.Location = new System.Drawing.Point(1860, 374);
+            this.buttonListarInactivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonListarInactivos.Name = "buttonListarInactivos";
-            this.buttonListarInactivos.Size = new System.Drawing.Size(156, 82);
+            this.buttonListarInactivos.Size = new System.Drawing.Size(208, 101);
             this.buttonListarInactivos.TabIndex = 30;
             this.buttonListarInactivos.Text = "Listar Inactivos";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
@@ -153,9 +163,10 @@
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(1395, 73);
+            this.buttonEditar.Location = new System.Drawing.Point(1860, 90);
+            this.buttonEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(156, 82);
+            this.buttonEditar.Size = new System.Drawing.Size(208, 101);
             this.buttonEditar.TabIndex = 29;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.TextColor = System.Drawing.Color.White;
@@ -174,9 +185,10 @@
             this.buttonListarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonListarActivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarActivos.Location = new System.Drawing.Point(1395, 197);
+            this.buttonListarActivos.Location = new System.Drawing.Point(1860, 242);
+            this.buttonListarActivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonListarActivos.Name = "buttonListarActivos";
-            this.buttonListarActivos.Size = new System.Drawing.Size(156, 82);
+            this.buttonListarActivos.Size = new System.Drawing.Size(208, 101);
             this.buttonListarActivos.TabIndex = 28;
             this.buttonListarActivos.Text = "Listar Activos";
             this.buttonListarActivos.TextColor = System.Drawing.Color.White;
@@ -196,9 +208,10 @@
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(138, 197);
+            this.buttonGuardar.Location = new System.Drawing.Point(184, 242);
+            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(156, 82);
+            this.buttonGuardar.Size = new System.Drawing.Size(208, 101);
             this.buttonGuardar.TabIndex = 27;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
@@ -217,9 +230,10 @@
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNuevo.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonNuevo.ForeColor = System.Drawing.Color.White;
-            this.buttonNuevo.Location = new System.Drawing.Point(138, 73);
+            this.buttonNuevo.Location = new System.Drawing.Point(184, 90);
+            this.buttonNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(156, 82);
+            this.buttonNuevo.Size = new System.Drawing.Size(208, 101);
             this.buttonNuevo.TabIndex = 26;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
@@ -228,11 +242,11 @@
             // 
             // FormMetodoDePago
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1713, 825);
+            this.ClientSize = new System.Drawing.Size(2284, 1015);
             this.Controls.Add(this.buttonListarInactivos);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonListarActivos);
@@ -240,6 +254,7 @@
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMetodoDePago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMetodoDePago";
