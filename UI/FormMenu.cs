@@ -38,7 +38,6 @@ namespace UI
         {
             FormRol formrol = new FormRol();
             formrol.Show();
-            this.Close();
         }
 
         private void ButtonMetodoDePago_Click(object sender, EventArgs e)
@@ -64,6 +63,7 @@ namespace UI
         {
             Form1 form1 = new Form1();
             form1.Show();
+            this.Close();
         }
 
         private void ButtonAsignacionPermisos_Click(object sender, EventArgs e)
