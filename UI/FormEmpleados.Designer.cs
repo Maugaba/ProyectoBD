@@ -37,6 +37,7 @@
             this.textBoxDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxDPI = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.DPI = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -44,13 +45,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.checkBoxEstado = new System.Windows.Forms.CheckBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dataSetVentas1 = new DAL.DataSetVentas();
+            this.Regresar = new UI.RJButton();
             this.buttonListarInactivos = new UI.RJButton();
             this.buttonEditar = new UI.RJButton();
             this.buttonListarActivos = new UI.RJButton();
             this.buttonGuardar = new UI.RJButton();
             this.buttonNuevo = new UI.RJButton();
-            this.dataSetVentas1 = new DAL.DataSetVentas();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetVentas1)).BeginInit();
@@ -62,9 +63,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 471);
+            this.dataGridView1.Location = new System.Drawing.Point(110, 496);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1814, 403);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1969, 534);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.AutoSizeColumnModeChanged += new System.Windows.Forms.DataGridViewAutoSizeColumnModeEventHandler(this.dataGridView1_AutoSizeColumnModeChanged);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -80,6 +83,7 @@
             this.groupBox1.Controls.Add(this.textBoxDireccion);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBoxDPI);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.DPI);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
@@ -87,12 +91,13 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.checkBoxEstado);
             this.groupBox1.Controls.Add(this.textBoxNombre);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.groupBox1.Location = new System.Drawing.Point(207, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(312, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1465, 453);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1581, 473);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Metodo de Pago";
@@ -100,9 +105,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(75, 382);
+            this.label6.Location = new System.Drawing.Point(69, 378);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 42);
+            this.label6.Size = new System.Drawing.Size(127, 39);
             this.label6.TabIndex = 14;
             this.label6.Text = "Genero";
             // 
@@ -112,90 +118,112 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.comboBox1.Location = new System.Drawing.Point(222, 374);
+            this.comboBox1.Location = new System.Drawing.Point(216, 378);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(642, 50);
+            this.comboBox1.Size = new System.Drawing.Size(520, 47);
             this.comboBox1.TabIndex = 13;
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.Location = new System.Drawing.Point(1047, 284);
+            this.textBoxTelefono.Location = new System.Drawing.Point(1059, 267);
+            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(394, 50);
+            this.textBoxTelefono.Size = new System.Drawing.Size(489, 46);
             this.textBoxTelefono.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(884, 292);
+            this.label5.Location = new System.Drawing.Point(889, 267);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 42);
+            this.label5.Size = new System.Drawing.Size(142, 39);
             this.label5.TabIndex = 11;
             this.label5.Text = "Telefono";
             // 
             // textBoxDireccion
             // 
-            this.textBoxDireccion.Location = new System.Drawing.Point(1047, 185);
+            this.textBoxDireccion.Location = new System.Drawing.Point(1059, 159);
+            this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(394, 50);
+            this.textBoxDireccion.Size = new System.Drawing.Size(489, 46);
             this.textBoxDireccion.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(870, 188);
+            this.label4.Location = new System.Drawing.Point(872, 167);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 42);
+            this.label4.Size = new System.Drawing.Size(156, 39);
             this.label4.TabIndex = 9;
             this.label4.Text = "Direccion";
             // 
             // textBoxDPI
             // 
-            this.textBoxDPI.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.textBoxDPI.Location = new System.Drawing.Point(1047, 77);
+            this.textBoxDPI.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDPI.Location = new System.Drawing.Point(1059, 74);
+            this.textBoxDPI.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDPI.Name = "textBoxDPI";
-            this.textBoxDPI.Size = new System.Drawing.Size(394, 50);
+            this.textBoxDPI.Size = new System.Drawing.Size(489, 46);
             this.textBoxDPI.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombres";
             // 
             // DPI
             // 
             this.DPI.AutoSize = true;
-            this.DPI.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.DPI.Location = new System.Drawing.Point(951, 82);
+            this.DPI.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DPI.Location = new System.Drawing.Point(972, 82);
+            this.DPI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DPI.Name = "DPI";
-            this.DPI.Size = new System.Drawing.Size(79, 42);
+            this.DPI.Size = new System.Drawing.Size(74, 39);
             this.DPI.TabIndex = 7;
             this.DPI.Text = "DPI";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 269);
+            this.label3.Location = new System.Drawing.Point(9, 256);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 84);
+            this.label3.Size = new System.Drawing.Size(182, 78);
             this.label3.TabIndex = 6;
             this.label3.Text = "Fecha de \r\nNacimiento";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(222, 284);
+            this.dateTimePicker1.Location = new System.Drawing.Point(216, 271);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(642, 50);
+            this.dateTimePicker1.Size = new System.Drawing.Size(636, 46);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // textBoxApellido
             // 
-            this.textBoxApellido.Location = new System.Drawing.Point(222, 185);
+            this.textBoxApellido.Location = new System.Drawing.Point(216, 159);
+            this.textBoxApellido.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxApellido.Name = "textBoxApellido";
-            this.textBoxApellido.Size = new System.Drawing.Size(642, 50);
+            this.textBoxApellido.Size = new System.Drawing.Size(520, 46);
             this.textBoxApellido.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 185);
+            this.label2.Location = new System.Drawing.Point(43, 162);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 42);
+            this.label2.Size = new System.Drawing.Size(150, 39);
             this.label2.TabIndex = 3;
             this.label2.Text = "Apellidos";
             // 
@@ -208,9 +236,10 @@
             this.checkBoxEstado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxEstado.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkBoxEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBoxEstado.Location = new System.Drawing.Point(891, 376);
+            this.checkBoxEstado.Location = new System.Drawing.Point(897, 373);
+            this.checkBoxEstado.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxEstado.Name = "checkBoxEstado";
-            this.checkBoxEstado.Size = new System.Drawing.Size(149, 46);
+            this.checkBoxEstado.Size = new System.Drawing.Size(138, 43);
             this.checkBoxEstado.TabIndex = 2;
             this.checkBoxEstado.Text = "Estado";
             this.checkBoxEstado.UseVisualStyleBackColor = true;
@@ -219,21 +248,39 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.textBoxNombre.Location = new System.Drawing.Point(222, 77);
+            this.textBoxNombre.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNombre.Location = new System.Drawing.Point(216, 74);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(642, 50);
+            this.textBoxNombre.Size = new System.Drawing.Size(520, 46);
             this.textBoxNombre.TabIndex = 1;
             // 
-            // label1
+            // dataSetVentas1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label1.Location = new System.Drawing.Point(51, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombres";
+            this.dataSetVentas1.DataSetName = "DataSetVentas";
+            this.dataSetVentas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Regresar
+            // 
+            this.Regresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Regresar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Regresar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Regresar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Regresar.BorderRadius = 40;
+            this.Regresar.BorderSize = 0;
+            this.Regresar.FlatAppearance.BorderSize = 0;
+            this.Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Regresar.Font = new System.Drawing.Font("Arial", 20.25F);
+            this.Regresar.ForeColor = System.Drawing.Color.White;
+            this.Regresar.Location = new System.Drawing.Point(1906, 15);
+            this.Regresar.Margin = new System.Windows.Forms.Padding(4);
+            this.Regresar.Name = "Regresar";
+            this.Regresar.Size = new System.Drawing.Size(184, 52);
+            this.Regresar.TabIndex = 26;
+            this.Regresar.Text = "Regresar";
+            this.Regresar.TextColor = System.Drawing.Color.White;
+            this.Regresar.UseVisualStyleBackColor = false;
+            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
             // buttonListarInactivos
             // 
@@ -245,11 +292,12 @@
             this.buttonListarInactivos.BorderSize = 0;
             this.buttonListarInactivos.FlatAppearance.BorderSize = 0;
             this.buttonListarInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonListarInactivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarInactivos.Location = new System.Drawing.Point(1678, 296);
+            this.buttonListarInactivos.Location = new System.Drawing.Point(1902, 363);
+            this.buttonListarInactivos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListarInactivos.Name = "buttonListarInactivos";
-            this.buttonListarInactivos.Size = new System.Drawing.Size(169, 106);
+            this.buttonListarInactivos.Size = new System.Drawing.Size(188, 95);
             this.buttonListarInactivos.TabIndex = 25;
             this.buttonListarInactivos.Text = "Listar Inactivos";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
@@ -266,11 +314,12 @@
             this.buttonEditar.BorderSize = 0;
             this.buttonEditar.FlatAppearance.BorderSize = 0;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditar.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonEditar.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(1678, 33);
+            this.buttonEditar.Location = new System.Drawing.Point(1902, 92);
+            this.buttonEditar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(169, 106);
+            this.buttonEditar.Size = new System.Drawing.Size(188, 95);
             this.buttonEditar.TabIndex = 24;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.TextColor = System.Drawing.Color.White;
@@ -287,11 +336,12 @@
             this.buttonListarActivos.BorderSize = 0;
             this.buttonListarActivos.FlatAppearance.BorderSize = 0;
             this.buttonListarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonListarActivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarActivos.Location = new System.Drawing.Point(1678, 165);
+            this.buttonListarActivos.Location = new System.Drawing.Point(1902, 235);
+            this.buttonListarActivos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListarActivos.Name = "buttonListarActivos";
-            this.buttonListarActivos.Size = new System.Drawing.Size(169, 106);
+            this.buttonListarActivos.Size = new System.Drawing.Size(188, 95);
             this.buttonListarActivos.TabIndex = 23;
             this.buttonListarActivos.Text = "Listar Activos";
             this.buttonListarActivos.TextColor = System.Drawing.Color.White;
@@ -308,11 +358,12 @@
             this.buttonGuardar.BorderSize = 0;
             this.buttonGuardar.FlatAppearance.BorderSize = 0;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGuardar.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonGuardar.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(32, 257);
+            this.buttonGuardar.Location = new System.Drawing.Point(116, 308);
+            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(169, 106);
+            this.buttonGuardar.Size = new System.Drawing.Size(188, 95);
             this.buttonGuardar.TabIndex = 22;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
@@ -329,29 +380,26 @@
             this.buttonNuevo.BorderSize = 0;
             this.buttonNuevo.FlatAppearance.BorderSize = 0;
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNuevo.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonNuevo.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonNuevo.ForeColor = System.Drawing.Color.White;
-            this.buttonNuevo.Location = new System.Drawing.Point(32, 88);
+            this.buttonNuevo.Location = new System.Drawing.Point(116, 92);
+            this.buttonNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(169, 106);
+            this.buttonNuevo.Size = new System.Drawing.Size(188, 95);
             this.buttonNuevo.TabIndex = 21;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
             this.buttonNuevo.UseVisualStyleBackColor = false;
             this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click_1);
             // 
-            // dataSetVentas1
-            // 
-            this.dataSetVentas1.DataSetName = "DataSetVentas";
-            this.dataSetVentas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // FormEmpleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1858, 871);
+            this.ClientSize = new System.Drawing.Size(2182, 1036);
+            this.Controls.Add(this.Regresar);
             this.Controls.Add(this.buttonListarInactivos);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonListarActivos);
@@ -359,6 +407,7 @@
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEmpleados";
@@ -396,5 +445,6 @@
         private RJButton buttonEditar;
         private RJButton buttonListarInactivos;
         private DAL.DataSetVentas dataSetVentas1;
+        private RJButton Regresar;
     }
 }

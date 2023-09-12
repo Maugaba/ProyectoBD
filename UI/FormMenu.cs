@@ -26,14 +26,12 @@ namespace UI
         {
             FormUsuario formusuario = new FormUsuario();
             formusuario.Show();
-            this.Close();
         }
 
         private void ButtonEmpleados_Click(object sender, EventArgs e)
         {
             FormEmpleados formempleados = new FormEmpleados();
             formempleados.Show();
-            this.Close();
         }
 
         private void ButtonRol_Click(object sender, EventArgs e)
@@ -47,29 +45,25 @@ namespace UI
         {
             FormMetodoDePago formMetodoDePago = new FormMetodoDePago();
             formMetodoDePago.Show();
-            this.Close();
+
         }
 
         private void ButtonMarcas_Click(object sender, EventArgs e)
         {
             FormMarcas formmarcas = new FormMarcas();
             formmarcas.Show();
-            this.Close();
-
         }
 
         private void ButtonGarantia_Click(object sender, EventArgs e)
         {
             FormGarantia formGarantia = new FormGarantia();
             formGarantia.Show();
-            this.Close();
         }
 
         private void rjButtonCloseSession_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
             form1.Show();
-            this.Close();
         }
 
         private void ButtonAsignacionPermisos_Click(object sender, EventArgs e)

@@ -48,9 +48,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 429);
+            this.dataGridView1.Location = new System.Drawing.Point(285, 479);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1814, 464);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1997, 532);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -62,10 +64,12 @@
             this.groupBox1.Controls.Add(this.textBoxGarantia);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.groupBox1.Location = new System.Drawing.Point(319, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 24F);
+            this.groupBox1.Location = new System.Drawing.Point(489, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1288, 297);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1581, 351);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marca";
@@ -74,9 +78,10 @@
             // 
             this.checkBoxEstado.AutoSize = true;
             this.checkBoxEstado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBoxEstado.Location = new System.Drawing.Point(1092, 133);
+            this.checkBoxEstado.Location = new System.Drawing.Point(1297, 167);
+            this.checkBoxEstado.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxEstado.Name = "checkBoxEstado";
-            this.checkBoxEstado.Size = new System.Drawing.Size(152, 46);
+            this.checkBoxEstado.Size = new System.Drawing.Size(165, 49);
             this.checkBoxEstado.TabIndex = 2;
             this.checkBoxEstado.Text = "Estado";
             this.checkBoxEstado.UseVisualStyleBackColor = true;
@@ -84,17 +89,19 @@
             // 
             // textBoxGarantia
             // 
-            this.textBoxGarantia.Location = new System.Drawing.Point(481, 134);
+            this.textBoxGarantia.Location = new System.Drawing.Point(553, 165);
+            this.textBoxGarantia.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGarantia.Name = "textBoxGarantia";
-            this.textBoxGarantia.Size = new System.Drawing.Size(566, 50);
+            this.textBoxGarantia.Size = new System.Drawing.Size(632, 53);
             this.textBoxGarantia.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 137);
+            this.label1.Location = new System.Drawing.Point(21, 169);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(459, 42);
+            this.label1.Size = new System.Drawing.Size(494, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tiempo de garantia en dias";
             // 
@@ -108,11 +115,12 @@
             this.buttonListarInactivos.BorderSize = 0;
             this.buttonListarInactivos.FlatAppearance.BorderSize = 0;
             this.buttonListarInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonListarInactivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarInactivos.Location = new System.Drawing.Point(1280, 317);
+            this.buttonListarInactivos.Location = new System.Drawing.Point(1732, 363);
+            this.buttonListarInactivos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListarInactivos.Name = "buttonListarInactivos";
-            this.buttonListarInactivos.Size = new System.Drawing.Size(169, 106);
+            this.buttonListarInactivos.Size = new System.Drawing.Size(208, 101);
             this.buttonListarInactivos.TabIndex = 30;
             this.buttonListarInactivos.Text = "Listar Inactivos";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
@@ -129,11 +137,12 @@
             this.buttonEditar.BorderSize = 0;
             this.buttonEditar.FlatAppearance.BorderSize = 0;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditar.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonEditar.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(855, 315);
+            this.buttonEditar.Location = new System.Drawing.Point(1172, 363);
+            this.buttonEditar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(169, 106);
+            this.buttonEditar.Size = new System.Drawing.Size(208, 101);
             this.buttonEditar.TabIndex = 29;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.TextColor = System.Drawing.Color.White;
@@ -150,11 +159,12 @@
             this.buttonListarActivos.BorderSize = 0;
             this.buttonListarActivos.FlatAppearance.BorderSize = 0;
             this.buttonListarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonListarActivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarActivos.Location = new System.Drawing.Point(1070, 317);
+            this.buttonListarActivos.Location = new System.Drawing.Point(1456, 363);
+            this.buttonListarActivos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListarActivos.Name = "buttonListarActivos";
-            this.buttonListarActivos.Size = new System.Drawing.Size(169, 106);
+            this.buttonListarActivos.Size = new System.Drawing.Size(208, 101);
             this.buttonListarActivos.TabIndex = 28;
             this.buttonListarActivos.Text = "Listar Activos";
             this.buttonListarActivos.TextColor = System.Drawing.Color.White;
@@ -171,11 +181,12 @@
             this.buttonGuardar.BorderSize = 0;
             this.buttonGuardar.FlatAppearance.BorderSize = 0;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGuardar.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonGuardar.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(651, 317);
+            this.buttonGuardar.Location = new System.Drawing.Point(900, 363);
+            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(169, 106);
+            this.buttonGuardar.Size = new System.Drawing.Size(208, 101);
             this.buttonGuardar.TabIndex = 27;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
@@ -192,11 +203,12 @@
             this.buttonNuevo.BorderSize = 0;
             this.buttonNuevo.FlatAppearance.BorderSize = 0;
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNuevo.Font = new System.Drawing.Font("Arial", 27.75F);
+            this.buttonNuevo.Font = new System.Drawing.Font("Arial", 24F);
             this.buttonNuevo.ForeColor = System.Drawing.Color.White;
-            this.buttonNuevo.Location = new System.Drawing.Point(441, 315);
+            this.buttonNuevo.Location = new System.Drawing.Point(620, 363);
+            this.buttonNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(169, 106);
+            this.buttonNuevo.Size = new System.Drawing.Size(208, 101);
             this.buttonNuevo.TabIndex = 26;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
@@ -205,11 +217,11 @@
             // 
             // FormGarantia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1822, 840);
+            this.ClientSize = new System.Drawing.Size(2198, 1015);
             this.Controls.Add(this.buttonListarInactivos);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonListarActivos);
@@ -217,6 +229,7 @@
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormGarantia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGarantia";

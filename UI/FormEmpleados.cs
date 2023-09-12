@@ -169,5 +169,12 @@ namespace UI
             buttonNuevo.Enabled = true;
             groupBox1.Enabled = false;
         }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            FormMenu formmenu = new FormMenu(id);
+            formmenu.Show();
+            this.Close();
+        }
     }
 }
