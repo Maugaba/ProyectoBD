@@ -328,7 +328,7 @@
             this.rjButtonProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButtonProductos.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButtonProductos.ForeColor = System.Drawing.Color.White;
-            this.rjButtonProductos.Location = new System.Drawing.Point(661, 625);
+            this.rjButtonProductos.Location = new System.Drawing.Point(647, 626);
             this.rjButtonProductos.Name = "rjButtonProductos";
             this.rjButtonProductos.Size = new System.Drawing.Size(223, 122);
             this.rjButtonProductos.TabIndex = 42;
