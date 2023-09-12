@@ -66,7 +66,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1969, 461);
+            this.dataGridView1.Size = new System.Drawing.Size(1969, 317);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.AutoSizeColumnModeChanged += new System.Windows.Forms.DataGridViewAutoSizeColumnModeEventHandler(this.dataGridView1_AutoSizeColumnModeChanged);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -92,14 +92,14 @@
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(308, 47);
+            this.groupBox1.Location = new System.Drawing.Point(308, 69);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1581, 458);
+            this.groupBox1.Size = new System.Drawing.Size(1567, 436);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Metodo de Pago";
+            this.groupBox1.Text = "Empleados";
             // 
             // label6
             // 
@@ -271,7 +271,7 @@
             this.buttonListarInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonListarInactivos.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonListarInactivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarInactivos.Location = new System.Drawing.Point(1898, 380);
+            this.buttonListarInactivos.Location = new System.Drawing.Point(1883, 380);
             this.buttonListarInactivos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListarInactivos.Name = "buttonListarInactivos";
             this.buttonListarInactivos.Size = new System.Drawing.Size(188, 95);
@@ -293,7 +293,7 @@
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(1898, 109);
+            this.buttonEditar.Location = new System.Drawing.Point(1883, 109);
             this.buttonEditar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(188, 95);
@@ -315,7 +315,7 @@
             this.buttonListarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonListarActivos.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonListarActivos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarActivos.Location = new System.Drawing.Point(1898, 252);
+            this.buttonListarActivos.Location = new System.Drawing.Point(1883, 252);
             this.buttonListarActivos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListarActivos.Name = "buttonListarActivos";
             this.buttonListarActivos.Size = new System.Drawing.Size(188, 95);

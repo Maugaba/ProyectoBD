@@ -62,7 +62,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label1.Location = new System.Drawing.Point(596, 86);
+            this.label1.Location = new System.Drawing.Point(270, 100);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 53);
@@ -74,7 +74,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label2.Location = new System.Drawing.Point(596, 199);
+            this.label2.Location = new System.Drawing.Point(270, 213);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(256, 53);
@@ -86,7 +86,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label3.Location = new System.Drawing.Point(596, 294);
+            this.label3.Location = new System.Drawing.Point(270, 308);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(192, 53);
@@ -98,7 +98,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label4.Location = new System.Drawing.Point(596, 412);
+            this.label4.Location = new System.Drawing.Point(270, 426);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(291, 53);
@@ -110,7 +110,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label5.Location = new System.Drawing.Point(596, 523);
+            this.label5.Location = new System.Drawing.Point(270, 537);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(235, 53);
@@ -122,7 +122,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label6.Location = new System.Drawing.Point(596, 608);
+            this.label6.Location = new System.Drawing.Point(270, 622);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(308, 106);
@@ -134,7 +134,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label7.Location = new System.Drawing.Point(1369, 85);
+            this.label7.Location = new System.Drawing.Point(1043, 99);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(178, 53);
@@ -146,7 +146,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label8.Location = new System.Drawing.Point(1369, 185);
+            this.label8.Location = new System.Drawing.Point(1043, 199);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(207, 53);
@@ -158,7 +158,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label9.Location = new System.Drawing.Point(1369, 297);
+            this.label9.Location = new System.Drawing.Point(1043, 311);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(143, 53);
@@ -170,7 +170,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label12.Location = new System.Drawing.Point(1369, 404);
+            this.label12.Location = new System.Drawing.Point(1043, 418);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(227, 53);
@@ -182,7 +182,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label13.Location = new System.Drawing.Point(1369, 500);
+            this.label13.Location = new System.Drawing.Point(1043, 514);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(265, 106);
@@ -194,7 +194,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label14.Location = new System.Drawing.Point(980, 768);
+            this.label14.Location = new System.Drawing.Point(704, 781);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(166, 53);
@@ -206,7 +206,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 27.75F);
-            this.label10.Location = new System.Drawing.Point(1331, 639);
+            this.label10.Location = new System.Drawing.Point(1005, 653);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(358, 53);
@@ -216,7 +216,7 @@
             // 
             // rjToggleButtonTiposClientes
             // 
-            this.rjToggleButtonTiposClientes.Location = new System.Drawing.Point(1711, 639);
+            this.rjToggleButtonTiposClientes.Location = new System.Drawing.Point(1385, 653);
             this.rjToggleButtonTiposClientes.Margin = new System.Windows.Forms.Padding(4);
             this.rjToggleButtonTiposClientes.MinimumSize = new System.Drawing.Size(60, 27);
             this.rjToggleButtonTiposClientes.Name = "rjToggleButtonTiposClientes";
@@ -241,7 +241,7 @@
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Arial", 27.75F);
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(1324, 891);
+            this.buttonGuardar.Location = new System.Drawing.Point(799, 890);
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(225, 113);
@@ -253,7 +253,7 @@
             // 
             // rjToggleMetodos
             // 
-            this.rjToggleMetodos.Location = new System.Drawing.Point(1712, 535);
+            this.rjToggleMetodos.Location = new System.Drawing.Point(1386, 549);
             this.rjToggleMetodos.Margin = new System.Windows.Forms.Padding(4);
             this.rjToggleMetodos.MinimumSize = new System.Drawing.Size(60, 27);
             this.rjToggleMetodos.Name = "rjToggleMetodos";
@@ -267,7 +267,7 @@
             // 
             // rjToggleGarantias
             // 
-            this.rjToggleGarantias.Location = new System.Drawing.Point(1713, 415);
+            this.rjToggleGarantias.Location = new System.Drawing.Point(1387, 429);
             this.rjToggleGarantias.Margin = new System.Windows.Forms.Padding(4);
             this.rjToggleGarantias.MinimumSize = new System.Drawing.Size(60, 27);
             this.rjToggleGarantias.Name = "rjToggleGarantias";
@@ -281,7 +281,7 @@
             // 
             // rjToggleVentas
             // 
-            this.rjToggleVentas.Location = new System.Drawing.Point(1324, 768);
+            this.rjToggleVentas.Location = new System.Drawing.Point(976, 782);
             this.rjToggleVentas.Margin = new System.Windows.Forms.Padding(4);
             this.rjToggleVentas.MinimumSize = new System.Drawing.Size(60, 27);
             this.rjToggleVentas.Name = "rjToggleVentas";
@@ -295,7 +295,7 @@
             // 
             // rjToggleButtonRoles
             // 
-            this.rjToggleButtonRoles.Location = new System.Drawing.Point(1713, 297);
+            this.rjToggleButtonRoles.Location = new System.Drawing.Point(1387, 311);
             this.rjToggleButtonRoles.Margin = new System.Windows.Forms.Padding(4);
             this.rjToggleButtonRoles.MinimumSize = new System.Drawing.Size(60, 27);
             this.rjToggleButtonRoles.Name = "rjToggleButtonRoles";
@@ -309,7 +309,7 @@
             // 
             // rjToggleButtonFacturas
             // 
-            this.rjToggleButtonFacturas.Location = new System.Drawing.Point(1713, 185);
+            this.rjToggleButtonFacturas.Location = new System.Drawing.Point(1387, 199);
             this.rjToggleButtonFacturas.Margin = new System.Windows.Forms.Padding(4);
             this.rjToggleButtonFacturas.MinimumSize = new System.Drawing.Size(60, 27);
             this.rjToggleButtonFacturas.Name = "rjToggleButtonFacturas";
@@ -324,7 +324,7 @@
             // ToggleButtonMarcas
             // 
             this.ToggleButtonMarcas.BackColor = System.Drawing.Color.Transparent;
-            this.ToggleButtonMarcas.Location = new System.Drawing.Point(1712, 85);
+            this.ToggleButtonMarcas.Location = new System.Drawing.Point(1386, 99);
             this.ToggleButtonMarcas.Margin = new System.Windows.Forms.Padding(4);
             this.ToggleButtonMarcas.MinimumSize = new System.Drawing.Size(60, 27);
             this.ToggleButtonMarcas.Name = "ToggleButtonMarcas";
@@ -338,7 +338,7 @@
             // 
             // ToggleButtonCategoriaDeProductos
             // 
-            this.ToggleButtonCategoriaDeProductos.Location = new System.Drawing.Point(976, 639);
+            this.ToggleButtonCategoriaDeProductos.Location = new System.Drawing.Point(650, 653);
             this.ToggleButtonCategoriaDeProductos.Margin = new System.Windows.Forms.Padding(4);
             this.ToggleButtonCategoriaDeProductos.MinimumSize = new System.Drawing.Size(60, 27);
             this.ToggleButtonCategoriaDeProductos.Name = "ToggleButtonCategoriaDeProductos";
@@ -352,7 +352,7 @@
             // 
             // ToggleButtonProductos
             // 
-            this.ToggleButtonProductos.Location = new System.Drawing.Point(976, 523);
+            this.ToggleButtonProductos.Location = new System.Drawing.Point(650, 537);
             this.ToggleButtonProductos.Margin = new System.Windows.Forms.Padding(4);
             this.ToggleButtonProductos.MinimumSize = new System.Drawing.Size(60, 27);
             this.ToggleButtonProductos.Name = "ToggleButtonProductos";
@@ -366,7 +366,7 @@
             // 
             // ToggleButtonProveedores
             // 
-            this.ToggleButtonProveedores.Location = new System.Drawing.Point(976, 412);
+            this.ToggleButtonProveedores.Location = new System.Drawing.Point(650, 426);
             this.ToggleButtonProveedores.Margin = new System.Windows.Forms.Padding(4);
             this.ToggleButtonProveedores.MinimumSize = new System.Drawing.Size(60, 27);
             this.ToggleButtonProveedores.Name = "ToggleButtonProveedores";
@@ -380,7 +380,7 @@
             // 
             // ToggleButtonClientes
             // 
-            this.ToggleButtonClientes.Location = new System.Drawing.Point(976, 305);
+            this.ToggleButtonClientes.Location = new System.Drawing.Point(650, 319);
             this.ToggleButtonClientes.Margin = new System.Windows.Forms.Padding(4);
             this.ToggleButtonClientes.MinimumSize = new System.Drawing.Size(60, 27);
             this.ToggleButtonClientes.Name = "ToggleButtonClientes";
@@ -394,7 +394,7 @@
             // 
             // ToggleButtonEmpleados
             // 
-            this.ToggleButtonEmpleados.Location = new System.Drawing.Point(976, 199);
+            this.ToggleButtonEmpleados.Location = new System.Drawing.Point(650, 213);
             this.ToggleButtonEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.ToggleButtonEmpleados.MinimumSize = new System.Drawing.Size(60, 27);
             this.ToggleButtonEmpleados.Name = "ToggleButtonEmpleados";
@@ -408,7 +408,7 @@
             // 
             // ToggleButtonUsuarios
             // 
-            this.ToggleButtonUsuarios.Location = new System.Drawing.Point(976, 86);
+            this.ToggleButtonUsuarios.Location = new System.Drawing.Point(650, 100);
             this.ToggleButtonUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.ToggleButtonUsuarios.MinimumSize = new System.Drawing.Size(60, 27);
             this.ToggleButtonUsuarios.Name = "ToggleButtonUsuarios";
@@ -454,7 +454,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ToggleButtonUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPermisos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPermisos";
