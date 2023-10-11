@@ -104,7 +104,8 @@ namespace UI
 
         private void ButtonPermisos_Click(object sender, EventArgs e)
         {
-
+            FormTipoDeUsuario formtipodeusuario = new FormTipoDeUsuario();
+            formtipodeusuario.Show();
         }
 
         private void ButtonFacturas_Click(object sender, EventArgs e)
