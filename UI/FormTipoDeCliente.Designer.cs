@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class FormTipoDeUsuario
+    partial class FormTipoDeCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDescripcion = new System.Windows.Forms.TextBox();
             this.Descripcion = new System.Windows.Forms.Label();
             this.checkBoxEstado = new System.Windows.Forms.CheckBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonNuevo = new UI.RJButton();
             this.buttonGuardar = new UI.RJButton();
             this.buttonEditar = new UI.RJButton();
@@ -64,7 +64,25 @@
             this.groupBox1.Size = new System.Drawing.Size(1132, 354);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tipos De Usuarios";
+            this.groupBox1.Text = "Tipos De Cliente";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(752, 68);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(337, 39);
+            this.textBox1.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(569, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 32);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Descuento %";
             // 
             // label1
             // 
@@ -117,24 +135,6 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(375, 39);
             this.textBoxNombre.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(569, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 32);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Descuento %";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(752, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 39);
-            this.textBox1.TabIndex = 6;
             // 
             // buttonNuevo
             // 
@@ -248,7 +248,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1424, 389);
             this.dataGridView1.TabIndex = 28;
             // 
-            // FormTipoDeUsuario
+            // FormTipoDeCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -260,9 +260,9 @@
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FormTipoDeUsuario";
+            this.Name = "FormTipoDeCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormTipoDeUsuario";
+            this.Text = "FormTipoDeCliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

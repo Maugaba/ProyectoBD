@@ -109,11 +109,11 @@
     <Compile Include="FormRol.Designer.cs">
       <DependentUpon>FormRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTipoDeUsuario.cs">
+    <Compile Include="FormTipoDeCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTipoDeUsuario.Designer.cs">
-      <DependentUpon>FormTipoDeUsuario.cs</DependentUpon>
+    <Compile Include="FormTipoDeCliente.Designer.cs">
+      <DependentUpon>FormTipoDeCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUsuario.cs">
       <SubType>Form</SubType>
@@ -153,8 +153,8 @@
     <EmbeddedResource Include="FormRol.resx">
       <DependentUpon>FormRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTipoDeUsuario.resx">
-      <DependentUpon>FormTipoDeUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="FormTipoDeCliente.resx">
+      <DependentUpon>FormTipoDeCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuario.resx">
       <DependentUpon>FormUsuario.cs</DependentUpon>

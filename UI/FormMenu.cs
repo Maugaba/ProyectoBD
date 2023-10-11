@@ -99,12 +99,7 @@ namespace UI
 
         private void ButtonTiposDeClientes_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void ButtonPermisos_Click(object sender, EventArgs e)
-        {
-            FormTipoDeUsuario formtipodeusuario = new FormTipoDeUsuario();
+            FormTipoDeCliente formtipodeusuario = new FormTipoDeCliente();
             formtipodeusuario.Show();
         }
 
