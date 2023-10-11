@@ -14,6 +14,7 @@ namespace BLL
         //atributos
         private RolesTableAdapter roles = null;
         private RolesPermisosTableAdapter permisos = null;
+        private func_ListaPermisosYRolesTableAdapter funcion = null;
         
         //propiedades
         private RolesTableAdapter ROLES
@@ -32,6 +33,15 @@ namespace BLL
                 if (permisos == null)
                     permisos = new RolesPermisosTableAdapter();
                 return permisos;
+            }
+        }
+        private func_ListaPermisosYRolesTableAdapter FUNCION
+        {
+            get
+            {
+                if (funcion == null)
+                    funcion = new func_ListaPermisosYRolesTableAdapter();
+                return funcion;
             }
         }
 
@@ -54,6 +64,11 @@ namespace BLL
         {
             return ROLES.GetDataRolesInactivos();
         }//fin del metodo ListarRolesInactivos
+
+        public DataTable ListarPermisoindividual(int id)
+        {
+            return FUNCION.GetDataPermisos(id);
+        }
 
         /// <summary>
         /// Este metodo nos sirve para crear un nuevo rol en la base de datos

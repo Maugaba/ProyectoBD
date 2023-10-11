@@ -20,6 +20,14 @@
 
 namespace DAL.DataSetVentasTableAdapters
 {
+    partial class FacturasTableAdapter
+    {
+    }
+
+    partial class MarcasTableAdapter
+    {
+    }
+
     partial class EmpleadosTableAdapter
     {
     }

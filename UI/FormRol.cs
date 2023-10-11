@@ -38,12 +38,14 @@ namespace UI
         {
             dataGridView1.DataSource = logicaRol.ListarRolesActivos();
             dataGridView1.Refresh();
+            dataGridView1.Enabled = true;
         }
 
         private void buttonListarInactivos_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = logicaRol.ListarUsuariosInactivos();
             dataGridView1.Refresh();
+            dataGridView1.Enabled = true;
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
@@ -86,6 +88,7 @@ namespace UI
                 buttonNuevo.Enabled = false;
                 groupBox1.Enabled = true;
                 buttonGuardar.Enabled = false;
+                rjButtonPerm.Enabled = true;
             }
         }
 
@@ -129,6 +132,21 @@ namespace UI
             buttonNuevo.Enabled = true;
             checkBoxEstado.Visible = false;
             groupBox1.Enabled = false;
+            rjButtonPerm.Enabled = false;
+        }
+
+        private void rjButtonPerm_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = logicaRol.ListarPermisoindividual(id);
+            dataGridView1.Refresh();
+            dataGridView1.Enabled = false;
+            textBoxNombre.Text = "";
+            textBoxDescripcion.Text = "";
+            buttonEditar.Enabled = false;
+            buttonNuevo.Enabled = true;
+            checkBoxEstado.Visible = false;
+            groupBox1.Enabled = false;
+            rjButtonPerm.Enabled = false;
         }
     }
 }

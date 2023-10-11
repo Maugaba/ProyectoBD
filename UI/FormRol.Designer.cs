@@ -40,6 +40,7 @@
             this.buttonListarActivos = new UI.RJButton();
             this.buttonGuardar = new UI.RJButton();
             this.buttonNuevo = new UI.RJButton();
+            this.rjButtonPerm = new UI.RJButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -230,12 +231,35 @@
             this.buttonNuevo.UseVisualStyleBackColor = false;
             this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click_1);
             // 
+            // rjButtonPerm
+            // 
+            this.rjButtonPerm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rjButtonPerm.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonPerm.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonPerm.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButtonPerm.BorderRadius = 40;
+            this.rjButtonPerm.BorderSize = 0;
+            this.rjButtonPerm.Enabled = false;
+            this.rjButtonPerm.FlatAppearance.BorderSize = 0;
+            this.rjButtonPerm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButtonPerm.Font = new System.Drawing.Font("Arial", 24F);
+            this.rjButtonPerm.ForeColor = System.Drawing.Color.White;
+            this.rjButtonPerm.Location = new System.Drawing.Point(138, 319);
+            this.rjButtonPerm.Name = "rjButtonPerm";
+            this.rjButtonPerm.Size = new System.Drawing.Size(156, 82);
+            this.rjButtonPerm.TabIndex = 31;
+            this.rjButtonPerm.Text = "Listar Permiso";
+            this.rjButtonPerm.TextColor = System.Drawing.Color.White;
+            this.rjButtonPerm.UseVisualStyleBackColor = false;
+            this.rjButtonPerm.Click += new System.EventHandler(this.rjButtonPerm_Click);
+            // 
             // FormRol
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1667, 860);
+            this.Controls.Add(this.rjButtonPerm);
             this.Controls.Add(this.buttonListarInactivos);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonListarActivos);
@@ -269,5 +293,6 @@
         private RJButton buttonListarActivos;
         private RJButton buttonNuevo;
         private RJButton buttonGuardar;
+        private RJButton rjButtonPerm;
     }
 }
