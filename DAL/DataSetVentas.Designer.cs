@@ -90,6 +90,8 @@ namespace DAL {
         
         private global::System.Data.DataRelation relationFK_Ventas_MetodosDePago;
         
+        private global::System.Data.DataRelation relationFK_SolicitudProductosaProveedores_Proveedores;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -668,6 +670,7 @@ namespace DAL {
             this.relationFK_Ventas_Empleados1 = this.Relations["FK_Ventas_Empleados1"];
             this.relationFK_Ventas_Facturas = this.Relations["FK_Ventas_Facturas"];
             this.relationFK_Ventas_MetodosDePago = this.Relations["FK_Ventas_MetodosDePago"];
+            this.relationFK_SolicitudProductosaProveedores_Proveedores = this.Relations["FK_SolicitudProductosaProveedores_Proveedores"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -772,6 +775,10 @@ namespace DAL {
                         this.tableMetodosDePago.IdMétodoDePagoColumn}, new global::System.Data.DataColumn[] {
                         this.tableVentas.IdMétodoDePagoColumn}, false);
             this.Relations.Add(this.relationFK_Ventas_MetodosDePago);
+            this.relationFK_SolicitudProductosaProveedores_Proveedores = new global::System.Data.DataRelation("FK_SolicitudProductosaProveedores_Proveedores", new global::System.Data.DataColumn[] {
+                        this.tableProveedores.IdProveedorColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSolicitudProductosaProveedores.IdProveedorColumn}, false);
+            this.Relations.Add(this.relationFK_SolicitudProductosaProveedores_Proveedores);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4095,6 +4102,8 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnPorcentajeDescuentoEspecial;
             
+            private global::System.Data.DataColumn columnEstado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TiposdeClientesDataTable() {
@@ -4162,6 +4171,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4197,13 +4214,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TiposdeClientesRow AddTiposdeClientesRow(int IdTipoCliente, string Nombre, string Descripcion, int PorcentajeDescuentoEspecial) {
+            public TiposdeClientesRow AddTiposdeClientesRow(int IdTipoCliente, string Nombre, string Descripcion, int PorcentajeDescuentoEspecial, byte Estado) {
                 TiposdeClientesRow rowTiposdeClientesRow = ((TiposdeClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdTipoCliente,
                         Nombre,
                         Descripcion,
-                        PorcentajeDescuentoEspecial};
+                        PorcentajeDescuentoEspecial,
+                        Estado};
                 rowTiposdeClientesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTiposdeClientesRow);
                 return rowTiposdeClientesRow;
@@ -4237,6 +4255,7 @@ namespace DAL {
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnPorcentajeDescuentoEspecial = base.Columns["PorcentajeDescuentoEspecial"];
+                this.columnEstado = base.Columns["Estado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4250,6 +4269,8 @@ namespace DAL {
                 base.Columns.Add(this.columnDescripcion);
                 this.columnPorcentajeDescuentoEspecial = new global::System.Data.DataColumn("PorcentajeDescuentoEspecial", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPorcentajeDescuentoEspecial);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdTipoCliente}, true));
                 this.columnIdTipoCliente.AllowDBNull = false;
@@ -4259,6 +4280,7 @@ namespace DAL {
                 this.columnDescripcion.AllowDBNull = false;
                 this.columnDescripcion.MaxLength = 250;
                 this.columnPorcentajeDescuentoEspecial.AllowDBNull = false;
+                this.columnEstado.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4398,6 +4420,10 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnTélefono;
             
+            private global::System.Data.DataColumn columnEstado;
+            
+            private global::System.Data.DataColumn columnIdProveedor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ProveedoresDataTable() {
@@ -4457,6 +4483,22 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IdProveedorColumn {
+                get {
+                    return this.columnIdProveedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4492,15 +4534,24 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProveedoresRow AddProveedoresRow(string Nombre, string Dirección, string Télefono) {
+            public ProveedoresRow AddProveedoresRow(string Nombre, string Dirección, string Télefono, byte Estado) {
                 ProveedoresRow rowProveedoresRow = ((ProveedoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nombre,
                         Dirección,
-                        Télefono};
+                        Télefono,
+                        Estado,
+                        null};
                 rowProveedoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProveedoresRow);
                 return rowProveedoresRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ProveedoresRow FindByIdProveedor(int IdProveedor) {
+                return ((ProveedoresRow)(this.Rows.Find(new object[] {
+                            IdProveedor})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4523,6 +4574,8 @@ namespace DAL {
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnDirección = base.Columns["Dirección"];
                 this.columnTélefono = base.Columns["Télefono"];
+                this.columnEstado = base.Columns["Estado"];
+                this.columnIdProveedor = base.Columns["IdProveedor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4534,12 +4587,25 @@ namespace DAL {
                 base.Columns.Add(this.columnDirección);
                 this.columnTélefono = new global::System.Data.DataColumn("Télefono", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTélefono);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
+                this.columnIdProveedor = new global::System.Data.DataColumn("IdProveedor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdProveedor);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIdProveedor}, true));
                 this.columnNombre.AllowDBNull = false;
                 this.columnNombre.MaxLength = 50;
                 this.columnDirección.AllowDBNull = false;
                 this.columnDirección.MaxLength = 50;
                 this.columnTélefono.AllowDBNull = false;
                 this.columnTélefono.MaxLength = 200;
+                this.columnEstado.AllowDBNull = false;
+                this.columnIdProveedor.AutoIncrement = true;
+                this.columnIdProveedor.AutoIncrementSeed = -1;
+                this.columnIdProveedor.AutoIncrementStep = -1;
+                this.columnIdProveedor.AllowDBNull = false;
+                this.columnIdProveedor.ReadOnly = true;
+                this.columnIdProveedor.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4689,6 +4755,8 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnNit;
             
+            private global::System.Data.DataColumn columnEstado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ClientesDataTable() {
@@ -4788,6 +4856,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4823,7 +4899,7 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ClientesRow AddClientesRow(string Nombres, string Apellidos, string Dirección, string NúmeroDeCelular, string CorreoElectronico, TiposdeClientesRow parentTiposdeClientesRowByFK_Clientes_TiposdeClientes, string Nit) {
+            public ClientesRow AddClientesRow(string Nombres, string Apellidos, string Dirección, string NúmeroDeCelular, string CorreoElectronico, TiposdeClientesRow parentTiposdeClientesRowByFK_Clientes_TiposdeClientes, string Nit, byte Estado) {
                 ClientesRow rowClientesRow = ((ClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4833,7 +4909,8 @@ namespace DAL {
                         NúmeroDeCelular,
                         CorreoElectronico,
                         null,
-                        Nit};
+                        Nit,
+                        Estado};
                 if ((parentTiposdeClientesRowByFK_Clientes_TiposdeClientes != null)) {
                     columnValuesArray[6] = parentTiposdeClientesRowByFK_Clientes_TiposdeClientes[0];
                 }
@@ -4874,6 +4951,7 @@ namespace DAL {
                 this.columnCorreoElectronico = base.Columns["CorreoElectronico"];
                 this.columnIdTipoCliente = base.Columns["IdTipoCliente"];
                 this.columnNit = base.Columns["Nit"];
+                this.columnEstado = base.Columns["Estado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4895,6 +4973,8 @@ namespace DAL {
                 base.Columns.Add(this.columnIdTipoCliente);
                 this.columnNit = new global::System.Data.DataColumn("Nit", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNit);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdCliente}, true));
                 this.columnIdCliente.AutoIncrement = true;
@@ -4916,6 +4996,7 @@ namespace DAL {
                 this.columnIdTipoCliente.AllowDBNull = false;
                 this.columnNit.AllowDBNull = false;
                 this.columnNit.MaxLength = 50;
+                this.columnEstado.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5055,6 +5136,8 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnIdCategoría;
             
+            private global::System.Data.DataColumn columnEstado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CategoríasDataTable() {
@@ -5114,6 +5197,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5149,12 +5240,13 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CategoríasRow AddCategoríasRow(string Nombre, string Descripcion) {
+            public CategoríasRow AddCategoríasRow(string Nombre, string Descripcion, byte Estado) {
                 CategoríasRow rowCategoríasRow = ((CategoríasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nombre,
                         Descripcion,
-                        null};
+                        null,
+                        Estado};
                 rowCategoríasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCategoríasRow);
                 return rowCategoríasRow;
@@ -5187,6 +5279,7 @@ namespace DAL {
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnIdCategoría = base.Columns["IdCategoría"];
+                this.columnEstado = base.Columns["Estado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5198,6 +5291,8 @@ namespace DAL {
                 base.Columns.Add(this.columnDescripcion);
                 this.columnIdCategoría = new global::System.Data.DataColumn("IdCategoría", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdCategoría);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdCategoría}, true));
                 this.columnNombre.AllowDBNull = false;
@@ -5210,6 +5305,7 @@ namespace DAL {
                 this.columnIdCategoría.AllowDBNull = false;
                 this.columnIdCategoría.ReadOnly = true;
                 this.columnIdCategoría.Unique = true;
+                this.columnEstado.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5674,6 +5770,8 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnIdProveedor;
             
+            private global::System.Data.DataColumn columnEstado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ProductosDataTable() {
@@ -5813,6 +5911,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5848,7 +5954,7 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProductosRow AddProductosRow(string Descripción, string Nombre, decimal Precio_de_Venta, int Porcentaje_de_descuento, MarcasRow parentMarcasRowByFK_Productos_Marcas, string Modelo, int Stock, int ExistenciaMínima, GarantíasRow parentGarantíasRowByFK_Productos_Garantías, CategoríasRow parentCategoríasRowByFK_Productos_Categorías, System.DateTime FechadeIngreso, int IdProveedor) {
+            public ProductosRow AddProductosRow(string Descripción, string Nombre, decimal Precio_de_Venta, int Porcentaje_de_descuento, MarcasRow parentMarcasRowByFK_Productos_Marcas, string Modelo, int Stock, int ExistenciaMínima, GarantíasRow parentGarantíasRowByFK_Productos_Garantías, CategoríasRow parentCategoríasRowByFK_Productos_Categorías, System.DateTime FechadeIngreso, int IdProveedor, byte Estado) {
                 ProductosRow rowProductosRow = ((ProductosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5863,7 +5969,8 @@ namespace DAL {
                         null,
                         null,
                         FechadeIngreso,
-                        IdProveedor};
+                        IdProveedor,
+                        Estado};
                 if ((parentMarcasRowByFK_Productos_Marcas != null)) {
                     columnValuesArray[5] = parentMarcasRowByFK_Productos_Marcas[0];
                 }
@@ -5915,6 +6022,7 @@ namespace DAL {
                 this.columnIdCategoría = base.Columns["IdCategoría"];
                 this.columnFechadeIngreso = base.Columns["FechadeIngreso"];
                 this.columnIdProveedor = base.Columns["IdProveedor"];
+                this.columnEstado = base.Columns["Estado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5946,6 +6054,8 @@ namespace DAL {
                 base.Columns.Add(this.columnFechadeIngreso);
                 this.columnIdProveedor = new global::System.Data.DataColumn("IdProveedor", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdProveedor);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdProducto}, true));
                 this.columnIdProducto.AutoIncrement = true;
@@ -5969,6 +6079,7 @@ namespace DAL {
                 this.columnIdCategoría.AllowDBNull = false;
                 this.columnFechadeIngreso.AllowDBNull = false;
                 this.columnIdProveedor.AllowDBNull = false;
+                this.columnEstado.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6423,6 +6534,8 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnCantidadSolicitada;
             
+            private global::System.Data.DataColumn columnEstado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SolicitudProductosaProveedoresDataTable() {
@@ -6490,6 +6603,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6525,15 +6646,19 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SolicitudProductosaProveedoresRow AddSolicitudProductosaProveedoresRow(ProductosRow parentProductosRowByFK_SolicitudProductosaProveedores_Productos, int IdProveedor, int CantidadSolicitada) {
+            public SolicitudProductosaProveedoresRow AddSolicitudProductosaProveedoresRow(ProductosRow parentProductosRowByFK_SolicitudProductosaProveedores_Productos, ProveedoresRow parentProveedoresRowByFK_SolicitudProductosaProveedores_Proveedores, int CantidadSolicitada, int Estado) {
                 SolicitudProductosaProveedoresRow rowSolicitudProductosaProveedoresRow = ((SolicitudProductosaProveedoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        IdProveedor,
-                        CantidadSolicitada};
+                        null,
+                        CantidadSolicitada,
+                        Estado};
                 if ((parentProductosRowByFK_SolicitudProductosaProveedores_Productos != null)) {
                     columnValuesArray[1] = parentProductosRowByFK_SolicitudProductosaProveedores_Productos[0];
+                }
+                if ((parentProveedoresRowByFK_SolicitudProductosaProveedores_Proveedores != null)) {
+                    columnValuesArray[2] = parentProveedoresRowByFK_SolicitudProductosaProveedores_Proveedores[4];
                 }
                 rowSolicitudProductosaProveedoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSolicitudProductosaProveedoresRow);
@@ -6568,6 +6693,7 @@ namespace DAL {
                 this.columnIdProducto = base.Columns["IdProducto"];
                 this.columnIdProveedor = base.Columns["IdProveedor"];
                 this.columnCantidadSolicitada = base.Columns["CantidadSolicitada"];
+                this.columnEstado = base.Columns["Estado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6581,6 +6707,8 @@ namespace DAL {
                 base.Columns.Add(this.columnIdProveedor);
                 this.columnCantidadSolicitada = new global::System.Data.DataColumn("CantidadSolicitada", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidadSolicitada);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdSolicitud}, true));
                 this.columnIdSolicitud.AutoIncrement = true;
@@ -6592,6 +6720,7 @@ namespace DAL {
                 this.columnIdProducto.AllowDBNull = false;
                 this.columnIdProveedor.AllowDBNull = false;
                 this.columnCantidadSolicitada.AllowDBNull = false;
+                this.columnEstado.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7943,6 +8072,17 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte Estado {
+                get {
+                    return ((byte)(this[this.tableTiposdeClientes.EstadoColumn]));
+                }
+                set {
+                    this[this.tableTiposdeClientes.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ClientesRow[] GetClientesRows() {
                 if ((this.Table.ChildRelations["FK_Clientes_TiposdeClientes"] == null)) {
                     return new ClientesRow[0];
@@ -7997,6 +8137,39 @@ namespace DAL {
                 }
                 set {
                     this[this.tableProveedores.TélefonoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte Estado {
+                get {
+                    return ((byte)(this[this.tableProveedores.EstadoColumn]));
+                }
+                set {
+                    this[this.tableProveedores.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int IdProveedor {
+                get {
+                    return ((int)(this[this.tableProveedores.IdProveedorColumn]));
+                }
+                set {
+                    this[this.tableProveedores.IdProveedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SolicitudProductosaProveedoresRow[] GetSolicitudProductosaProveedoresRows() {
+                if ((this.Table.ChildRelations["FK_SolicitudProductosaProveedores_Proveedores"] == null)) {
+                    return new SolicitudProductosaProveedoresRow[0];
+                }
+                else {
+                    return ((SolicitudProductosaProveedoresRow[])(base.GetChildRows(this.Table.ChildRelations["FK_SolicitudProductosaProveedores_Proveedores"])));
                 }
             }
         }
@@ -8105,6 +8278,17 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte Estado {
+                get {
+                    return ((byte)(this[this.tableClientes.EstadoColumn]));
+                }
+                set {
+                    this[this.tableClientes.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TiposdeClientesRow TiposdeClientesRow {
                 get {
                     return ((TiposdeClientesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Clientes_TiposdeClientes"])));
@@ -8170,6 +8354,17 @@ namespace DAL {
                 }
                 set {
                     this[this.tableCategorías.IdCategoríaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte Estado {
+                get {
+                    return ((byte)(this[this.tableCategorías.EstadoColumn]));
+                }
+                set {
+                    this[this.tableCategorías.EstadoColumn] = value;
                 }
             }
             
@@ -8414,6 +8609,17 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte Estado {
+                get {
+                    return ((byte)(this[this.tableProductos.EstadoColumn]));
+                }
+                set {
+                    this[this.tableProductos.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CategoríasRow CategoríasRow {
                 get {
                     return ((CategoríasRow)(this.GetParentRow(this.Table.ParentRelations["FK_Productos_Categorías"])));
@@ -8609,12 +8815,34 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Estado {
+                get {
+                    return ((int)(this[this.tableSolicitudProductosaProveedores.EstadoColumn]));
+                }
+                set {
+                    this[this.tableSolicitudProductosaProveedores.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ProductosRow ProductosRow {
                 get {
                     return ((ProductosRow)(this.GetParentRow(this.Table.ParentRelations["FK_SolicitudProductosaProveedores_Productos"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_SolicitudProductosaProveedores_Productos"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ProveedoresRow ProveedoresRow {
+                get {
+                    return ((ProveedoresRow)(this.GetParentRow(this.Table.ParentRelations["FK_SolicitudProductosaProveedores_Proveedores"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_SolicitudProductosaProveedores_Proveedores"]);
                 }
             }
         }
@@ -12241,6 +12469,7 @@ WHERE        (Usuarios.Estado = 0)";
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("PorcentajeDescuentoEspecial", "PorcentajeDescuentoEspecial");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -12257,13 +12486,13 @@ WHERE        (Usuarios.Estado = 0)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        IdTipoCliente, Nombre, Descripcion, PorcentajeDescuentoEspecial\r\nFR" +
-                "OM            TiposdeClientes\r\nWHERE        (Estado = 1)";
+            this._commandCollection[0].CommandText = "SELECT        IdTipoCliente, Nombre, Descripcion, PorcentajeDescuentoEspecial,Est" +
+                "ado\r\nFROM            TiposdeClientes\r\nWHERE        (Estado = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        IdTipoCliente, Nombre, Descripcion, PorcentajeDescuentoEspecial\r\nFR" +
-                "OM            TiposdeClientes\r\nWHERE        (Estado = 0)";
+            this._commandCollection[1].CommandText = "SELECT Descripcion, Estado, IdTipoCliente, Nombre, PorcentajeDescuentoEspecial FR" +
+                "OM TiposdeClientes WHERE (Estado = 0)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -12547,6 +12776,8 @@ WHERE        (Usuarios.Estado = 0)";
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Dirección", "Dirección");
             tableMapping.ColumnMappings.Add("Télefono", "Télefono");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("IdProveedor", "IdProveedor");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -12563,13 +12794,13 @@ WHERE        (Usuarios.Estado = 0)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Nombre, Dirección, Télefono\r\nFROM            Proveedores\r\nWHERE    " +
-                "    (Estado = 1)";
+            this._commandCollection[0].CommandText = "SELECT        IdProveedor, Nombre, Dirección, Télefono, Estado\r\nFROM            P" +
+                "roveedores\r\nWHERE        (Estado = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Nombre, Dirección, Télefono\r\nFROM            Proveedores\r\nWHERE    " +
-                "    (Estado = 0)";
+            this._commandCollection[1].CommandText = "SELECT        IdProveedor, Nombre, Dirección, Télefono, Estado\r\nFROM            P" +
+                "roveedores\r\nWHERE        (Estado = 0)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -12867,6 +13098,7 @@ WHERE        (Usuarios.Estado = 0)";
             tableMapping.ColumnMappings.Add("CorreoElectronico", "CorreoElectronico");
             tableMapping.ColumnMappings.Add("IdTipoCliente", "IdTipoCliente");
             tableMapping.ColumnMappings.Add("Nit", "Nit");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -12884,14 +13116,13 @@ WHERE        (Usuarios.Estado = 0)";
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        IdCliente, Nombres, Apellidos, Dirección, NúmeroDeCelular, CorreoEl" +
-                "ectronico, IdTipoCliente, Nit\r\nFROM            Clientes\r\nWHERE        (Estado = " +
-                "1)";
+                "ectronico, IdTipoCliente, Nit, Estado\r\nFROM            Clientes\r\nWHERE        (E" +
+                "stado = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        IdCliente, Nombres, Apellidos, Dirección, NúmeroDeCelular, CorreoEl" +
-                "ectronico, IdTipoCliente, Nit\r\nFROM            Clientes\r\nWHERE        (Estado = " +
-                "0)";
+            this._commandCollection[1].CommandText = "SELECT Apellidos, CorreoElectronico, Dirección, Estado, IdCliente, IdTipoCliente," +
+                " Nit, Nombres, NúmeroDeCelular FROM Clientes WHERE (Estado = 0)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -13232,6 +13463,7 @@ WHERE        (Usuarios.Estado = 0)";
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("IdCategoría", "IdCategoría");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13248,13 +13480,13 @@ WHERE        (Usuarios.Estado = 0)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        IdCategoría, Nombre, Descripcion\r\nFROM            Categorías\r\nWHERE" +
-                "        (Estado = 1)";
+            this._commandCollection[0].CommandText = "SELECT        IdCategoría, Nombre, Descripcion, Estado\r\nFROM            Categoría" +
+                "s\r\nWHERE        (Estado = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        IdCategoría, Nombre, Descripcion\r\nFROM            Categorías\r\nWHERE" +
-                "        (Estado = 0)";
+            this._commandCollection[1].CommandText = "SELECT Descripcion, Estado, IdCategoría, Nombre, Estado FROM Categorías WHERE (Es" +
+                "tado = 0)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -13843,6 +14075,7 @@ WHERE        (Usuarios.Estado = 0)";
             tableMapping.ColumnMappings.Add("IdCategoría", "IdCategoría");
             tableMapping.ColumnMappings.Add("FechadeIngreso", "FechadeIngreso");
             tableMapping.ColumnMappings.Add("IdProveedor", "IdProveedor");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13861,13 +14094,14 @@ WHERE        (Usuarios.Estado = 0)";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        IdProducto, Descripción, Nombre, Precio_de_Venta, Porcentaje_de_des" +
                 "cuento, IdMarca, Modelo, Stock, ExistenciaMínima, IdGarantía, IdCategoría, Fecha" +
-                "deIngreso, IdProveedor\r\nFROM            Productos\r\nWHERE        (Estado = 1)";
+                "deIngreso, IdProveedor, Estado\r\nFROM            Productos\r\nWHERE        (Estado " +
+                "= 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        IdProducto, Descripción, Nombre, Precio_de_Venta, Porcentaje_de_des" +
-                "cuento, IdMarca, Modelo, Stock, ExistenciaMínima, IdGarantía, IdCategoría, Fecha" +
-                "deIngreso, IdProveedor\r\nFROM            Productos\r\nWHERE        (Estado = 0)";
+            this._commandCollection[1].CommandText = "SELECT Descripción, Estado, ExistenciaMínima, FechadeIngreso, IdCategoría, IdGara" +
+                "ntía, IdMarca, IdProducto, IdProveedor, Modelo, Nombre, Porcentaje_de_descuento," +
+                " Precio_de_Venta, Stock, Estado FROM Productos WHERE (Estado = 0)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -14454,6 +14688,7 @@ WHERE        (IdProducto = @id)";
             tableMapping.ColumnMappings.Add("IdProducto", "IdProducto");
             tableMapping.ColumnMappings.Add("IdProveedor", "IdProveedor");
             tableMapping.ColumnMappings.Add("CantidadSolicitada", "CantidadSolicitada");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -14467,37 +14702,42 @@ WHERE        (IdProducto = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        IdSolicitud, IdProducto, IdProveedor, CantidadSolicitada\r\nFROM     " +
-                "       SolicitudProductosaProveedores\r\nWHERE        (Estado = 1)";
+            this._commandCollection[0].CommandText = "SELECT        IdSolicitud, IdProducto, IdProveedor, CantidadSolicitada, Estado\r\nF" +
+                "ROM            SolicitudProductosaProveedores\r\nWHERE        (Estado = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        IdSolicitud, IdProducto, IdProveedor, CantidadSolicitada\r\nFROM     " +
-                "       SolicitudProductosaProveedores\r\nWHERE        (Estado = 0)";
+            this._commandCollection[1].CommandText = "SELECT        IdSolicitud, IdProducto, IdProveedor, CantidadSolicitada, Estado\r\nF" +
+                "ROM            SolicitudProductosaProveedores\r\nWHERE        (Estado = 2)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO SolicitudProductosaProveedores\r\n                         (IdProducto," +
-                " IdProveedor, CantidadSolicitada, Estado)\r\nVALUES        (@idprod,@idprovee,@can" +
-                "tidad, 1)";
+            this._commandCollection[2].CommandText = "SELECT CantidadSolicitada, Estado, IdProducto, IdProveedor, IdSolicitud, Estado F" +
+                "ROM SolicitudProductosaProveedores WHERE (Estado = 0)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idprod", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProducto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idprovee", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadSolicitada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE       SolicitudProductosaProveedores\r\nSET                IdProducto = @idp" +
+            this._commandCollection[3].CommandText = "INSERT INTO SolicitudProductosaProveedores\r\n                         (IdProducto," +
+                " IdProveedor, CantidadSolicitada, Estado)\r\nVALUES        (@idprod,@idprovee,@can" +
+                "tidad, 1)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idprod", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProducto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idprovee", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadSolicitada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE       SolicitudProductosaProveedores\r\nSET                IdProducto = @idp" +
                 "roducto, IdProveedor = @idproveedor, CantidadSolicitada = @cantidad, Estado = @e" +
                 "stado\r\nWHERE        (IdSolicitud = @id)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idproducto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProducto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idproveedor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadSolicitada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdSolicitud", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idproducto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProducto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idproveedor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadSolicitada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdSolicitud", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14515,8 +14755,19 @@ WHERE        (IdProducto = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetVentas.SolicitudProductosaProveedoresDataTable GetDataSolicitudInactivos() {
+        public virtual DataSetVentas.SolicitudProductosaProveedoresDataTable GetDataCompletados() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            DataSetVentas.SolicitudProductosaProveedoresDataTable dataTable = new DataSetVentas.SolicitudProductosaProveedoresDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetVentas.SolicitudProductosaProveedoresDataTable GetDataSolicitudInactivos() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             DataSetVentas.SolicitudProductosaProveedoresDataTable dataTable = new DataSetVentas.SolicitudProductosaProveedoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -14527,7 +14778,7 @@ WHERE        (IdProducto = @id)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuerySolicitud(int idprod, int idprovee, int cantidad) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((int)(idprod));
             command.Parameters[1].Value = ((int)(idprovee));
             command.Parameters[2].Value = ((int)(cantidad));
@@ -14553,7 +14804,7 @@ WHERE        (IdProducto = @id)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuerySolicitud(int idproducto, int idproveedor, int cantidad, int estado, int id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             command.Parameters[0].Value = ((int)(idproducto));
             command.Parameters[1].Value = ((int)(idproveedor));
             command.Parameters[2].Value = ((int)(cantidad));

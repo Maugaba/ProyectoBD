@@ -152,6 +152,7 @@
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
             this.buttonNuevo.UseVisualStyleBackColor = false;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // buttonGuardar
             // 
@@ -172,6 +173,7 @@
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
             this.buttonGuardar.UseVisualStyleBackColor = false;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonEditar
             // 
@@ -192,6 +194,7 @@
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.TextColor = System.Drawing.Color.White;
             this.buttonEditar.UseVisualStyleBackColor = false;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonListarActivos
             // 
@@ -212,6 +215,7 @@
             this.buttonListarActivos.Text = "Listar Activos";
             this.buttonListarActivos.TextColor = System.Drawing.Color.White;
             this.buttonListarActivos.UseVisualStyleBackColor = false;
+            this.buttonListarActivos.Click += new System.EventHandler(this.buttonListarActivos_Click);
             // 
             // buttonListarInactivos
             // 
@@ -232,6 +236,7 @@
             this.buttonListarInactivos.Text = "Listar Inactivos";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
             this.buttonListarInactivos.UseVisualStyleBackColor = false;
+            this.buttonListarInactivos.Click += new System.EventHandler(this.buttonListarInactivos_Click);
             // 
             // dataGridView1
             // 
@@ -244,6 +249,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1424, 389);
             this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // FormProveedores
             // 

@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogicaCategoria.cs" />
+    <Compile Include="LogicaClientes.cs" />
+    <Compile Include="LogicaProductos.cs" />
+    <Compile Include="LogicaProveedores.cs" />
+    <Compile Include="LogicaSolocitud.cs" />
+    <Compile Include="LogicaTiposClientes.cs" />
     <Compile Include="LogicaGarantia.cs" />
     <Compile Include="LogicaMarca.cs" />
     <Compile Include="LogicaMetododePago.cs" />

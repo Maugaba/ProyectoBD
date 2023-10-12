@@ -115,12 +115,14 @@ namespace UI
 
         private void ButtonProveedores_Click(object sender, EventArgs e)
         {
-
+            FormProveedores formproveedores = new FormProveedores();
+            formproveedores.Show();
         }
 
         private void ButtonClientes_Click(object sender, EventArgs e)
         {
-
+            FormClientes formcliente = new FormClientes();
+            formcliente.Show();
         }
 
         class MyObject

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxdescuento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDescripcion = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxdescuento);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxDescripcion);
@@ -66,13 +66,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipos De Cliente";
             // 
-            // textBox1
+            // textBoxdescuento
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(752, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 39);
-            this.textBox1.TabIndex = 6;
+            this.textBoxdescuento.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxdescuento.Location = new System.Drawing.Point(752, 68);
+            this.textBoxdescuento.Name = "textBoxdescuento";
+            this.textBoxdescuento.Size = new System.Drawing.Size(337, 39);
+            this.textBoxdescuento.TabIndex = 6;
             // 
             // label2
             // 
@@ -155,6 +155,7 @@
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
             this.buttonNuevo.UseVisualStyleBackColor = false;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // buttonGuardar
             // 
@@ -175,6 +176,7 @@
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
             this.buttonGuardar.UseVisualStyleBackColor = false;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonEditar
             // 
@@ -195,6 +197,7 @@
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.TextColor = System.Drawing.Color.White;
             this.buttonEditar.UseVisualStyleBackColor = false;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonListarActivos
             // 
@@ -215,6 +218,7 @@
             this.buttonListarActivos.Text = "Listar Activos";
             this.buttonListarActivos.TextColor = System.Drawing.Color.White;
             this.buttonListarActivos.UseVisualStyleBackColor = false;
+            this.buttonListarActivos.Click += new System.EventHandler(this.buttonListarActivos_Click);
             // 
             // buttonListarInactivos
             // 
@@ -235,6 +239,7 @@
             this.buttonListarInactivos.Text = "Listar Inactivos";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
             this.buttonListarInactivos.UseVisualStyleBackColor = false;
+            this.buttonListarInactivos.Click += new System.EventHandler(this.buttonListarInactivos_Click);
             // 
             // dataGridView1
             // 
@@ -247,6 +252,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1424, 389);
             this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // FormTipoDeCliente
             // 
@@ -280,7 +286,7 @@
         private System.Windows.Forms.CheckBox checkBoxEstado;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxdescuento;
         private RJButton buttonNuevo;
         private RJButton buttonGuardar;
         private RJButton buttonEditar;
