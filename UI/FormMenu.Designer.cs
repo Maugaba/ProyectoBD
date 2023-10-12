@@ -42,6 +42,7 @@
             this.ButtonVentas = new UI.RJButton();
             this.rjButtonCloseSession = new UI.RJButton();
             this.rjButtonProductos = new UI.RJButton();
+            this.rjButtonSolicitudPP = new UI.RJButton();
             this.SuspendLayout();
             // 
             // buttonUsuario
@@ -228,7 +229,7 @@
             this.ButtonCategoriaProducto.Name = "ButtonCategoriaProducto";
             this.ButtonCategoriaProducto.Size = new System.Drawing.Size(223, 122);
             this.ButtonCategoriaProducto.TabIndex = 35;
-            this.ButtonCategoriaProducto.Text = "Categorias de Productos";
+            this.ButtonCategoriaProducto.Text = "Categorias";
             this.ButtonCategoriaProducto.TextColor = System.Drawing.Color.White;
             this.ButtonCategoriaProducto.UseVisualStyleBackColor = false;
             this.ButtonCategoriaProducto.Click += new System.EventHandler(this.ButtonCategoriaProducto_Click);
@@ -328,13 +329,35 @@
             this.rjButtonProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButtonProductos.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButtonProductos.ForeColor = System.Drawing.Color.White;
-            this.rjButtonProductos.Location = new System.Drawing.Point(647, 626);
+            this.rjButtonProductos.Location = new System.Drawing.Point(232, 610);
             this.rjButtonProductos.Name = "rjButtonProductos";
             this.rjButtonProductos.Size = new System.Drawing.Size(223, 122);
             this.rjButtonProductos.TabIndex = 42;
             this.rjButtonProductos.Text = "Productos";
             this.rjButtonProductos.TextColor = System.Drawing.Color.White;
             this.rjButtonProductos.UseVisualStyleBackColor = false;
+            this.rjButtonProductos.Click += new System.EventHandler(this.rjButtonProductos_Click);
+            // 
+            // rjButtonSolicitudPP
+            // 
+            this.rjButtonSolicitudPP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rjButtonSolicitudPP.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonSolicitudPP.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonSolicitudPP.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButtonSolicitudPP.BorderRadius = 40;
+            this.rjButtonSolicitudPP.BorderSize = 0;
+            this.rjButtonSolicitudPP.FlatAppearance.BorderSize = 0;
+            this.rjButtonSolicitudPP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButtonSolicitudPP.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButtonSolicitudPP.ForeColor = System.Drawing.Color.White;
+            this.rjButtonSolicitudPP.Location = new System.Drawing.Point(504, 610);
+            this.rjButtonSolicitudPP.Name = "rjButtonSolicitudPP";
+            this.rjButtonSolicitudPP.Size = new System.Drawing.Size(223, 122);
+            this.rjButtonSolicitudPP.TabIndex = 43;
+            this.rjButtonSolicitudPP.Text = "Solicitud Producto Proveedor";
+            this.rjButtonSolicitudPP.TextColor = System.Drawing.Color.White;
+            this.rjButtonSolicitudPP.UseVisualStyleBackColor = false;
+            this.rjButtonSolicitudPP.Click += new System.EventHandler(this.rjButtonSolicitudPP_Click);
             // 
             // FormMenu
             // 
@@ -343,6 +366,7 @@
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1540, 819);
+            this.Controls.Add(this.rjButtonSolicitudPP);
             this.Controls.Add(this.rjButtonProductos);
             this.Controls.Add(this.rjButtonCloseSession);
             this.Controls.Add(this.ButtonVentas);
@@ -382,5 +406,6 @@
         private RJButton ButtonVentas;
         private RJButton rjButtonCloseSession;
         private RJButton rjButtonProductos;
+        private RJButton rjButtonSolicitudPP;
     }
 }

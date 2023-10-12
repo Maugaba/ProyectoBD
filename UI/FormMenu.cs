@@ -110,7 +110,8 @@ namespace UI
 
         private void ButtonCategoriaProducto_Click(object sender, EventArgs e)
         {
-
+            FormCategorias formcateg = new FormCategorias();
+            formcateg.Show();
         }
 
         private void ButtonProveedores_Click(object sender, EventArgs e)
@@ -131,6 +132,18 @@ namespace UI
             public int rol { get; set; }
             public int permiso { get; set; }
             public byte estado { get; set; }
+        }
+
+        private void rjButtonProductos_Click(object sender, EventArgs e)
+        {
+            FormProductos formproductos = new FormProductos();
+            formproductos.Show();
+        }
+
+        private void rjButtonSolicitudPP_Click(object sender, EventArgs e)
+        {
+            FormSolicitudProductoProveedor formsolicitudpp = new FormSolicitudProductoProveedor();
+            formsolicitudpp.Show();
         }
     }
 }

@@ -67,6 +67,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategorias.Designer.cs">
+      <DependentUpon>FormCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,12 @@
     <Compile Include="FormPermisos.Designer.cs">
       <DependentUpon>FormPermisos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductos.Designer.cs">
+      <DependentUpon>FormProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,12 @@
     </Compile>
     <Compile Include="FormRol.Designer.cs">
       <DependentUpon>FormRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSolicitudProductoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSolicitudProductoProveedor.Designer.cs">
+      <DependentUpon>FormSolicitudProductoProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTipoDeCliente.cs">
       <SubType>Form</SubType>
@@ -144,6 +162,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCategorias.resx">
+      <DependentUpon>FormCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,11 +186,17 @@
     <EmbeddedResource Include="FormPermisos.resx">
       <DependentUpon>FormPermisos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProductos.resx">
+      <DependentUpon>FormProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProveedores.resx">
       <DependentUpon>FormProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRol.resx">
       <DependentUpon>FormRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSolicitudProductoProveedor.resx">
+      <DependentUpon>FormSolicitudProductoProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTipoDeCliente.resx">
       <DependentUpon>FormTipoDeCliente.cs</DependentUpon>
