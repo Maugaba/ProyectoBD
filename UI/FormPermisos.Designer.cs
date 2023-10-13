@@ -47,7 +47,7 @@
             this.rjToggleGarantias = new UI.RJToggleButton();
             this.rjToggleVentas = new UI.RJToggleButton();
             this.rjToggleButtonRoles = new UI.RJToggleButton();
-            this.rjToggleButtonFacturas = new UI.RJToggleButton();
+            this.rjToggleButtonReportes = new UI.RJToggleButton();
             this.ToggleButtonMarcas = new UI.RJToggleButton();
             this.ToggleButtonCategoriaDeProductos = new UI.RJToggleButton();
             this.ToggleButtonProductos = new UI.RJToggleButton();
@@ -55,7 +55,7 @@
             this.ToggleButtonClientes = new UI.RJToggleButton();
             this.ToggleButtonEmpleados = new UI.RJToggleButton();
             this.ToggleButtonUsuarios = new UI.RJToggleButton();
-            this.rjToggleButton1 = new UI.RJToggleButton();
+            this.rjToggleButtonSolicitud = new UI.RJToggleButton();
             this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -143,9 +143,9 @@
             this.label8.Font = new System.Drawing.Font("Arial", 27.75F);
             this.label8.Location = new System.Drawing.Point(782, 162);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(161, 42);
+            this.label8.Size = new System.Drawing.Size(167, 42);
             this.label8.TabIndex = 14;
-            this.label8.Text = "Facturas";
+            this.label8.Text = "Reportes";
             // 
             // label9
             // 
@@ -290,18 +290,18 @@
             this.rjToggleButtonRoles.TabIndex = 22;
             this.rjToggleButtonRoles.UseVisualStyleBackColor = true;
             // 
-            // rjToggleButtonFacturas
+            // rjToggleButtonReportes
             // 
-            this.rjToggleButtonFacturas.Location = new System.Drawing.Point(1040, 162);
-            this.rjToggleButtonFacturas.MinimumSize = new System.Drawing.Size(45, 22);
-            this.rjToggleButtonFacturas.Name = "rjToggleButtonFacturas";
-            this.rjToggleButtonFacturas.OffBackColor = System.Drawing.Color.IndianRed;
-            this.rjToggleButtonFacturas.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.rjToggleButtonFacturas.OnBackColor = System.Drawing.Color.MediumAquamarine;
-            this.rjToggleButtonFacturas.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.rjToggleButtonFacturas.Size = new System.Drawing.Size(149, 42);
-            this.rjToggleButtonFacturas.TabIndex = 21;
-            this.rjToggleButtonFacturas.UseVisualStyleBackColor = true;
+            this.rjToggleButtonReportes.Location = new System.Drawing.Point(1040, 162);
+            this.rjToggleButtonReportes.MinimumSize = new System.Drawing.Size(45, 22);
+            this.rjToggleButtonReportes.Name = "rjToggleButtonReportes";
+            this.rjToggleButtonReportes.OffBackColor = System.Drawing.Color.IndianRed;
+            this.rjToggleButtonReportes.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.rjToggleButtonReportes.OnBackColor = System.Drawing.Color.MediumAquamarine;
+            this.rjToggleButtonReportes.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.rjToggleButtonReportes.Size = new System.Drawing.Size(149, 42);
+            this.rjToggleButtonReportes.TabIndex = 21;
+            this.rjToggleButtonReportes.UseVisualStyleBackColor = true;
             // 
             // ToggleButtonMarcas
             // 
@@ -395,18 +395,18 @@
             this.ToggleButtonUsuarios.TabIndex = 0;
             this.ToggleButtonUsuarios.UseVisualStyleBackColor = true;
             // 
-            // rjToggleButton1
+            // rjToggleButtonSolicitud
             // 
-            this.rjToggleButton1.Location = new System.Drawing.Point(1040, 627);
-            this.rjToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
-            this.rjToggleButton1.Name = "rjToggleButton1";
-            this.rjToggleButton1.OffBackColor = System.Drawing.Color.IndianRed;
-            this.rjToggleButton1.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.rjToggleButton1.OnBackColor = System.Drawing.Color.MediumAquamarine;
-            this.rjToggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.rjToggleButton1.Size = new System.Drawing.Size(149, 42);
-            this.rjToggleButton1.TabIndex = 32;
-            this.rjToggleButton1.UseVisualStyleBackColor = true;
+            this.rjToggleButtonSolicitud.Location = new System.Drawing.Point(1040, 627);
+            this.rjToggleButtonSolicitud.MinimumSize = new System.Drawing.Size(45, 22);
+            this.rjToggleButtonSolicitud.Name = "rjToggleButtonSolicitud";
+            this.rjToggleButtonSolicitud.OffBackColor = System.Drawing.Color.IndianRed;
+            this.rjToggleButtonSolicitud.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.rjToggleButtonSolicitud.OnBackColor = System.Drawing.Color.MediumAquamarine;
+            this.rjToggleButtonSolicitud.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.rjToggleButtonSolicitud.Size = new System.Drawing.Size(149, 42);
+            this.rjToggleButtonSolicitud.TabIndex = 32;
+            this.rjToggleButtonSolicitud.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -426,7 +426,7 @@
             this.BackgroundImage = global::UI.Properties.Resources.Fondo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1352, 857);
-            this.Controls.Add(this.rjToggleButton1);
+            this.Controls.Add(this.rjToggleButtonSolicitud);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.rjToggleButtonTiposClientes);
             this.Controls.Add(this.label10);
@@ -435,7 +435,7 @@
             this.Controls.Add(this.rjToggleGarantias);
             this.Controls.Add(this.rjToggleVentas);
             this.Controls.Add(this.rjToggleButtonRoles);
-            this.Controls.Add(this.rjToggleButtonFacturas);
+            this.Controls.Add(this.rjToggleButtonReportes);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -486,7 +486,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private RJToggleButton rjToggleButtonFacturas;
+        private RJToggleButton rjToggleButtonReportes;
         private RJToggleButton rjToggleButtonRoles;
         private RJToggleButton rjToggleVentas;
         private RJToggleButton rjToggleGarantias;
@@ -494,7 +494,7 @@
         private RJButton buttonGuardar;
         private RJToggleButton rjToggleButtonTiposClientes;
         private System.Windows.Forms.Label label10;
-        private RJToggleButton rjToggleButton1;
+        private RJToggleButton rjToggleButtonSolicitud;
         private System.Windows.Forms.Label label11;
     }
 }

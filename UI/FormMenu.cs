@@ -16,10 +16,12 @@ namespace UI
     {
         LogicaRol LogicaRol = new LogicaRol();
         private int id;
-        public FormMenu(int id)
+        private int iduser;
+        public FormMenu(int id, int iduser)
         {
             InitializeComponent();
             this.id = id;
+            this.iduser = iduser;
         }
 
         private void buttonUsuario_Click(object sender, EventArgs e)
@@ -95,6 +97,7 @@ namespace UI
             ButtonMetodoDePago.Enabled = Convert.ToBoolean(listaDeObjetos[10].estado);
             ButtonTiposDeClientes.Enabled = Convert.ToBoolean(listaDeObjetos[11].estado);
             ButtonVentas.Enabled = Convert.ToBoolean(listaDeObjetos[12].estado);
+            rjButtonSolicitudPP.Enabled = Convert.ToBoolean(listaDeObjetos[13].estado);
         }
 
         private void ButtonTiposDeClientes_Click(object sender, EventArgs e)

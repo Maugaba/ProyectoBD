@@ -101,7 +101,7 @@ namespace UI
                     error = 0;
                     if (item.password == ComprobarContraseña(textBoxContraseña.Text))
                     {
-                        FormMenu form = new FormMenu(item.rol);
+                        FormMenu form = new FormMenu(item.rol, item.Id);
                         form.Show();
                         this.Hide();
                         return;

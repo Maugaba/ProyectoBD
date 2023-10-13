@@ -42,7 +42,7 @@ namespace BLL
                 return "Error: la categoria " + nombre + " ya existe previamente";
             else
             {
-                CATEGORIAS.InsertQueryCategoria(nombre, descripcion);
+                CATEGORIAS.InsertQueryCategorias(nombre, descripcion);
                 return "La categoria " + nombre + " ha sido agregada exitosamente";
             }
         }//fin del metodo NuevoEmpleado

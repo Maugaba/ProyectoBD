@@ -49,12 +49,13 @@ namespace UI
                 ToggleButtonProductos.Checked = Convert.ToBoolean(listaDeObjetos[4].estado);
                 ToggleButtonCategoriaDeProductos.Checked = Convert.ToBoolean(listaDeObjetos[5].estado);
                 ToggleButtonMarcas.Checked = Convert.ToBoolean(listaDeObjetos[6].estado);
-                rjToggleButtonFacturas.Checked = Convert.ToBoolean(listaDeObjetos[7].estado);
+                rjToggleButtonReportes.Checked = Convert.ToBoolean(listaDeObjetos[7].estado);
                 rjToggleButtonRoles.Checked = Convert.ToBoolean(listaDeObjetos[8].estado);
                 rjToggleGarantias.Checked = Convert.ToBoolean(listaDeObjetos[9].estado);
                 rjToggleMetodos.Checked = Convert.ToBoolean(listaDeObjetos[10].estado);
                 rjToggleButtonTiposClientes.Checked = Convert.ToBoolean(listaDeObjetos[11].estado);
                 rjToggleVentas.Checked = Convert.ToBoolean(listaDeObjetos[12].estado);
+                rjToggleButtonSolicitud.Checked = Convert.ToBoolean(listaDeObjetos[13].estado);
             }
         }
 
@@ -90,12 +91,13 @@ namespace UI
             LogicaRol.NuevoPermiso(id, 5, Convert.ToByte(ToggleButtonProductos.Checked));
             LogicaRol.NuevoPermiso(id, 6, Convert.ToByte(ToggleButtonCategoriaDeProductos.Checked));
             LogicaRol.NuevoPermiso(id, 7, Convert.ToByte(ToggleButtonMarcas.Checked));
-            LogicaRol.NuevoPermiso(id, 8, Convert.ToByte(rjToggleButtonFacturas.Checked));
+            LogicaRol.NuevoPermiso(id, 8, Convert.ToByte(rjToggleButtonReportes.Checked));
             LogicaRol.NuevoPermiso(id, 9, Convert.ToByte(rjToggleButtonRoles.Checked));
             LogicaRol.NuevoPermiso(id, 10, Convert.ToByte(rjToggleGarantias.Checked));
             LogicaRol.NuevoPermiso(id, 11, Convert.ToByte(rjToggleMetodos.Checked));
             LogicaRol.NuevoPermiso(id, 12, Convert.ToByte(rjToggleButtonTiposClientes.Checked));
             LogicaRol.NuevoPermiso(id, 13, Convert.ToByte(rjToggleVentas.Checked));
+            LogicaRol.NuevoPermiso(id, 14, Convert.ToByte(rjToggleButtonSolicitud.Checked));
             MessageBox.Show("Se han guardado los permisos correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
@@ -109,12 +111,13 @@ namespace UI
             LogicaRol.EditarPermiso(Convert.ToByte(ToggleButtonProductos.Checked), listaDeObjetos[4].Id);
             LogicaRol.EditarPermiso(Convert.ToByte(ToggleButtonCategoriaDeProductos.Checked), listaDeObjetos[5].Id);
             LogicaRol.EditarPermiso(Convert.ToByte(ToggleButtonMarcas.Checked), listaDeObjetos[6].Id);
-            LogicaRol.EditarPermiso(Convert.ToByte(rjToggleButtonFacturas.Checked), listaDeObjetos[7].Id);
+            LogicaRol.EditarPermiso(Convert.ToByte(rjToggleButtonReportes.Checked), listaDeObjetos[7].Id);
             LogicaRol.EditarPermiso(Convert.ToByte(rjToggleButtonRoles.Checked), listaDeObjetos[8].Id);
             LogicaRol.EditarPermiso(Convert.ToByte(rjToggleGarantias.Checked), listaDeObjetos[9].Id);
             LogicaRol.EditarPermiso(Convert.ToByte(rjToggleMetodos.Checked), listaDeObjetos[10].Id);
             LogicaRol.EditarPermiso(Convert.ToByte(rjToggleButtonTiposClientes.Checked), listaDeObjetos[11].Id);
             LogicaRol.EditarPermiso(Convert.ToByte(rjToggleVentas.Checked), listaDeObjetos[12].Id);
+            LogicaRol.EditarPermiso(Convert.ToByte(rjToggleButtonSolicitud.Checked), listaDeObjetos[13].Id);
             MessageBox.Show("Se han editado los permisos correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }

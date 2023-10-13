@@ -53,6 +53,8 @@
     <Compile Include="LogicaRol.cs" />
     <Compile Include="LogicaEmpleado.cs" />
     <Compile Include="LogicaUsuario.cs" />
+    <Compile Include="LogicaVentas.cs" />
+    <Compile Include="Productosventa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

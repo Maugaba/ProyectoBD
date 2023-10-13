@@ -29,19 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxDPI = new System.Windows.Forms.TextBox();
+            this.Estado = new System.Windows.Forms.Label();
+            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
+            this.comboBoxProveedor = new System.Windows.Forms.ComboBox();
+            this.comboBoxProducto = new System.Windows.Forms.ComboBox();
+            this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DPI = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBoxEstado = new System.Windows.Forms.CheckBox();
             this.buttonListarInactivos = new UI.RJButton();
             this.buttonEditar = new UI.RJButton();
             this.buttonListarActivos = new UI.RJButton();
             this.buttonGuardar = new UI.RJButton();
             this.buttonNuevo = new UI.RJButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBoxProducto = new System.Windows.Forms.ComboBox();
-            this.comboBoxProveedor = new System.Windows.Forms.ComboBox();
+            this.clientesTableAdapter1 = new DAL.DataSetVentasTableAdapters.ClientesTableAdapter();
+            this.rjButtonListarCompletados = new UI.RJButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -50,13 +53,14 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.Estado);
+            this.groupBox1.Controls.Add(this.comboBoxEstado);
             this.groupBox1.Controls.Add(this.comboBoxProveedor);
             this.groupBox1.Controls.Add(this.comboBoxProducto);
-            this.groupBox1.Controls.Add(this.textBoxDPI);
+            this.groupBox1.Controls.Add(this.textBoxCantidad);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.DPI);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.checkBoxEstado);
             this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(134, 32);
@@ -66,19 +70,57 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solicitud Producto Proveedor";
             // 
-            // textBoxDPI
+            // Estado
             // 
-            this.textBoxDPI.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDPI.Location = new System.Drawing.Point(446, 249);
-            this.textBoxDPI.Name = "textBoxDPI";
-            this.textBoxDPI.Size = new System.Drawing.Size(391, 39);
-            this.textBoxDPI.TabIndex = 8;
+            this.Estado.AutoSize = true;
+            this.Estado.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Estado.Location = new System.Drawing.Point(865, 128);
+            this.Estado.Name = "Estado";
+            this.Estado.Size = new System.Drawing.Size(99, 32);
+            this.Estado.TabIndex = 18;
+            this.Estado.Text = "Estado";
+            // 
+            // comboBoxEstado
+            // 
+            this.comboBoxEstado.FormattingEnabled = true;
+            this.comboBoxEstado.Items.AddRange(new object[] {
+            "Cancelado",
+            "Activo",
+            "Completado"});
+            this.comboBoxEstado.Location = new System.Drawing.Point(748, 163);
+            this.comboBoxEstado.Name = "comboBoxEstado";
+            this.comboBoxEstado.Size = new System.Drawing.Size(341, 40);
+            this.comboBoxEstado.TabIndex = 17;
+            // 
+            // comboBoxProveedor
+            // 
+            this.comboBoxProveedor.FormattingEnabled = true;
+            this.comboBoxProveedor.Location = new System.Drawing.Point(287, 163);
+            this.comboBoxProveedor.Name = "comboBoxProveedor";
+            this.comboBoxProveedor.Size = new System.Drawing.Size(391, 40);
+            this.comboBoxProveedor.TabIndex = 16;
+            // 
+            // comboBoxProducto
+            // 
+            this.comboBoxProducto.FormattingEnabled = true;
+            this.comboBoxProducto.Location = new System.Drawing.Point(287, 83);
+            this.comboBoxProducto.Name = "comboBoxProducto";
+            this.comboBoxProducto.Size = new System.Drawing.Size(391, 40);
+            this.comboBoxProducto.TabIndex = 15;
+            // 
+            // textBoxCantidad
+            // 
+            this.textBoxCantidad.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCantidad.Location = new System.Drawing.Point(287, 249);
+            this.textBoxCantidad.Name = "textBoxCantidad";
+            this.textBoxCantidad.Size = new System.Drawing.Size(391, 39);
+            this.textBoxCantidad.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(317, 86);
+            this.label1.Location = new System.Drawing.Point(158, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 32);
             this.label1.TabIndex = 0;
@@ -88,7 +130,7 @@
             // 
             this.DPI.AutoSize = true;
             this.DPI.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DPI.Location = new System.Drawing.Point(191, 249);
+            this.DPI.Location = new System.Drawing.Point(32, 249);
             this.DPI.Name = "DPI";
             this.DPI.Size = new System.Drawing.Size(249, 32);
             this.DPI.TabIndex = 7;
@@ -97,28 +139,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(303, 166);
+            this.label2.Location = new System.Drawing.Point(144, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Proveedor";
-            // 
-            // checkBoxEstado
-            // 
-            this.checkBoxEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxEstado.AutoSize = true;
-            this.checkBoxEstado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBoxEstado.Cursor = System.Windows.Forms.Cursors.Default;
-            this.checkBoxEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBoxEstado.Location = new System.Drawing.Point(937, 162);
-            this.checkBoxEstado.Name = "checkBoxEstado";
-            this.checkBoxEstado.Size = new System.Drawing.Size(115, 36);
-            this.checkBoxEstado.TabIndex = 2;
-            this.checkBoxEstado.Text = "Estado";
-            this.checkBoxEstado.UseVisualStyleBackColor = true;
-            this.checkBoxEstado.Visible = false;
             // 
             // buttonListarInactivos
             // 
@@ -136,7 +161,7 @@
             this.buttonListarInactivos.Name = "buttonListarInactivos";
             this.buttonListarInactivos.Size = new System.Drawing.Size(135, 85);
             this.buttonListarInactivos.TabIndex = 30;
-            this.buttonListarInactivos.Text = "Listar Inactivos";
+            this.buttonListarInactivos.Text = "Listar Cancelados";
             this.buttonListarInactivos.TextColor = System.Drawing.Color.White;
             this.buttonListarInactivos.UseVisualStyleBackColor = false;
             // 
@@ -192,13 +217,14 @@
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(-5, 224);
+            this.buttonGuardar.Location = new System.Drawing.Point(-6, 188);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(135, 85);
             this.buttonGuardar.TabIndex = 27;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextColor = System.Drawing.Color.White;
             this.buttonGuardar.UseVisualStyleBackColor = false;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonNuevo
             // 
@@ -212,13 +238,14 @@
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNuevo.Font = new System.Drawing.Font("Arial", 20.25F);
             this.buttonNuevo.ForeColor = System.Drawing.Color.White;
-            this.buttonNuevo.Location = new System.Drawing.Point(-6, 92);
+            this.buttonNuevo.Location = new System.Drawing.Point(-7, 82);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(135, 85);
             this.buttonNuevo.TabIndex = 26;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextColor = System.Drawing.Color.White;
             this.buttonNuevo.UseVisualStyleBackColor = false;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // dataGridView1
             // 
@@ -232,27 +259,36 @@
             this.dataGridView1.Size = new System.Drawing.Size(1424, 389);
             this.dataGridView1.TabIndex = 31;
             // 
-            // comboBoxProducto
+            // clientesTableAdapter1
             // 
-            this.comboBoxProducto.FormattingEnabled = true;
-            this.comboBoxProducto.Location = new System.Drawing.Point(446, 83);
-            this.comboBoxProducto.Name = "comboBoxProducto";
-            this.comboBoxProducto.Size = new System.Drawing.Size(391, 40);
-            this.comboBoxProducto.TabIndex = 15;
+            this.clientesTableAdapter1.ClearBeforeFill = true;
             // 
-            // comboBoxProveedor
+            // rjButtonListarCompletados
             // 
-            this.comboBoxProveedor.FormattingEnabled = true;
-            this.comboBoxProveedor.Location = new System.Drawing.Point(446, 163);
-            this.comboBoxProveedor.Name = "comboBoxProveedor";
-            this.comboBoxProveedor.Size = new System.Drawing.Size(391, 40);
-            this.comboBoxProveedor.TabIndex = 16;
+            this.rjButtonListarCompletados.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rjButtonListarCompletados.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonListarCompletados.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButtonListarCompletados.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButtonListarCompletados.BorderRadius = 40;
+            this.rjButtonListarCompletados.BorderSize = 0;
+            this.rjButtonListarCompletados.FlatAppearance.BorderSize = 0;
+            this.rjButtonListarCompletados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButtonListarCompletados.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButtonListarCompletados.ForeColor = System.Drawing.Color.White;
+            this.rjButtonListarCompletados.Location = new System.Drawing.Point(-8, 291);
+            this.rjButtonListarCompletados.Name = "rjButtonListarCompletados";
+            this.rjButtonListarCompletados.Size = new System.Drawing.Size(135, 85);
+            this.rjButtonListarCompletados.TabIndex = 32;
+            this.rjButtonListarCompletados.Text = "Listar Completados";
+            this.rjButtonListarCompletados.TextColor = System.Drawing.Color.White;
+            this.rjButtonListarCompletados.UseVisualStyleBackColor = false;
             // 
             // FormSolicitudProductoProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1443, 842);
+            this.Controls.Add(this.rjButtonListarCompletados);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonListarInactivos);
             this.Controls.Add(this.buttonEditar);
@@ -264,6 +300,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSolicitudProductoProveedor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormSolicitudProductoProveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -274,11 +311,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxDPI;
+        private System.Windows.Forms.TextBox textBoxCantidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label DPI;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBoxEstado;
         private RJButton buttonListarInactivos;
         private RJButton buttonEditar;
         private RJButton buttonListarActivos;
@@ -287,5 +323,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBoxProveedor;
         private System.Windows.Forms.ComboBox comboBoxProducto;
+        private System.Windows.Forms.Label Estado;
+        private System.Windows.Forms.ComboBox comboBoxEstado;
+        private DAL.DataSetVentasTableAdapters.ClientesTableAdapter clientesTableAdapter1;
+        private RJButton rjButtonListarCompletados;
     }
 }
