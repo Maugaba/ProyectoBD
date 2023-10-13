@@ -295,6 +295,7 @@
             this.ButtonVentas.Text = "Ventas";
             this.ButtonVentas.TextColor = System.Drawing.Color.White;
             this.ButtonVentas.UseVisualStyleBackColor = false;
+            this.ButtonVentas.Click += new System.EventHandler(this.ButtonVentas_Click);
             // 
             // rjButtonCloseSession
             // 

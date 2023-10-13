@@ -145,5 +145,11 @@ namespace UI
             FormSolicitudProductoProveedor formsolicitudpp = new FormSolicitudProductoProveedor();
             formsolicitudpp.Show();
         }
+
+        private void ButtonVentas_Click(object sender, EventArgs e)
+        {
+            FormVentas formventa = new FormVentas();
+            formventa.Show();
+        }
     }
 }
