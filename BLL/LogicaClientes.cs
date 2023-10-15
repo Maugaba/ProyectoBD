@@ -12,6 +12,7 @@ namespace BLL
     {
         //atributos
         private ClientesTableAdapter clientes = null;
+        private ClientesVentasTableAdapter clientesVentas = null;
         //propiedades
         private ClientesTableAdapter CLIENTES
         {
@@ -20,6 +21,15 @@ namespace BLL
                 if (clientes == null)
                     clientes = new ClientesTableAdapter();
                 return clientes;
+            }
+        }
+        private ClientesVentasTableAdapter CLIENTESVENTAS
+        {
+            get
+            {
+                if (clientesVentas == null)
+                    clientesVentas = new ClientesVentasTableAdapter();
+                return clientesVentas;
             }
         }
         //metodos
@@ -32,6 +42,11 @@ namespace BLL
         {
             return CLIENTES.GetDataClientesInactivos();
         }//fin del metodo ListarEmpleadosInactivos
+
+        public DataTable ListarClientesVentas()
+        {
+            return CLIENTESVENTAS.GetDataClientesVentas();
+        }//fin del metodo ListarEmpleadosVentas
 
         public string NuevoCliente(string nombre, string apellido, string direccion, string telefono, string email, int idtipocliente, string nit)
         {

@@ -20,6 +20,10 @@
 
 namespace DAL.DataSetVentasTableAdapters
 {
+    partial class func_ListarProductosVentasTableAdapter
+    {
+    }
+
     partial class FacturasTableAdapter
     {
     }

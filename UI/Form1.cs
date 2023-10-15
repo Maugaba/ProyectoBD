@@ -81,6 +81,8 @@ namespace UI
                 username = row.Field<string>("Usuario"),
                 password = row.Field<string>("Contraseña"),
                 rol = row.Field<int>("IdRol"),
+                idemployee = row.Field<int>("IdEmpleado")
+
             })
             .ToList();
             if (textBoxUsuario.Text == "")
@@ -101,7 +103,7 @@ namespace UI
                     error = 0;
                     if (item.password == ComprobarContraseña(textBoxContraseña.Text))
                     {
-                        FormMenu form = new FormMenu(item.rol, item.Id);
+                        FormMenu form = new FormMenu(item.rol, item.idemployee);
                         form.Show();
                         this.Hide();
                         return;
@@ -146,6 +148,7 @@ namespace UI
             public string username { get; set; }
             public string password { get; set; }
             public int rol { get; set; }
+            public int idemployee { get; set; }
         }
 
         private void Form1_Load(object sender, EventArgs e)

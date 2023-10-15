@@ -246,11 +246,11 @@
             this.ButtonFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonFacturas.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonFacturas.ForeColor = System.Drawing.Color.White;
-            this.ButtonFacturas.Location = new System.Drawing.Point(504, 453);
+            this.ButtonFacturas.Location = new System.Drawing.Point(782, 614);
             this.ButtonFacturas.Name = "ButtonFacturas";
             this.ButtonFacturas.Size = new System.Drawing.Size(223, 122);
             this.ButtonFacturas.TabIndex = 36;
-            this.ButtonFacturas.Text = "Facturas";
+            this.ButtonFacturas.Text = "Reportes";
             this.ButtonFacturas.TextColor = System.Drawing.Color.White;
             this.ButtonFacturas.UseVisualStyleBackColor = false;
             this.ButtonFacturas.Click += new System.EventHandler(this.ButtonFacturas_Click);
@@ -267,7 +267,7 @@
             this.ButtonTiposDeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonTiposDeClientes.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonTiposDeClientes.ForeColor = System.Drawing.Color.White;
-            this.ButtonTiposDeClientes.Location = new System.Drawing.Point(1047, 453);
+            this.ButtonTiposDeClientes.Location = new System.Drawing.Point(504, 452);
             this.ButtonTiposDeClientes.Name = "ButtonTiposDeClientes";
             this.ButtonTiposDeClientes.Size = new System.Drawing.Size(223, 122);
             this.ButtonTiposDeClientes.TabIndex = 39;
@@ -288,7 +288,7 @@
             this.ButtonVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonVentas.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonVentas.ForeColor = System.Drawing.Color.White;
-            this.ButtonVentas.Location = new System.Drawing.Point(782, 453);
+            this.ButtonVentas.Location = new System.Drawing.Point(504, 614);
             this.ButtonVentas.Name = "ButtonVentas";
             this.ButtonVentas.Size = new System.Drawing.Size(223, 122);
             this.ButtonVentas.TabIndex = 40;
@@ -330,7 +330,7 @@
             this.rjButtonProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButtonProductos.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButtonProductos.ForeColor = System.Drawing.Color.White;
-            this.rjButtonProductos.Location = new System.Drawing.Point(232, 610);
+            this.rjButtonProductos.Location = new System.Drawing.Point(782, 452);
             this.rjButtonProductos.Name = "rjButtonProductos";
             this.rjButtonProductos.Size = new System.Drawing.Size(223, 122);
             this.rjButtonProductos.TabIndex = 42;
@@ -351,7 +351,7 @@
             this.rjButtonSolicitudPP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButtonSolicitudPP.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButtonSolicitudPP.ForeColor = System.Drawing.Color.White;
-            this.rjButtonSolicitudPP.Location = new System.Drawing.Point(504, 610);
+            this.rjButtonSolicitudPP.Location = new System.Drawing.Point(1047, 452);
             this.rjButtonSolicitudPP.Name = "rjButtonSolicitudPP";
             this.rjButtonSolicitudPP.Size = new System.Drawing.Size(223, 122);
             this.rjButtonSolicitudPP.TabIndex = 43;

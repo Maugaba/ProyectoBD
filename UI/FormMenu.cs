@@ -16,12 +16,12 @@ namespace UI
     {
         LogicaRol LogicaRol = new LogicaRol();
         private int id;
-        private int iduser;
-        public FormMenu(int id, int iduser)
+        private int idemployee;
+        public FormMenu(int id, int idemployee)
         {
             InitializeComponent();
             this.id = id;
-            this.iduser = iduser;
+            this.idemployee = idemployee;
         }
 
         private void buttonUsuario_Click(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace UI
 
         private void ButtonVentas_Click(object sender, EventArgs e)
         {
-            FormVentas formventa = new FormVentas();
+            FormVentas formventa = new FormVentas(idemployee);
             formventa.Show();
         }
     }

@@ -10,9 +10,10 @@ namespace BLL
 {
     public class LogicaVentas
     {
-        List<Productosventa> productosventas = new List<Productosventa>();
         //atributos
         private VentasTableAdapter ventas = null;
+        private func_ListarProductosVentasTableAdapter func_ListarProductosVentasTableAdapter = null;
+        private func_ListarVentaIndividualTableAdapter func_ListarVentaIndividualTableAdapter = null;
         //propiedades
         private VentasTableAdapter VENTAS
         {
@@ -23,26 +24,44 @@ namespace BLL
                 return ventas;
             }
         }
-        //metodos
-        public string CrearVenta()
+        private func_ListarProductosVentasTableAdapter FUNC_LISTARPRODUCTOSVENTAS
         {
-            string respuesta = "", informacion = "";
-            productosventas.Add(new Productosventa { IdProducto = 4, Cantidad = 1 });
-            productosventas.Add(new Productosventa { IdProducto = 4, Cantidad = 2 });
-            DataTable ventasDataTable = new DataTable();
-            ventasDataTable.Columns.Add("IdProducto", typeof(int));
-            ventasDataTable.Columns.Add("Cantidad", typeof(int));
-
-            // Llenar la DataTable con los datos de productosventas
-            foreach (var productoVenta in productosventas)
+            get
             {
-                ventasDataTable.Rows.Add(productoVenta.IdProducto, productoVenta.Cantidad);
+                if (func_ListarProductosVentasTableAdapter == null)
+                    func_ListarProductosVentasTableAdapter = new func_ListarProductosVentasTableAdapter();
+                return func_ListarProductosVentasTableAdapter;
             }
-            
+        }
+        private func_ListarVentaIndividualTableAdapter FUNC_LISTARVENTAINDIVIDUAL
+        {
+            get
+            {
+                if (func_ListarVentaIndividualTableAdapter == null)
+                    func_ListarVentaIndividualTableAdapter = new func_ListarVentaIndividualTableAdapter();
+                return func_ListarVentaIndividualTableAdapter;
+            }
+        }
+        //metodos
+
+        public DataTable ListarVentas()
+        {
+            return VENTAS.GetDataVenta();
+        }
+        public DataTable ListarVentasInactivas()
+        {
+            return VENTAS.GetDataVentaInactiva();
+        }
+        public DataTable VentaIndividual(int id)
+        {
+            return FUNC_LISTARVENTAINDIVIDUAL.GetDataVentaIndividual(id);
+        }
+        public string CrearVenta(int idcliente, Decimal Subtotal, decimal Descuento, decimal Total, string comentario, int metododepago, int empleado, DataTable ventasDataTable)
+        {
+            string respuesta = "", informacion = "";    
             try
             {
-
-                VENTAS.ProcesoCreacionVenta("34", "A", DateTime.Now, 1, Convert.ToDecimal(20), Convert.ToDecimal(0), Convert.ToDecimal(20), "venta1", 1, 1, ventasDataTable, ref informacion);
+                VENTAS.ProcesoCreacionVenta("C", DateTime.Now, idcliente, Subtotal, Descuento, Total, comentario, metododepago, empleado, ventasDataTable, ref informacion);
                 respuesta = informacion;
             }
             catch (Exception error)
@@ -50,6 +69,10 @@ namespace BLL
                 respuesta = "Error: al realizar la venta " + informacion + " " + error.Message;
             }
             return respuesta;
-        }//Fin NuevoAutorConEscribe
+        }///Fin Crear Venta
+        public DataTable ListarProductosVentas(int idventa)
+        {
+            return FUNC_LISTARPRODUCTOSVENTAS.GetDataListadoProductosVentas(idventa);
+        }
     }
 }

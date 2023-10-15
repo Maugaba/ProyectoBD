@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Factura TECHSAVVY</title>
+    <style>
+        table.border {
+            border-collapse: collapse;
+        }
+
+            table.border th {
+                padding: 5px;
+                border: 1px solid black;
+            }
+
+            table.border td {
+                padding: 5px;
+                border: 1px solid black;
+            }
+    </style>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td style="width:20%"></td>
+            <td style="width:60%" align="center" valign="top">
+                <table>
+                    <tr><td align="center"><h4 style="margin:0px">No. Factura @NOFACTURA</h4></td></tr>
+                    <tr><td align="center">NIT: 644321-3</td></tr>
+                    <tr><td align="center">Direccion: Interplaza Xela Local 31</td></tr>
+                    <tr><td align="center">Telefono: 77674554</td></tr>
+                </table>
+            </td>
+            <td style="width:20%">
+                <table class="border" style="width:100%">
+                    <tr><td align="center">Factura Serie: @SERIE</td></tr>
+                    <tr><td align="center" style="background-color:#D8D8D8">FACTURA</td></tr>
+                    <tr><td align="center">Correlativo: @CORRELATIVO</td></tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr><td colspan="3" height="20"></td></tr>
+
+        <tr>
+            <td colspan="2">
+                <table style="width:100%">
+                    <tr>
+                        <td style="width:20%">Cliente:</td>
+                        <td style="width:30%;border-bottom:1px solid black">@CLIENTE</td>
+                        <td style="width:20%">NIT:</td>
+                        <td style="width:30%;border-bottom:1px solid black">@NIT</td>
+                    </tr>
+                </table>
+                <table style="width:100%">
+                    <tr>
+                        <td style="width:20%">Direccion:</td>
+                        <td style="width:30%;border-bottom:1px solid black">@DIRECCION</td>
+                        <td style="width:20%">Fecha:</td>
+                        <td style="width:30%;border-bottom:1px solid black">@FECHA</td>
+                    </tr>
+                </table>
+                <table style="width:100%">
+                    <tr>
+                        <td style="width:20%">Empleado:</td>
+                        <td style="width:30%;border-bottom:1px solid black">@EMPLEADO</td>
+                        <td style="width:20%">Pago:</td>
+                        <td style="width:30%;border-bottom:1px solid black">@TIPODEPAGO</td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr><td colspan="3" height="30"></td></tr>
+
+        <tr>
+            <td colspan="3">
+                <table class="border" style="width:100%;">
+                    <thead>
+                        <tr style="background-color:#D8D8D8">
+                            <th>Nombre</th>
+                            <th>P. Unitario</th>
+                            <th>Cant.</th>
+                            <th>Importe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @FILAS
+                        <tr>
+                            <td style="border: 0px !important"></td>
+                            <td style="border: 0px !important"></td>
+                            <td align="right">Subtotal:</td>
+                            <td>@SUBTOTAL</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 0px !important"></td>
+                            <td style="border: 0px !important"></td>
+                            <td align="right">Descuento:</td>
+                            <td>@DESCUENTO</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 0px !important"></td>
+                            <td style="border: 0px !important"></td>
+                            <td align="right">Total:</td>
+                            <td>@TOTAL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

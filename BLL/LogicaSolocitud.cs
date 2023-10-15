@@ -45,7 +45,7 @@ namespace BLL
             return "La solicitud del producto ha sido agregada exitosamente";
         }//fin del metodo NuevoEmpleado
 
-        public string EditarSolicitud(int producto, int proveedores, int cantidad, byte state, int id)
+        public string EditarSolicitud(int producto, int proveedores, int cantidad, int state, int id)
         {
             SOLICITUDES.UpdateQuerySolicitud(producto, proveedores, cantidad, state, id);
             return "La solicitud del producto ha sido editada exitosamente";

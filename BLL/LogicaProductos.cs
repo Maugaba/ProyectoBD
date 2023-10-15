@@ -34,7 +34,7 @@ namespace BLL
             return PRODUCTOS.GetDataProductosInactivos();
         }//fin del metodo ListarEmpleadosInactivos
 
-        public string NuevoProducto(string nombre, string descripcion, decimal precio, int porcentaje, int idmarca, string model, int stock, int existencia, int idgarantia, int idcategoria, string fechaingreso, int idproveedor)
+        public string NuevoProducto(string nombre, string descripcion, decimal precio, int idmarca, string model, int stock, int existencia, int idgarantia, int idcategoria, string fechaingreso, int idproveedor)
         {
             int existe;
             existe = Convert.ToInt32(PRODUCTOS.ScalarQueryExisteProducto(nombre));
@@ -42,12 +42,12 @@ namespace BLL
                 return "Error: el producto " + nombre + " ya existe previamente";
             else
             {
-                PRODUCTOS.InsertQueryProducto(nombre, descripcion, precio, porcentaje, idmarca, model, stock, existencia, idgarantia, idcategoria, fechaingreso, idproveedor);
+                PRODUCTOS.InsertQueryProducto(nombre, descripcion, precio, idmarca, model, stock, existencia, idgarantia, idcategoria, fechaingreso, idproveedor);
                 return "El producto " + nombre + " ha sido agregado exitosamente";
             }
         }//fin del metodo NuevoEmpleado
 
-        public string EditarProducto(string nombre, string descripcion, decimal precio, int porcentaje, int idmarca, string model, int stock, int existencia, int idgarantia, int idcategoria, string fechaingreso, int idproveedor, byte state, int id)
+        public string EditarProducto(string nombre, string descripcion, decimal precio, int idmarca, string model, int stock, int existencia, int idgarantia, int idcategoria, string fechaingreso, int idproveedor, byte state, int id)
         {
             int existe;
             existe = Convert.ToInt32(PRODUCTOS.ScalarQueryExisteProducto(nombre));
@@ -55,7 +55,7 @@ namespace BLL
                 return "Error: el producto " + nombre + " ya existe previamente";
             else
             {
-                PRODUCTOS.UpdateQueryProducto(nombre, descripcion, precio, porcentaje, idmarca, model, stock, existencia, idgarantia, idcategoria, fechaingreso, idproveedor, state, id);
+                PRODUCTOS.UpdateQueryProducto(nombre, descripcion, precio, idmarca, model, stock, existencia, idgarantia, idcategoria, fechaingreso, idproveedor, state, id);
                 return "El producto " + nombre + " ha sido editado exitosamente";
             }
         }//fin del metodo EditarEmpleado
